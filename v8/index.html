@@ -893,13 +893,17 @@
     .a-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
     .rs-items{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
   }
+
+  .m-logo-img{display:block;height:44px;width:auto;max-width:none}
+  @media (max-width:760px){.m-logo-img{height:34px}}
+  @media (max-width:400px){.m-logo-img{height:28px}}
 </style>
 </head>
 <body>
 <div style="background:#F7F4FF;color:#160A33;font-family:Poppins,Helvetica,Arial,sans-serif;font-weight:500;overflow-x:hidden">
 
   <header class="m-head">
-    <a href="#" class="m-logo" aria-label="Maestro, accueil"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true" style="flex:none;display:block"><path d="M33.93 5.83A47 47 0 0 1 95.60 38.63L76.74 53.76A27 27 0 0 0 50.94 23.02ZM96.29 58.16A47 47 0 0 1 37.05 95.18L33.38 71.28A27 27 0 0 0 72.90 64.31ZM19.79 86.00A47 47 0 0 1 17.35 16.19L39.89 24.97A27 27 0 0 0 26.16 62.68Z" fill="#7B4FF3"></path></svg><span style="display:block;line-height:1"><span style="display:block;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500;font-size:25px;letter-spacing:-.01em;color:#120B2E">Maestro</span></span></a>
+    <a href="#" class="m-logo" aria-label="Maestro CRM by Nexxt Technologies, accueil"><img src="logos/maestro-crm.png" alt="Maestro CRM by Nexxt Technologies" class="m-logo-img"></a>
     <nav class="m-nav" aria-label="Navigation principale">
       <a href="#fonctionnalites" class="m-nav-pill"><i></i>Fonctionnalités<i></i></a>
       <a href="#pourqui">Pour qui</a>
