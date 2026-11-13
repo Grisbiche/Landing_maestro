@@ -788,6 +788,111 @@
   .hw-step{border:1px solid transparent !important;border-radius:20px;padding:18px 20px !important;background:#F7F4FE !important;transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .2s ease}
   .hw-step:first-child{border-top:1px solid transparent !important}
   .hw-step.is-on{background:#fff !important;border-color:rgba(101,34,232,.18) !important;box-shadow:0 24px 50px -36px rgba(43,10,120,.6)}
+
+  /* ================= V8j ================= */
+  /* Pas de CRM */
+  .pb-sec .pb-list li{border-top:0 !important;border-bottom:0 !important;padding:9px 0 !important}
+  .pb-sec .rs-box{background:#F7F4FE !important;box-shadow:none !important;border:1px solid rgba(101,34,232,.1)}
+  .pb-sec .rs-box h3{color:#160A33 !important}
+  .pb-sec .rs-item{border-left-color:rgba(101,34,232,.14) !important}
+  .pb-sec .rs-item span{background:#FCE4F4 !important;color:#A2389F !important}
+  .pb-sec .rs-item p{color:#160A33 !important}
+  @media (max-width:860px){.pb-sec .rs-item{border-top-color:rgba(101,34,232,.14) !important}}
+
+  /* Bandeau entre en scène */
+  .sc-band{background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 45%,rgba(214,198,255,.3) 60%,rgba(230,220,255,.62) 74%,rgba(244,239,255,.88) 87%,#fff 100%),radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;padding-bottom:clamp(170px,16vw,230px) !important}
+  .sc-in{max-width:1100px}
+  .sc-band p.sc-line{max-width:none}
+  @media (min-width:900px){.sc-band p.sc-line{white-space:nowrap}}
+
+  /* ================= Responsive tablette & mobile ================= */
+  @media (max-width:1024px){
+    .s-sec,.w-sec,.a-sec,.hw-sec,.pb-sec,.sc-band{padding-left:max(24px,env(safe-area-inset-left,0px)) !important;padding-right:max(24px,env(safe-area-inset-right,0px)) !important}
+    #fonctionnalites,#pourqui{padding-left:24px !important;padding-right:24px !important}
+    .one-line,.sc-band p.sc-line{white-space:normal !important}
+    .hw-grid{grid-template-columns:1fr !important}
+    .hw-frame{max-width:620px;margin:0 auto;width:100%}
+    .wy-wrap{grid-template-columns:1fr !important;gap:32px !important}
+    .wy-left{position:static !important;text-align:center}
+    .wy-title{max-width:none}
+    .a-panel{grid-template-columns:1fr !important}
+    .a-left{text-align:center}
+    .a-left p{margin-left:auto;margin-right:auto}
+    .o-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+    .fc-arrow--prev{left:-12px !important}.fc-arrow--next{right:-12px !important}
+    .s-foot-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .s-foot-brand{grid-column:1/-1}
+  }
+  @media (max-width:760px){
+    .s-sec,.w-sec,.a-sec,.hw-sec,.pb-sec,.sc-band,#fonctionnalites,#pourqui{padding-left:max(18px,env(safe-area-inset-left,0px)) !important;padding-right:max(18px,env(safe-area-inset-right,0px)) !important;padding-top:64px !important}
+    .m-head{padding:12px 16px !important}
+    .m-head-cta{font-size:13.5px !important;padding:6px 6px 6px 14px !important;gap:8px !important}
+    .m-head-cta .cta-dot{width:28px;height:28px}
+    .m-hero{padding-left:18px !important;padding-right:18px !important;padding-top:48px !important}
+    .m-hero h1{font-size:clamp(32px,9vw,40px) !important;line-height:1.08 !important}
+    .m-sub,.s-lead,#fonctionnalites > div > p{font-size:16px !important}
+    .m-eyebrow{font-size:12px !important;line-height:1.4;text-align:left}
+    .m-cta,.sc-band .m-cta{font-size:16px !important;padding:7px 7px 7px 22px !important}
+    .m-cta .cta-dot{width:40px !important;height:40px !important}
+    .m-frame{padding:6px !important;border-radius:20px !important}
+    .m-grid{padding:8px !important;gap:8px !important}
+    .m-kpis{grid-template-columns:1fr 1fr !important}
+    .m-kpi p{display:none}
+    .s-h2,.wy-title,.a-left h2,.sc-band h2,#fonctionnalites > div > h2,#pourqui h2{font-size:clamp(26px,7.4vw,32px) !important;line-height:1.15 !important}
+    .lg-sec{padding:24px 18px !important}
+    .lg-item img{transform:scale(.85)}
+    .pb-sec .s-card{padding:22px !important}
+    .pb-sec .s-card h3{font-size:20px !important}
+    .pb-sec .pb-list li{font-size:16px !important}
+    .pb-sec .rs-box{padding:22px !important}
+    .pb-sec .rs-item p{font-size:16px !important}
+    .sc-band{padding-bottom:140px !important}
+    .sc-band p{font-size:16px}
+    .hw-step{padding:14px !important}
+    .hw-txt b{font-size:19px !important}
+    .hw-frame{padding:16px !important;border-radius:22px !important}
+    .hw-card{min-height:0 !important;padding:16px !important}
+    .hw-donut{width:140px;height:140px}
+    .fc-arrow{width:40px !important;height:40px !important}
+    .fc-arrow--prev{left:-6px !important}.fc-arrow--next{right:-6px !important}
+    .wy-item{padding:0 16px !important}
+    .wy-item summary{gap:14px !important}
+    .wy-ico{width:44px !important;height:44px !important}
+    .wy-item summary h3{font-size:18px !important}
+    .wy-item > p{margin-left:0 !important}
+    .t-grid > :nth-child(2){margin-top:0 !important}
+    .t-card{padding:24px !important}
+    .a-panel{padding:24px !important;border-radius:22px !important}
+    .a-grid{grid-template-columns:1fr 1fr !important;gap:10px !important}
+    .a-block{padding:16px !important}
+    .a-num{font-size:30px !important}
+    .o-plan{padding:24px !important}
+    .f-item summary{padding:16px !important;font-size:15px !important}
+    .f-item p{padding:0 16px 16px !important}
+    .s-final{padding-left:18px !important;padding-right:18px !important}
+    .s-final-actions{flex-direction:column}
+    .s-foot{padding-left:18px !important;padding-right:18px !important}
+    .s-foot-bottom{flex-direction:column}
+    #pourqui [style*="grid-auto-rows:1fr"]{grid-auto-rows:auto !important}
+  }
+  @media (max-width:420px){
+    .a-grid{grid-template-columns:1fr !important}
+    .m-head .m-logo svg{width:26px;height:26px}
+    .m-kpi-val strong{font-size:20px !important}
+    .m-kpi-val{flex-wrap:wrap}
+  }
+
+  @media (min-width:761px) and (max-width:1024px){
+    .t-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:12px !important}
+    .t-grid > :nth-child(2){margin-top:0 !important}
+    .t-card{padding:22px !important}
+    .o-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:12px !important}
+    .o-plan{padding:22px !important}
+    .o-amount b{font-size:36px !important}
+    .o-plan .s-btn-ghost,.o-plan .s-btn-cta{font-size:14px !important;padding:13px 14px !important;white-space:nowrap}
+    .a-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .rs-items{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  }
 </style>
 </head>
 <body>
@@ -932,7 +1037,7 @@
   <section class="sc-band">
     <div class="sc-in">
       <h2>C’est là que Maestro <span>entre en scène.</span></h2>
-      <p>Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A à Z.</p>
+      <p class="sc-line">Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A&nbsp;à&nbsp;Z.</p>
       <a class="m-cta sc-cta" href="#fonctionnalites">Voir comment<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
     </div>
   </section>
@@ -1233,7 +1338,6 @@
           <figcaption><span class="t-av">SA</span><span><b>Sophie Arnaud</b><small>Gérante, PME de services</small></span></figcaption>
         </figure>
       </div>
-      <p class="t-note">Témoignages d’illustration, à remplacer par des avis clients réels avant la mise en ligne.</p>
     </div>
   </section>
   <section class="s-sec s-white" id="offres">
@@ -1312,8 +1416,8 @@
     <div class="s-wrap">
       <div class="s-head"><h2 class="s-h2">Vos questions sur le <span class="s-grad">CRM Maestro</span></h2></div>
       <div class="f-grid">
-        <div class="f-col"><details class="f-item" open><summary>Combien coûte le CRM Maestro&nbsp;? Y a-t-il un engagement&nbsp;?<i aria-hidden="true"></i></summary><p>Maestro est accessible à partir de 79&nbsp;€&nbsp;HT par mois, avec un engagement d’un an. Le tarif dépend de la formule choisie et du nombre d’utilisateurs.</p></details><details class="f-item"><summary>Est-ce compliqué de passer d’Excel à un CRM&nbsp;? Mes contacts peuvent-ils être importés&nbsp;?<i aria-hidden="true"></i></summary><p>Non, Maestro est très facile à utiliser et tout est paramétrable selon votre façon de travailler. Et oui, vos contacts peuvent être importés depuis Excel ou depuis votre ancien CRM.</p></details><details class="f-item"><summary>Combien de temps faut-il pour prendre Maestro en main&nbsp;?<i aria-hidden="true"></i></summary><p>Une demi-journée de formation suffit pour prendre Maestro en main.</p></details><details class="f-item"><summary>Peut-on travailler à plusieurs dans Maestro&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Plusieurs accès sont possibles, pour que toute votre équipe partage la même information.</p></details><details class="f-item"><summary>Puis-je gérer plusieurs activités, sites ou entités&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro gère le multi-propriétés et la segmentation par Business Unit : vous gardez une vision consolidée tout en pilotant chaque activité séparément.</p></details></div>
-        <div class="f-col"><details class="f-item"><summary>Où sont hébergées mes données&nbsp;? Maestro est-il conforme au RGPD&nbsp;?<i aria-hidden="true"></i></summary><p>[Réponse à compléter : lieu d’hébergement des données et conformité RGPD, à valider avec Alex.]</p></details><details class="f-item"><summary>Comment fonctionne l’IA&nbsp;?<i aria-hidden="true"></i></summary><p>Maestro intègre une IA pour vous assister au quotidien. Pour aller plus loin, Maestro se connecte à Claude et à ChatGPT : vous pilotez alors l’intégralité de votre CRM en langage naturel, de la création d’une fiche client à l’analyse de votre activité.</p></details><details class="f-item"><summary>Maestro peut-il se connecter à mes autres outils métier&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro se connecte à vos outils métier. [Liste des connectivités disponibles à compléter.]</p></details><details class="f-item"><summary>Suis-je accompagné pour démarrer&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro propose plusieurs niveaux d’accompagnement, de la configuration et de l’import de vos données jusqu’à la formation de vos équipes.</p></details></div>
+        <div class="f-col"><details class="f-item" open><summary>Combien coûte le CRM Maestro&nbsp;? Y a-t-il un engagement&nbsp;?<i aria-hidden="true"></i></summary><p>Maestro est accessible à partir de 79&nbsp;€&nbsp;HT par mois, avec un engagement d’un an. Le tarif dépend de la formule choisie et du nombre d’utilisateurs.</p></details><details class="f-item"><summary>Est-ce compliqué de passer d’Excel à un CRM&nbsp;? Mes contacts peuvent-ils être importés&nbsp;?<i aria-hidden="true"></i></summary><p>Non, Maestro est très facile à utiliser et tout est paramétrable selon votre façon de travailler. Et oui, vos contacts peuvent être importés depuis Excel ou depuis votre ancien CRM.</p></details><details class="f-item"><summary>Combien de temps faut-il pour prendre Maestro en main&nbsp;?<i aria-hidden="true"></i></summary><p>Une demi-journée de formation suffit pour prendre Maestro en main.</p></details><details class="f-item"><summary>Peut-on travailler à plusieurs dans Maestro&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Plusieurs accès sont possibles, pour que toute votre équipe partage la même information.</p></details></div>
+        <div class="f-col"><details class="f-item"><summary>Puis-je gérer plusieurs activités, sites ou entités&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro gère le multi-propriétés et la segmentation par Business Unit : vous gardez une vision consolidée tout en pilotant chaque activité séparément.</p></details><details class="f-item"><summary>Où sont hébergées mes données&nbsp;? Maestro est-il conforme au RGPD&nbsp;?<i aria-hidden="true"></i></summary><p>[Réponse à compléter : lieu d’hébergement des données et conformité RGPD, à valider avec Alex.]</p></details><details class="f-item"><summary>Comment fonctionne l’IA&nbsp;?<i aria-hidden="true"></i></summary><p>Maestro intègre une IA pour vous assister au quotidien. Pour aller plus loin, Maestro se connecte à Claude et à ChatGPT : vous pilotez alors l’intégralité de votre CRM en langage naturel, de la création d’une fiche client à l’analyse de votre activité.</p></details><details class="f-item"><summary>Maestro peut-il se connecter à mes autres outils métier&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro se connecte à vos outils métier. [Liste des connectivités disponibles à compléter.]</p></details></div>
       </div>
     </div>
   </section>
