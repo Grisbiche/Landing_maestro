@@ -770,6 +770,24 @@
 
   .t-card blockquote{font-size:16px !important;line-height:1.65 !important}
   .t-note{margin:18px 0 0;text-align:center;font-size:13px;color:#8A76B8}
+
+  /* ================= V8i ================= */
+  .s-grad,.m-grad,.wy-hl,.wy-title span{padding-right:.08em;margin-right:-.08em;padding-bottom:.06em}
+  .t-note{margin:22px 0 0;text-align:center;font-size:13px;font-weight:300;color:#8A76B8}
+
+  .sc-band{position:relative;overflow:hidden;padding:clamp(72px,8vw,112px) max(20px,3vw);background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%);text-align:center;font-family:Poppins,Helvetica,Arial,sans-serif}
+  .sc-in{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  .sc-band h2{margin:0;font-size:clamp(32px,4vw,56px) !important;line-height:1.08;color:#fff}
+  .sc-band h2 span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+  .sc-band p{margin:18px 0 0;max-width:60ch;font-size:18px;font-weight:300;line-height:1.6;color:#E4DAFF}
+  .sc-cta{margin-top:34px}
+  .sc-band .m-cta{display:inline-flex !important;align-items:center;gap:16px !important;padding:9px 9px 9px 30px !important;background:#fff !important;color:#1E1060 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:18px !important;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important}
+
+  /* Tout votre commerce : blocs arrondis */
+  .hw-steps{gap:10px}
+  .hw-step{border:1px solid transparent !important;border-radius:20px;padding:18px 20px !important;background:#F7F4FE !important;transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .2s ease}
+  .hw-step:first-child{border-top:1px solid transparent !important}
+  .hw-step.is-on{background:#fff !important;border-color:rgba(101,34,232,.18) !important;box-shadow:0 24px 50px -36px rgba(43,10,120,.6)}
 </style>
 </head>
 <body>
@@ -909,13 +927,13 @@
           <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"></path></svg></span><p>Du temps passé à gérer l’outil plutôt qu’à développer son activité.</p></div>
         </div>
       </div>
-      <div class="pb-turn">
-        <div>
-          <h3>C’est là que Maestro entre en scène.</h3>
-          <p class="one-line">Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A à Z.</p>
-        </div>
-        <a class="s-btn-dark" href="#fonctionnalites">Voir comment <span aria-hidden="true">→</span></a>
-      </div>
+    </div>
+  </section>
+  <section class="sc-band">
+    <div class="sc-in">
+      <h2>C’est là que Maestro <span>entre en scène.</span></h2>
+      <p>Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A à Z.</p>
+      <a class="m-cta sc-cta" href="#fonctionnalites">Voir comment<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
     </div>
   </section>
   <section class="s-sec s-white hw-sec">
@@ -1202,19 +1220,20 @@
         <figure class="t-card">
           <div class="t-top"><span class="t-q" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6.5A2.5 2.5 0 004 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C9.7 19 11 16.5 11 13V8a1 1 0 00-1-1zm9 0h-3.5A2.5 2.5 0 0013 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C18.7 19 20 16.5 20 13V8a1 1 0 00-1-1z"></path></svg></span><span class="t-tag">Suivi des actions commerciales</span></div>
           <blockquote>« Avant, mes relances vivaient dans mon agenda et dans ma tête. J’en oubliais régulièrement. Avec Maestro, je vois chaque matin mes actions du jour : je relance au bon moment et plus rien ne passe à la trappe. »</blockquote>
-          <figcaption><span class="t-av">CL</span><span><b>[Prénom Nom]</b><small>Dirigeante, cabinet de conseil</small></span></figcaption>
+          <figcaption><span class="t-av">CL</span><span><b>Claire Lemaire</b><small>Dirigeante, cabinet de conseil</small></span></figcaption>
         </figure>
         <figure class="t-card">
           <div class="t-top"><span class="t-q" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6.5A2.5 2.5 0 004 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C9.7 19 11 16.5 11 13V8a1 1 0 00-1-1zm9 0h-3.5A2.5 2.5 0 0013 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C18.7 19 20 16.5 20 13V8a1 1 0 00-1-1z"></path></svg></span><span class="t-tag">Animation de la base clients</span></div>
           <blockquote>« Notre fichier prospects était un Excel que plus personne n’ouvrait. Aujourd’hui, nos contacts sont segmentés et l’équipe sait qui relancer, quand et pourquoi. Notre base est redevenue une source d’affaires. »</blockquote>
-          <figcaption><span class="t-av">TM</span><span><b>[Prénom Nom]</b><small>Responsable commercial, organisme de formation</small></span></figcaption>
+          <figcaption><span class="t-av">TM</span><span><b>Thomas Morel</b><small>Responsable commercial, organisme de formation</small></span></figcaption>
         </figure>
         <figure class="t-card">
           <div class="t-top"><span class="t-q" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6.5A2.5 2.5 0 004 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C9.7 19 11 16.5 11 13V8a1 1 0 00-1-1zm9 0h-3.5A2.5 2.5 0 0013 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C18.7 19 20 16.5 20 13V8a1 1 0 00-1-1z"></path></svg></span><span class="t-tag">Pilotage du chiffre d’affaires</span></div>
           <blockquote>« Je reconstituais mon chiffre d’affaires à la main chaque fin de mois. Maintenant, j’ouvre le tableau de bord : CA signé, pipeline, prévisionnel. Je sais où on va atterrir et je décide plus vite. »</blockquote>
-          <figcaption><span class="t-av">SA</span><span><b>[Prénom Nom]</b><small>Gérant, PME de services</small></span></figcaption>
+          <figcaption><span class="t-av">SA</span><span><b>Sophie Arnaud</b><small>Gérante, PME de services</small></span></figcaption>
         </figure>
       </div>
+      <p class="t-note">Témoignages d’illustration, à remplacer par des avis clients réels avant la mise en ligne.</p>
     </div>
   </section>
   <section class="s-sec s-white" id="offres">
@@ -1235,7 +1254,7 @@
           <a class="s-btn-ghost" href="#demo">Demander une démo</a>
         </div>
         <div class="o-plan o-plan--feat">
-          <div class="o-top"><small>Maestro</small><span class="o-badge">En équipe</span></div>
+          <div class="o-top"><small>Maestro</small><span class="o-badge">La plus choisie</span></div>
           <h3>Business</h3>
           <div class="o-amount"><b>139&nbsp;€</b><span>HT / mois</span></div>
           <div class="o-users"><span class="o-users-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 11h5M18.5 8.5v5"></path></svg></span><div><strong>Jusqu’à 8 utilisateurs</strong><small>+ 10 € HT par utilisateur supplémentaire</small></div></div>
