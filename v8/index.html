@@ -897,6 +897,16 @@
   .m-logo-img{display:block;height:44px;width:auto;max-width:none}
   @media (max-width:760px){.m-logo-img{height:34px}}
   @media (max-width:400px){.m-logo-img{height:28px}}
+
+  /* Pas de CRM : questions empilées, résultat à droite */
+  .pb-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;align-items:stretch}
+  .pb-stack{display:flex;flex-direction:column;gap:20px}
+  .pb-sec .pb-split .rs-box{margin-top:0 !important;display:flex !important;flex-direction:column;justify-content:center;gap:18px;text-align:left;padding:clamp(28px,3.2vw,44px) !important}
+  .pb-sec .pb-split .rs-box h3{align-self:flex-start;font-size:clamp(28px,2.8vw,38px) !important}
+  .pb-sec .pb-split .rs-items{grid-template-columns:1fr !important;gap:0 !important}
+  .pb-sec .pb-split .rs-item{flex-direction:row !important;align-items:center !important;border-left:0 !important;border-top:1px solid rgba(101,34,232,.14);padding:20px 0 !important}
+  .pb-sec .pb-split .rs-item:first-child{border-top:0}
+  @media (max-width:900px){.pb-split{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1016,7 +1026,8 @@
   <section class="s-sec s-white pb-sec">
     <div class="s-wrap">
       <div class="s-head s-head--wide"><h2 class="s-h2 one-line">Pas de CRM, ou un CRM que <span class="s-grad">personne n’ouvre</span>&nbsp;?</h2></div>
-      <div class="s-bento">
+      <div class="pb-split">
+      <div class="pb-stack">
         <article class="s-card">
           <span class="pb-tag">Sans CRM</span>
           <h3>Votre activité commerciale est éparpillée&nbsp;?</h3>
@@ -1035,6 +1046,7 @@
           <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5c1.6 0 3 .4 4.3 1M21.5 12s-1.2 2.2-3.5 4"></path><path d="M3 3l18 18"></path></svg></span><p>Des opportunités qu’on perd de vue.</p></div>
           <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"></path></svg></span><p>Du temps passé à gérer l’outil plutôt qu’à développer son activité.</p></div>
         </div>
+      </div>
       </div>
     </div>
   </section>
