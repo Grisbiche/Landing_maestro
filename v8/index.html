@@ -576,6 +576,78 @@
   .s-final .s-lead{color:#E4DAFF !important}
   .s-final .m-cta{background:#fff !important;color:#2A1890 !important;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important}
   .s-final .s-btn-ghost{background:transparent !important;border-color:rgba(255,255,255,.5) !important;color:#fff !important}
+
+  /* ================= V8d ================= */
+  /* Boutons pilule + pastille flèche */
+  .cta-dot{flex:none;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;transition:transform .25s ease}
+  .m-head-cta{display:inline-flex !important;align-items:center;gap:12px;padding:7px 7px 7px 20px !important;background:#7B4FF3 !important;color:#fff !important;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500 !important;font-size:15px !important;letter-spacing:.01em;box-shadow:0 12px 26px -12px rgba(123,79,243,.9) !important;filter:none !important}
+  .m-head-cta:hover{background:#5A35DB !important;transform:none !important}
+  .m-head-cta .cta-dot{width:32px;height:32px;background:#fff;color:#7B4FF3}
+  .m-hero .m-cta,.s-final .m-cta,.wy-left .m-cta,.a-left .m-cta{display:inline-flex !important;align-items:center;gap:16px !important;padding:9px 9px 9px 30px !important;background:#fff !important;color:#1E1060 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:18px !important;letter-spacing:.01em;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important;filter:none !important}
+  .m-cta .cta-dot{width:46px;height:46px;background:linear-gradient(135deg,#FF8A5C 0%,#E0569E 50%,#9B5CFF 100%);color:#fff}
+  .m-hero .m-cta:hover,.s-final .m-cta:hover,.m-head-cta:hover{transform:none !important;filter:none !important}
+  .m-cta:hover .cta-dot,.m-head-cta:hover .cta-dot{transform:rotate(-45deg)}
+
+  /* Logos clients */
+  .lg-set{gap:clamp(44px,5vw,72px) !important;padding-right:clamp(44px,5vw,72px) !important}
+  .lg-item img{display:block;width:auto;max-width:none;filter:grayscale(1);opacity:.6;transition:filter .2s ease,opacity .2s ease}
+  .lg-item:hover img{filter:none;opacity:1}
+  .lg-text{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600 !important;font-size:20px !important;line-height:1.2 !important}
+
+  /* Résultat mis en avant */
+  .rs-box{margin-top:16px;padding:clamp(28px,3.6vw,44px);border-radius:26px;background:radial-gradient(55% 75% at 0% 0%,rgba(192,79,208,.62),transparent 70%),radial-gradient(35% 50% at 100% 100%,rgba(255,138,92,.20),transparent 70%),radial-gradient(50% 60% at 85% 10%,rgba(110,80,255,.35),transparent 70%),linear-gradient(135deg,#4B2DD6 0%,#3320B0 45%,#1E1060 100%);box-shadow:0 50px 100px -55px rgba(30,16,96,.9)}
+  .rs-box h3{margin:0 0 22px;font-size:clamp(28px,3vw,40px);color:#fff}
+  .rs-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+  .rs-item{display:flex;align-items:center;gap:16px;padding:22px;border-radius:18px;background:#fff}
+  .rs-item span{flex:none;width:48px;height:48px;border-radius:14px;background:#FCE4F4;color:#A2389F;display:inline-flex;align-items:center;justify-content:center}
+  .rs-item p{margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#160A33}
+  .pb-turn{background:radial-gradient(70% 90% at 0% 0%,#D9C6FF 0%,transparent 70%),radial-gradient(45% 60% at 100% 100%,rgba(255,170,130,.38) 0%,transparent 70%),radial-gradient(60% 80% at 100% 0%,#EFD5F7 0%,transparent 70%),linear-gradient(120deg,#E8DCFF,#F3ECFF 55%,#FBEDF3) !important;box-shadow:none !important;padding:clamp(22px,2.8vw,32px) clamp(24px,3.4vw,40px) !important}
+  .pb-turn h3{color:#160A33 !important;font-size:clamp(20px,2vw,26px) !important}
+  .pb-turn p{color:#3B2168 !important;font-size:15.5px !important}
+  .pb-turn .s-btn-dark{background:#120B2E !important;color:#fff !important}
+
+  /* Tout votre commerce : sans trait, pictos carrés */
+  .hw-frame-in{background-image:none !important}
+  .hw-ico{border-radius:14px !important}
+
+  /* Fonctionnalités : fond du hero qui se fond en blanc, titre avant le visuel */
+  #fonctionnalites{border-top:0 !important;background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 46%,rgba(214,198,255,.6) 60%,rgba(244,239,255,.95) 72%,#fff 82%),radial-gradient(55% 75% at 0% 0%,rgba(192,79,208,.62),transparent 70%),radial-gradient(35% 50% at 100% 100%,rgba(255,138,92,.20),transparent 70%),radial-gradient(50% 60% at 85% 10%,rgba(110,80,255,.35),transparent 70%),linear-gradient(135deg,#4B2DD6 0%,#3320B0 45%,#1E1060 100%) !important}
+  #fonctionnalites > div > h2{color:#fff !important}
+  #fonctionnalites > div > h2 span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
+  #fonctionnalites > div > p{color:#E4DAFF !important}
+  #fonctionnalites > div > p span{color:#FFBE98 !important}
+  .fc .w-card{background:#fff !important;box-shadow:0 30px 60px -40px rgba(10,4,40,.7) !important}
+  .fc-card h3{margin:10px 10px 14px !important;min-height:2.5em}
+  .fc-arrow{top:150px !important}
+
+  /* Pour qui : en-tête centré, phrase fine */
+  .pq-head{max-width:900px;margin:0 auto;text-align:center}
+  .pq-head p{margin:18px 0 0 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:14px !important;letter-spacing:.16em;text-transform:uppercase;color:#5A35DB !important}
+
+  /* Pourquoi : deux colonnes lisibles */
+  .wy-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,96px);align-items:start}
+  @media (max-width:900px){.wy-wrap{grid-template-columns:1fr}}
+  .wy-left{position:sticky;top:110px}
+  @media (max-width:900px){.wy-left{position:static}}
+  .wy-title{margin:0;font-size:clamp(30px,3.4vw,48px);line-height:1.08;color:#fff !important}
+  .wy-title span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wy-cta{margin-top:32px}
+  .wy-list{display:flex;flex-direction:column}
+  .wy-item{display:flex;gap:20px;align-items:flex-start;padding:26px 0;border-top:1px solid rgba(255,255,255,.16)}
+  .wy-item:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+  .wy-ico{flex:none;width:52px;height:52px;border-radius:15px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;display:inline-flex;align-items:center;justify-content:center}
+  .wy-item h3{margin:4px 0 0;font-size:clamp(20px,1.9vw,24px);color:#fff}
+  .wy-item p{margin:8px 0 0;max-width:52ch;font-size:16.5px;font-weight:400;line-height:1.65;color:#E4DAFF}
+
+  /* Changer de CRM : dégradé foncé */
+  .a-panel{background:radial-gradient(55% 75% at 0% 0%,rgba(192,79,208,.62),transparent 70%),radial-gradient(35% 50% at 100% 100%,rgba(255,138,92,.20),transparent 70%),radial-gradient(50% 60% at 85% 10%,rgba(110,80,255,.35),transparent 70%),linear-gradient(135deg,#4B2DD6 0%,#3320B0 45%,#1E1060 100%) !important;box-shadow:0 50px 100px -55px rgba(30,16,96,.9) !important}
+  .a-left h2{color:#fff !important}
+  .a-left p{color:#E4DAFF !important}
+  .a-cta{margin-top:28px}
+  .a-block{background:rgba(255,255,255,.1) !important;border:1px solid rgba(255,255,255,.2) !important;backdrop-filter:blur(6px) !important}
+  .a-block h3{color:#fff !important}
+  .a-block p{color:#E4DAFF !important}
+  .a-num{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
 </style>
 </head>
 <body>
@@ -590,7 +662,7 @@
       <a href="#offres">Tarifs</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="m-head-cta" href="#demo">Demander une démo</a>
+    <a class="m-head-cta" href="#demo">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
   </header>
 
   <section class="m-hero">
@@ -598,7 +670,7 @@
       <p class="m-eyebrow"><span></span>Le CRM simple des TPE et PME de conseil, de formation et de services</p>
       <h1>Le CRM qui donne le <span class="m-grad">tempo</span><br class="m-br"> à votre activité commerciale.</h1>
       <p class="m-sub">Prospects, clients, opportunités, relances, devis, suivi de missions et chiffre d’affaires : Maestro réunit toute votre activité commerciale au même endroit pour mieux suivre, mieux vendre et mieux piloter.</p>
-      <a class="m-cta" href="#demo">Demander une démo <span aria-hidden="true">→</span></a>
+      <a class="m-cta" href="#demo">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 
       <div class="m-frame" role="img" aria-label="Aperçu illustratif du tableau de bord Maestro, données d’exemple">
         <div class="m-app">
@@ -671,9 +743,9 @@
   </section>
   <section class="lg-sec" aria-label="Ils nous font confiance">
     <div class="lg-wrap">
-      <p class="lg-text">Plus de [X] entreprises<br>nous font confiance</p>
+      <p class="lg-text">Ils nous font<br>confiance.</p>
       <span class="lg-sep" aria-hidden="true"></span>
-      <div class="lg-viewport" aria-hidden="true"><div class="lg-track"><div class="lg-set"><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7l5 5-5 5-5-5z" fill="currentColor"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19L13 5M10 19L18 5" stroke-width="3"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6v12M9.5 4v16M14 7v10M18.5 9v6" stroke-width="2.6"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" stroke-width="2.2"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.5" fill="currentColor"></circle></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c3-8 13-8 16 0M8 18c1.5-4 6.5-4 8 0" stroke-width="2.2"></path></svg><span>Logo client</span></span></div><div class="lg-set"><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7l5 5-5 5-5-5z" fill="currentColor"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19L13 5M10 19L18 5" stroke-width="3"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6v12M9.5 4v16M14 7v10M18.5 9v6" stroke-width="2.6"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" stroke-width="2.2"></path></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.5" fill="currentColor"></circle></svg><span>Logo client</span></span><span class="lg-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c3-8 13-8 16 0M8 18c1.5-4 6.5-4 8 0" stroke-width="2.2"></path></svg><span>Logo client</span></span></div></div></div>
+      <div class="lg-viewport"><div class="lg-track"><div class="lg-set"><span class="lg-item"><img src="logos/grisbiche.svg" alt="Grisbiche" style="height:30px" loading="lazy"></span><span class="lg-item"><img src="logos/jai-le-lead.svg" alt="J’ai le lead" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/axioncom.png" alt="Axioncom" style="height:46px" loading="lazy"></span><span class="lg-item"><img src="logos/safe-hospitality.png" alt="Safe Hospitality" style="height:40px" loading="lazy"></span><span class="lg-item"><img src="logos/the-originals-expert.png" alt="The Originals Expert" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/insaho.png" alt="Insaho" style="height:40px" loading="lazy"></span></div><div class="lg-set" aria-hidden="true"><span class="lg-item"><img src="logos/grisbiche.svg" alt="" data-alt="Grisbiche" style="height:30px" loading="lazy"></span><span class="lg-item"><img src="logos/jai-le-lead.svg" alt="" data-alt="J’ai le lead" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/axioncom.png" alt="" data-alt="Axioncom" style="height:46px" loading="lazy"></span><span class="lg-item"><img src="logos/safe-hospitality.png" alt="" data-alt="Safe Hospitality" style="height:40px" loading="lazy"></span><span class="lg-item"><img src="logos/the-originals-expert.png" alt="" data-alt="The Originals Expert" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/insaho.png" alt="" data-alt="Insaho" style="height:40px" loading="lazy"></span></div></div></div>
     </div>
   </section>
   <section class="s-sec s-white" id="video">
@@ -707,7 +779,15 @@
           <ul class="pb-list"><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Trop complexe à utiliser au quotidien.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Un outil que votre équipe n’utilise pas vraiment.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Un outil de saisie plus qu’un outil de pilotage.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Une base de données à retraiter avant de pouvoir s’en servir.</li></ul>
         </article>
       </div>
-      <div class="pb-turn s-soft-panel">
+      <div class="rs-box">
+        <h3>Résultat&nbsp;:</h3>
+        <div class="rs-items">
+          <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3 2"></path></svg></span><p>Des relances qui passent à la trappe.</p></div>
+          <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5c1.6 0 3 .4 4.3 1M21.5 12s-1.2 2.2-3.5 4"></path><path d="M3 3l18 18"></path></svg></span><p>Des opportunités qu’on perd de vue.</p></div>
+          <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"></path></svg></span><p>Du temps passé à gérer l’outil plutôt qu’à développer son activité.</p></div>
+        </div>
+      </div>
+      <div class="pb-turn">
         <div>
           <h3>C’est là que Maestro entre en scène.</h3>
           <p class="one-line">Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A à Z.</p>
@@ -794,7 +874,7 @@
       </div>
     </div>
   </section>
-  <section id="fonctionnalites" style="padding:clamp(64px,7vw,104px) 24px;background:#fff;border-top:1px solid rgba(101,34,232,.1)">
+  <section id="fonctionnalites" style="padding:clamp(64px,7vw,104px) 24px;background:#fff" class="ft-sec">
     <div style="max-width:1240px;margin:0 auto">
       <h2 style="margin:0;max-width:30ch;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.02;letter-spacing:-.04em">Les fonctionnalités du <span style="background:linear-gradient(110deg,#7B4FF3,#B44FD0);-webkit-background-clip:text;background-clip:text;color:transparent">CRM Maestro</span></h2>
       <p style="margin:16px 0 0;font-size:18px;font-weight:600;color:#3B2168">Découvrez votre <span style="color:#7B4FF3">cockpit commercial</span>. Les cartes défilent toutes seules, utilisez les flèches pour naviguer.</p>
@@ -803,57 +883,58 @@
         <button type="button" class="fc-arrow fc-arrow--prev" data-fc="-1" aria-label="Fonctionnalité précédente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
         <div class="fc-track" id="fc-track" tabindex="0" aria-label="Les fonctionnalités de Maestro">
           <article class="w-card fc-card">
+            <h3>CRM commercial</h3>
             <div class="w-illu"><div class="w-ui">
               <div class="w-row w-row--on"><span class="fc-av">DC</span><b>Dupont Conseil</b><em class="fc-tag fc-tag--ok">Client</em></div>
               <div class="w-row"><span class="fc-av fc-av--b">FL</span><b>Forma+ Lyon</b><em class="fc-tag">Prospect</em></div>
               <div class="w-row"><span class="fc-av fc-av--c">GA</span><b>Groupe Arvel</b><em class="fc-tag">Prospect</em></div>
             </div></div>
-            <h3>CRM commercial</h3>
             <p class="fc-line">Votre activité commerciale, au même endroit.</p>
             <p>Prospects, clients, contacts, historique des échanges.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Gestion des opportunités</h3>
             <div class="w-illu"><div class="fc-pipe">
               <div><small>Qualifié</small><span>Atelier RH<em>8 k€</em></span><span>Lemoine<em>15 k€</em></span></div>
               <div><small>Proposition</small><span class="fc-hot">Dupont<em>12 k€</em></span><span>Forma+<em>22 k€</em></span></div>
               <div><small>Signé</small><span class="fc-won">Kaya<em>9 k€</em></span><span class="fc-won">Sirius<em>31 k€</em></span></div>
             </div></div>
-            <h3>Gestion des opportunités</h3>
             <p class="fc-line">Votre pipeline, toujours à jour.</p>
             <p>Pipeline, étapes, montant, responsable, échéances.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Actions commerciales</h3>
             <div class="w-illu"><div class="w-ui">
               <div class="w-row w-row--on"><i></i><b>Relancer Forma+ Lyon</b><em>Aujourd’hui</em></div>
               <div class="w-row"><i></i><b>Envoyer le devis Arvel</b><em class="fc-tag">Demain</em></div>
               <div class="w-row"><i class="w-done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></i><b>Appel Studio Kaya</b><em class="fc-tag fc-tag--ok">Fait</em></div>
             </div></div>
-            <h3>Actions commerciales</h3>
             <p class="fc-line">Votre prochaine action, toujours visible.</p>
             <p>Relances, prochaines étapes et suivi de l’activité.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Devis &amp; facturation</h3>
             <div class="w-illu"><div class="fc-doc">
               <div class="fc-doc-top"><b>Devis D-2026-041</b><em class="fc-tag fc-tag--ok">Signé</em></div>
               <small>Dupont Conseil · Accompagnement RH</small>
               <strong>12 000 € HT</strong>
               <div class="fc-doc-steps"><span class="on">Envoyé</span><span class="on">Signé</span><span>Facturé</span></div>
             </div></div>
-            <h3>Devis &amp; facturation</h3>
             <p class="fc-line">Vos devis suivis jusqu’à la signature.</p>
             <p>Suivi commercial jusqu’à la contractualisation.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Gestion des affaires &amp; mode projet</h3>
             <div class="w-illu"><div class="w-ui">
               <div class="w-step w-ok"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></i><b>Devis signé</b><em>12 k€</em></div>
               <div class="w-step"><i class="w-mid"></i><b>Mission en cours</b><span class="w-prog"><span style="width:60%"></span></span></div>
               <div class="w-step w-todo"><i></i><b>Livraison</b><em>15 déc.</em></div>
             </div></div>
-            <h3>Gestion des affaires &amp; mode projet</h3>
             <p class="fc-line">Vos missions suivies jusqu’à la livraison.</p>
             <p>Suivi de la production de la mission après signature.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Dashboard &amp; pilotage</h3>
             <div class="w-illu"><div class="fc-gauge">
               <svg viewBox="0 0 200 112" width="190" height="106" aria-hidden="true">
                 <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#EDE5FF" stroke-width="18" stroke-linecap="round"></path>
@@ -862,37 +943,36 @@
               </svg>
               <div><strong>72 %</strong><span>de l’objectif trimestriel</span></div>
             </div></div>
-            <h3>Dashboard &amp; pilotage</h3>
             <p class="fc-line">Vos chiffres de pilotage en un coup d’œil.</p>
             <p>CA réalisé, potentiel, prévisionnel, activité commerciale.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Multi-BU / Multi-sites</h3>
             <div class="w-illu"><div class="fc-bu">
               <div class="fc-bu-total"><small>CA consolidé</small><b>412 k€</b></div>
               <div class="fc-bu-row"><span>Lyon</span><i><b style="width:76%"></b></i><em>184 k€</em></div>
               <div class="fc-bu-row"><span>Paris</span><i><b style="width:56%"></b></i><em>136 k€</em></div>
               <div class="fc-bu-row"><span>Nantes</span><i><b style="width:38%"></b></i><em>92 k€</em></div>
             </div></div>
-            <h3>Multi-BU / Multi-sites</h3>
             <p class="fc-line">Votre vision d’ensemble, activité par activité.</p>
             <p>Plusieurs équipes, sites ou Business Units&nbsp;? Une vision globale avec un pilotage par activité.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Connectivité</h3>
             <div class="w-illu"><div class="fc-hub">
               <div class="fc-hub-col"><span>Messagerie</span><span>Agenda</span></div>
               <div class="fc-hub-center"><svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true" style="flex:none;display:block"><path d="M33.93 5.83A47 47 0 0 1 95.60 38.63L76.74 53.76A27 27 0 0 0 50.94 23.02ZM96.29 58.16A47 47 0 0 1 37.05 95.18L33.38 71.28A27 27 0 0 0 72.90 64.31ZM19.79 86.00A47 47 0 0 1 17.35 16.19L39.89 24.97A27 27 0 0 0 26.16 62.68Z" fill="#7B4FF3"></path></svg></div>
               <div class="fc-hub-col"><span>Comptabilité</span><span>Signature</span></div>
             </div></div>
-            <h3>Connectivité</h3>
             <p class="fc-line">Vos outils qui se parlent enfin.</p>
             <p>Connexion possible avec vos outils métier.</p>
           </article>
           <article class="w-card fc-card">
+            <h3>Intelligence augmentée</h3>
             <div class="w-illu"><div class="w-ui w-chat">
               <p class="w-me">Crée une opportunité de 12 k€ pour Dupont Conseil, relance jeudi.</p>
               <p class="w-bot"><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>Opportunité créée · relance jeudi</p>
             </div></div>
-            <h3>Intelligence augmentée</h3>
             <p class="fc-line">Votre CRM qui vous fait gagner du temps.</p>
             <p>Pilotez Maestro avec l’IA. Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité commerciale en quelques secondes.</p>
           </article>
@@ -921,7 +1001,7 @@
   </section>
   <section id="pourqui" style="padding:clamp(64px,7vw,104px) max(20px,3vw);background:#fff">
     <div style="max-width:1240px;margin:0 auto">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px 48px;align-items:center">
+      <div class="pq-head">
         <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.02;letter-spacing:-.04em;font-size:clamp(28px,3vw,42px);line-height:1.1">Un CRM pour les cabinets de conseil, les organismes de formation et les <span style="color:#7B4FF3">PME de services</span></h2>
         <p style="margin:0;font-size:19px;font-weight:600;line-height:1.5;color:#3B2168">Maestro est fait pour vous si vous vous reconnaissez dans l’un de ces profils.</p>
       </div>
@@ -972,31 +1052,32 @@
     </div>
   </section>
   <section id="pourquoi" class="w-sec">
-    <div class="w-wrap">
-      <div class="w-head">
-        <h2>Pourquoi choisir <span>Maestro</span> plutôt qu’un autre CRM&nbsp;?</h2>
+    <div class="w-wrap wy-wrap">
+      <div class="wy-left">
+        <h2 class="wy-title">Pourquoi choisir <span>Maestro</span> plutôt qu’un autre CRM&nbsp;?</h2>
+        <a class="m-cta wy-cta" href="#demo">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
       </div>
-      <div class="w-track w-grid" aria-label="Les raisons de choisir Maestro">
-          <article class="w-card">
-            <h3>Maestro se comprend tout de suite.</h3>
-            <p>Vous ouvrez Maestro, vous comprenez, vous agissez. Simple à comprendre, simple à utiliser, simple à piloter.</p>
-          </article>
-          <article class="w-card">
-            <h3>Maestro grandit avec vous.</h3>
-            <p>Devis, facturation, plusieurs sites ou équipes : quand votre activité se développe, l’outil suit.</p>
-          </article>
-          <article class="w-card">
-            <h3>Maestro continue après la signature.</h3>
-            <p>La plupart des CRM s’arrêtent au devis signé. Maestro suit aussi la production de la mission, jusqu’à la livraison.</p>
-          </article>
-          <article class="w-card">
-            <h3>Maestro se pilote avec l’IA.</h3>
-            <p>Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité en quelques secondes.</p>
-          </article>
-          <article class="w-card">
-            <h3>Maestro ne vous laisse jamais seul.</h3>
-            <p>On configure l’outil avec vous, on importe vos données et on forme votre équipe.</p>
-          </article>
+      <div class="wy-list">
+        <div class="wy-item">
+          <span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path></svg></span>
+          <div><h3>Maestro se comprend tout de suite.</h3><p>Vous ouvrez Maestro, vous comprenez, vous agissez. Simple à comprendre, simple à utiliser, simple à piloter.</p></div>
+        </div>
+        <div class="wy-item">
+          <span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5h16"></path><path d="M5.5 16V10M10.5 16V6M15.5 16v-4M20 16V8"></path></svg></span>
+          <div><h3>Maestro grandit avec vous.</h3><p>Devis, facturation, plusieurs sites ou équipes : quand votre activité se développe, l’outil suit.</p></div>
+        </div>
+        <div class="wy-item">
+          <span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+          <div><h3>Maestro continue après la signature.</h3><p>La plupart des CRM s’arrêtent au devis signé. Maestro suit aussi la production de la mission, jusqu’à la livraison.</p></div>
+        </div>
+        <div class="wy-item">
+          <span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span>
+          <div><h3>Maestro se pilote avec l’IA.</h3><p>Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité en quelques secondes.</p></div>
+        </div>
+        <div class="wy-item">
+          <span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3"></circle><circle cx="16.5" cy="9.5" r="2.4"></circle><path d="M3 18.5c0-2.6 2.5-4.5 5.5-4.5s5.5 1.9 5.5 4.5"></path><path d="M15 14.2c2.6.2 4.5 1.9 4.5 4.3"></path></svg></span>
+          <div><h3>Maestro ne vous laisse jamais seul.</h3><p>On configure l’outil avec vous, on importe vos données et on forme votre équipe.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1065,7 +1146,7 @@
       <div class="a-left">
         <h2>Changer de CRM sans douleur.</h2>
         <p>Avec Maestro, vous n’êtes pas seul face au CRM. Nous vous accompagnons pour configurer l’outil, former vos équipes et installer les bons réflexes commerciaux.</p>
-        <a href="#demo" class="a-btn">Demander une démo <span aria-hidden="true">→</span></a>
+        <a href="#demo" class="m-cta a-cta">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
       </div>
       <div class="a-grid">
           <div class="a-block">
@@ -1105,7 +1186,7 @@
       <h2 class="s-h2">Prêt à reprendre la main sur votre <span class="s-grad">activité commerciale</span>&nbsp;?</h2>
       <p class="s-lead">En 30 minutes, on vous montre Maestro sur vos propres affaires.</p>
       <div class="s-final-actions">
-        <a class="m-cta" href="#demo" style="margin-top:0">Demander ma démo Maestro <span aria-hidden="true">→</span></a>
+        <a class="m-cta" href="#demo" style="margin-top:0">Demander ma démo Maestro<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
         <a class="s-btn-ghost" href="#offres">Voir les offres</a>
       </div>
     </div>
