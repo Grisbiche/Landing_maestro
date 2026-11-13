@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maestro — Le CRM simple des PME de conseil et de formation</title>
+<meta name="description" content="Le CRM qui centralise vos prospects, opportunités, devis et missions. Pensé pour les TPE et PME de conseil, de formation et de services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#F7F4FF; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#6522E8; text-decoration:none; }
+  a:hover { color:#4A14B8; }
+  @keyframes maestro-logos { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .hv0:hover{color:#fff !important;filter:brightness(1.08) !important}
+  .hv1:hover{color:#fff !important;transform:translateY(-2px);box-shadow:0 0 0 6px rgba(255,107,44,.35),0 28px 56px -16px rgba(255,90,26,.95) !important;filter:brightness(1.05)}
+  .hv2:hover{background:rgba(255,255,255,.14) !important;color:#fff !important}
+  .hv3:hover{color:#fff !important;filter:brightness(1.08) !important}
+  .hv4:hover{background:#EFE6FF !important}
+  .hv5:hover{background:#EFE6FF !important}
+  .hv6:hover{color:#fff !important;filter:brightness(1.08) !important}
+  .hv7:hover{background:#EFE6FF !important;color:#5416D8 !important}
+  .hv8:hover{background:#FFF3EC !important;color:#3B0FA3 !important}
+  .hv9:hover{background:#EFE6FF !important;color:#5416D8 !important}
+  .hv10:hover{color:#5416D8 !important}
+  .hv11:hover{background:#FFF3EC !important;color:#3B0FA3 !important}
+  .hv12:hover{background:rgba(255,255,255,.14) !important;color:#fff !important}
+  .faq-q:hover{color:#5416D8 !important}
+  .feat summary::-webkit-details-marker{display:none}
+  .feat summary:hover .feat-title{color:#5416D8 !important}
+  .feat summary:focus-visible{outline:2px solid #7C2AF7;outline-offset:2px;border-radius:12px}
+  .feat[open] .feat-arrow{transform:rotate(180deg);background:#5416D8 !important;color:#fff !important}
+  .ft a{color:#CFC3EC}
+  .ft a:hover{color:#fff}
+
+  /* ---------- Hero V5 ---------- */
+  .m-head{position:sticky;top:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:14px max(20px,3vw);background:rgba(246,241,255,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(101,34,232,.08);font-family:Manrope,Helvetica,sans-serif}
+  .m-nav{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:600}
+  .m-nav a{color:#3D2A66}
+  .m-nav a:hover{color:#5416D8}
+  .m-nav-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.22);box-shadow:0 6px 16px -10px rgba(76,24,201,.5)}
+  .m-nav-pill i{width:4px;height:4px;border-radius:50%;background:#FF6B2C;display:block}
+  .m-head-cta{justify-self:end;display:inline-flex;align-items:center;padding:12px 22px;border-radius:999px;background:#160A33;color:#fff !important;font-weight:700;font-size:15px;white-space:nowrap}
+  .m-head-cta:hover{background:#3B0FA3}
+  @media (max-width:980px){.m-nav{display:none}.m-head{grid-template-columns:1fr auto}}
+  @media (max-width:520px){.m-head{gap:12px}.m-head-cta{padding:10px 16px;font-size:14px}.m-head a:first-child span:last-child{display:none}}
+
+  .m-hero{position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) max(20px,3vw) 0;background:radial-gradient(70% 55% at 50% 0%,#E6DAFF 0%,rgba(230,218,255,0) 70%),linear-gradient(180deg,#F6F1FF 0%,#F7F4FF 100%);font-family:Manrope,Helvetica,sans-serif;text-align:center}
+  .m-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none;z-index:2}
+  .m-hero-in{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  .m-eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(101,34,232,.16);font-size:13.5px;font-weight:700;color:#4B3A78}
+  .m-eyebrow span{width:7px;height:7px;border-radius:50%;background:#FF6B2C;display:block;flex:none}
+  .m-hero h1{margin:26px 0 0;max-width:20ch;font-weight:800;font-size:clamp(38px,5.6vw,76px);line-height:1.02;letter-spacing:-.045em;color:#160A33;text-wrap:balance}
+  .m-grad{background:linear-gradient(100deg,#7C2AF7 10%,#FF6B2C 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  @media (max-width:700px){.m-br{display:none}}
+  .m-sub{margin:22px 0 0;max-width:62ch;font-size:clamp(16px,1.4vw,19px);font-weight:500;line-height:1.6;color:#4A3B70}
+  .m-cta{margin-top:32px;display:inline-flex;align-items:center;gap:12px;padding:19px 36px;border-radius:999px;background:linear-gradient(110deg,#FF8A4C 0%,#FF5A1A 55%,#B13AF0 140%);color:#fff !important;font-weight:800;font-size:17px;box-shadow:0 0 0 5px rgba(255,107,44,.16),0 22px 44px -16px rgba(255,90,26,.8);transition:transform .18s ease,box-shadow .18s ease}
+  .m-cta:hover{transform:translateY(-2px);box-shadow:0 0 0 7px rgba(255,107,44,.22),0 28px 52px -16px rgba(255,90,26,.9)}
+  .m-cta span{font-size:20px;line-height:1}
+
+  .m-frame{position:relative;z-index:1;margin-top:clamp(48px,6vw,72px);width:100%;max-width:1060px;padding:12px;border-radius:28px;background:rgba(255,255,255,.55);border:1px solid rgba(101,34,232,.2);box-shadow:0 60px 120px -60px rgba(76,24,201,.55);text-align:left}
+  .m-app{border-radius:18px;background:#fff;overflow:hidden;border:1px solid rgba(101,34,232,.1)}
+  .m-app-bar{display:flex;align-items:center;gap:18px;padding:14px 18px;border-bottom:1px solid rgba(101,34,232,.08)}
+  .m-app-logo{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:#160A33}
+  .m-app-logo span{width:18px;height:18px;background:linear-gradient(135deg,#8B45FF,#5416D8);clip-path:polygon(28% 0,100% 0,100% 72%,74% 72%,74% 48%,26% 96%,4% 74%,52% 26%,28% 26%);display:block}
+  .m-tabs{flex:1;display:flex;align-items:center;justify-content:center;gap:22px;font-size:12.5px;font-weight:600;color:#54427E;white-space:nowrap;min-width:0;overflow:hidden}
+  .m-tab-on{padding:8px 14px;border-radius:999px;background:#160A33;color:#fff}
+  .m-avatar{flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FFB48C,#FF6B2C);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+  @media (max-width:760px){.m-tabs span:not(.m-tab-on){display:none}}
+  .m-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:12px;padding:14px;background:#FAF8FF}
+  @media (max-width:760px){.m-grid{grid-template-columns:minmax(0,1fr)}}
+  .m-card{background:#fff;border:1px solid rgba(101,34,232,.1);border-radius:16px;padding:16px;min-width:0}
+  .m-hello{position:relative;text-align:center;background:radial-gradient(90% 70% at 50% 100%,#F1EAFF,#fff 70%)}
+  .m-hello h3{margin:4px 0 0;font-size:19px;font-weight:800;letter-spacing:-.02em;color:#160A33}
+  .m-hello p{margin:4px 0 0;font-size:12.5px;color:#6B5A92;font-weight:500}
+  .m-ring{position:relative;width:180px;height:180px;margin:14px auto 6px}
+  .m-ring svg{display:block;max-width:100%}
+  .m-ring div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .m-ring strong{font-size:32px;font-weight:800;letter-spacing:-.04em;color:#160A33;font-variant-numeric:tabular-nums}
+  .m-ring span{font-size:11.5px;line-height:1.35;color:#6B5A92;font-weight:600}
+  .m-float{position:absolute;left:14px;top:96px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 11px;border-radius:12px;background:#fff;border:1px solid rgba(101,34,232,.14);box-shadow:0 14px 30px -18px rgba(43,10,120,.6);font-size:11px;font-weight:600;color:#54427E;text-align:left}
+  .m-float b{color:#160A33;font-size:13px}
+  .m-float em{font-style:normal;color:#1E8A57;font-weight:700}
+  @media (max-width:420px){.m-float{display:none}}
+  .m-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
+  .m-kpi-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;font-weight:700;color:#3D2A66}
+  .m-kpi-top b{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(101,34,232,.18);display:flex;align-items:center;justify-content:center;color:#5416D8}
+  .m-kpi-val{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+  .m-kpi-val strong{font-size:24px;font-weight:800;letter-spacing:-.035em;color:#160A33;font-variant-numeric:tabular-nums}
+  .m-kpi p{margin:8px 0 0;font-size:11.5px;line-height:1.45;color:#7A6AA0;font-weight:500}
+  .m-bars{display:flex;align-items:flex-end;gap:12px;height:110px;margin-top:14px}
+  .m-bars div{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}
+  .m-bars i{display:block;width:100%;max-width:46px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#A77BFF,#6A2BEA)}
+  .m-bars span{font-size:10.5px;font-weight:600;color:#7A6AA0}
+  .m-todo{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:12.5px;font-weight:600;color:#2B1558}
+  .m-todo li{display:flex;align-items:center;gap:10px}
+  .m-todo i{flex:none;width:14px;height:14px;border-radius:4px;border:1.5px solid #B6A7D8}
+  .m-todo span{margin-left:auto;font-size:11px;color:#8A76B8;white-space:nowrap}
+  .m-note{position:relative;z-index:3;margin:-56px 0 28px;font-size:12px;font-weight:600;color:#8A76B8}
+
+  /* ---------- Bloc problème V5 ---------- */
+  .p-sec{padding:clamp(64px,7vw,104px) max(20px,3vw);background:#fff;border-top:1px solid rgba(101,34,232,.1);font-family:Manrope,Helvetica,sans-serif}
+  .p-wrap{max-width:1160px;margin:0 auto}
+  .p-title{margin:0 auto;max-width:22ch;text-align:center;font-weight:800;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.04em;color:#160A33;text-wrap:balance}
+  .p-title span{color:#7C2AF7}
+  .p-pains{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px;margin-top:clamp(36px,4.5vw,56px)}
+  .p-card{display:flex;flex-direction:column;padding:clamp(26px,3vw,36px);border-radius:22px;background:#F7F4FF;border:1px solid rgba(101,34,232,.08)}
+  .p-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .p-ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)}
+  .p-tag{padding:6px 12px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);font-size:12.5px;font-weight:700;color:#5416D8}
+  .p-card h3{margin:20px 0 18px;font-weight:800;font-size:clamp(20px,1.8vw,23px);line-height:1.2;letter-spacing:-.03em;color:#160A33}
+  .p-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+  .p-card li{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid rgba(101,34,232,.1);font-size:16.5px;font-weight:600;line-height:1.4;color:#3B2168}
+  .p-card li span{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid rgba(101,34,232,.14)}
+  .p-or{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid rgba(101,34,232,.2);box-shadow:0 10px 24px -12px rgba(43,10,120,.5);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#7C2AF7}
+  @media (max-width:860px){.p-or{display:none}}
+  .p-link{display:flex;justify-content:center;margin-top:26px}
+  .p-link i{display:block;width:2px;height:44px;background:linear-gradient(180deg,rgba(124,42,247,.1),#7C2AF7);position:relative}
+  .p-link i::after{content:"";position:absolute;left:50%;bottom:-2px;width:10px;height:10px;border-right:2px solid #7C2AF7;border-bottom:2px solid #7C2AF7;transform:translateX(-50%) rotate(45deg)}
+  .p-quote{margin:20px auto 0;max-width:34ch;text-align:center;font-style:italic;font-weight:700;font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.02em;color:#3B2168}
+  .p-quote span{color:#7C2AF7}
+  .r-box{margin-top:clamp(28px,3.5vw,40px);padding:clamp(22px,2.6vw,30px);border-radius:24px;background:#FFF5EF;border:1px solid rgba(255,107,44,.28);display:grid;grid-template-columns:auto 1fr;align-items:center;gap:20px 32px}
+  @media (max-width:860px){.r-box{grid-template-columns:1fr}}
+  .r-label{margin:0;padding:0 8px;font-weight:800;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.03em;color:#D1490C}
+  .r-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+  .r-item{display:flex;align-items:center;gap:14px;padding:18px;border-radius:16px;background:#fff;box-shadow:0 14px 30px -24px rgba(209,73,12,.6)}
+  .r-ico{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:#FFE6D9}
+  .r-item p{margin:0;font-size:16px;font-weight:700;line-height:1.4;color:#2B1558}
+  .p-turn{margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;padding:clamp(28px,3.6vw,44px);border-radius:24px;background:linear-gradient(120deg,#7C2AF7 0%,#5C1BE0 45%,#2E0B8C 100%);color:#fff;box-shadow:0 40px 80px -50px rgba(43,10,120,.9)}
+  .p-turn h3{margin:0;font-weight:800;font-size:clamp(26px,3vw,42px);line-height:1.05;letter-spacing:-.04em;color:#fff}
+  .p-turn p{margin:10px 0 0;max-width:52ch;font-size:17px;font-weight:500;line-height:1.55;color:#EFE7FF}
+  .p-turn a{flex:none;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#fff;color:#3B0FA3;font-weight:800;font-size:16px}
+  .p-turn a:hover{background:#FFF3EC;color:#3B0FA3}
+</style>
+</head>
+<body>
+<div style="background:#F7F4FF;color:#160A33;font-family:Manrope,Helvetica,sans-serif;font-weight:500;overflow-x:hidden">
+
+  <header class="m-head">
+    <a href="#" style="display:flex;align-items:center;gap:10px;color:#160A33"><span style="width:28px;height:28px;background:linear-gradient(135deg,#8B45FF,#5416D8);clip-path:polygon(28% 0,100% 0,100% 72%,74% 72%,74% 48%,26% 96%,4% 74%,52% 26%,28% 26%);display:block"></span><span style="font-weight:800;font-size:19px;letter-spacing:-.03em">MAESTRO</span><span style="font-weight:800;font-size:11px;letter-spacing:.16em;color:#FF6B2C;padding-top:3px">CRM</span></a>
+    <nav class="m-nav" aria-label="Navigation principale">
+      <a href="#fonctionnalites" class="m-nav-pill"><i></i>Fonctionnalités<i></i></a>
+      <a href="#pourqui">Pour qui</a>
+      <a href="#pourquoi">Pourquoi Maestro</a>
+      <a href="#offres">Tarifs</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="m-head-cta" href="#demo">Demander une démo</a>
+  </header>
+
+  <section class="m-hero">
+    <div class="m-hero-in">
+      <p class="m-eyebrow"><span></span>Le CRM simple des TPE et PME de conseil, de formation et de services</p>
+      <h1>Le CRM qui donne le <span class="m-grad">tempo</span><br class="m-br"> à votre activité commerciale.</h1>
+      <p class="m-sub">Prospects, clients, opportunités, relances, devis, suivi de missions et chiffre d’affaires : Maestro réunit toute votre activité commerciale au même endroit pour mieux suivre, mieux vendre et mieux piloter.</p>
+      <a class="m-cta" href="#demo">Demander une démo <span aria-hidden="true">→</span></a>
+
+      <div class="m-frame" role="img" aria-label="Aperçu illustratif du tableau de bord Maestro, données d’exemple">
+        <div class="m-app">
+          <div class="m-app-bar">
+            <span class="m-app-logo"><span></span>Maestro</span>
+            <span class="m-tabs">
+              <span class="m-tab-on">Tableau de bord</span>
+              <span>Contacts ⌄</span><span>Opportunités ⌄</span><span>Devis ⌄</span><span>Missions ⌄</span>
+            </span>
+            <span class="m-avatar">CL</span>
+          </div>
+          <div class="m-grid">
+            <div class="m-card m-hello">
+              <h3>Bonjour, Claire</h3>
+              <p>Votre activité commerciale avance bien ce mois-ci</p>
+              <div class="m-ring">
+                <svg viewBox="0 0 140 140" width="180" height="180">
+                  <circle cx="70" cy="70" r="58" fill="none" stroke="#EDE5FF" stroke-width="16"></circle>
+                  <circle cx="70" cy="70" r="58" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round" stroke-dasharray="262.4 364.4" transform="rotate(-90 70 70)"></circle>
+                  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B45FF"></stop><stop offset="1" stop-color="#FF6B2C"></stop></linearGradient></defs>
+                </svg>
+                <div><strong>72 %</strong><span>de l’objectif<br>trimestriel atteint</span></div>
+              </div>
+              <span class="m-float">Dupont Conseil · <b>12 k€</b><em>signé</em></span>
+            </div>
+            <div class="m-kpis">
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>Opportunités en cours</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>38</strong><span style="padding:3px 9px;border-radius:999px;background:#E9FBEF;color:#1E8A57;font-size:11px;font-weight:700;white-space:nowrap">En hausse</span></div>
+              <p>6 nouvelles opportunités créées cette semaine.</p>
+            </div>
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>CA signé</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>184 k€</strong><span style="padding:3px 9px;border-radius:999px;background:#FFF1D6;color:#A3620A;font-size:11px;font-weight:700;white-space:nowrap">Record</span></div>
+              <p>Meilleur trimestre depuis le lancement de l’activité.</p>
+            </div>
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>Relances du jour</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>7</strong><span style="padding:3px 9px;border-radius:999px;background:#FFE9E0;color:#C2410C;font-size:11px;font-weight:700;white-space:nowrap">3 en retard</span></div>
+              <p>Ne laissez plus dormir une opportunité.</p>
+            </div>
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>Taux de transformation</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>32 %</strong><span style="padding:3px 9px;border-radius:999px;background:#EFE6FF;color:#5416D8;font-size:11px;font-weight:700;white-space:nowrap">+4 pts</span></div>
+              <p>Calculé sur les devis envoyés ce trimestre.</p>
+            </div>
+            </div>
+            <div class="m-card m-pipe">
+              <div class="m-kpi-top"><span>Pipeline commercial</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-bars">
+                <div><i style="height:62%"></i><span>Qualifié</span></div>
+                <div><i style="height:84%"></i><span>Proposition</span></div>
+                <div><i style="height:46%"></i><span>Négociation</span></div>
+                <div><i style="height:70%;background:linear-gradient(180deg,#FF8A4C,#FF6B2C)"></i><span>Signé</span></div>
+              </div>
+            </div>
+            <div class="m-card m-pipe">
+              <div class="m-kpi-top"><span>Prochaines actions</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <ul class="m-todo">
+                <li><i></i>Relancer Forma+ Lyon<span>Aujourd’hui</span></li>
+                <li><i></i>Envoyer le devis Groupe Arvel<span>Demain</span></li>
+                <li><i></i>Kick-off mission Studio Kaya<span>Jeudi</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="m-note">Aperçu illustratif · données d’exemple</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(34px,4vw,54px) 0;background:#fff;border-bottom:1px solid rgba(101,34,232,.1);overflow:hidden">
+    <div style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:baseline;gap:14px">
+      <h2 style="margin:0;font-weight:800;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em;color:#2B1558">Ils pilotent leur activité commerciale avec Maestro.</h2>
+      <span style="font-weight:700;font-size:15px;color:#7C2AF7">[X entreprises]</span>
+    </div>
+    <div style="margin-top:22px;display:flex;width:max-content;gap:16px;animation:maestro-logos 32s linear infinite">
+      <div style="display:flex;gap:16px">
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+      </div>
+      <div style="display:flex;gap:16px">
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+        <div style="width:170px;height:66px;border-radius:12px;background:#F7F4FF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:.14em;color:#A995CE">LOGO CLIENT</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video" style="padding:clamp(64px,7vw,104px) 24px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(30px,4vw,60px);align-items:center">
+        <div>
+          <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1;letter-spacing:-.04em">Maestro en <span style="background:linear-gradient(110deg,#7C2AF7,#FF6B2C);-webkit-background-clip:text;background-clip:text;color:transparent">45 secondes.</span></h2>
+          <p style="margin:18px 0 0;max-width:50ch;font-size:18px;font-weight:600;line-height:1.55;color:#3B2168">Découvrez comment centraliser votre activité commerciale et garder une vision claire de vos affaires.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:24px;font-weight:700;font-size:14px">
+            <span style="padding:9px 15px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);color:#3B2168">Un prospect</span><span style="color:#B6A7D8;font-size:17px">→</span>
+            <span style="padding:9px 15px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);color:#3B2168">une opportunité</span><span style="color:#B6A7D8;font-size:17px">→</span>
+            <span style="padding:9px 15px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);color:#3B2168">un devis</span><span style="color:#B6A7D8;font-size:17px">→</span>
+            <span style="padding:9px 15px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);color:#3B2168">une relance</span><span style="color:#B6A7D8;font-size:17px">→</span>
+            <span style="padding:9px 15px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);color:#3B2168">une vente</span><span style="color:#B6A7D8;font-size:17px">→</span>
+            <span style="padding:9px 15px;border-radius:999px;background:#EFE6FF;border:1px solid rgba(101,34,232,.3);color:#3B0FA3">une mission suivie jusqu’au bout</span>
+          </div>
+          <a class="hv3" href="#demo" style="display:inline-flex;align-items:center;margin-top:30px;padding:16px 28px;border-radius:999px;background:linear-gradient(120deg,#7C2AF7,#4B18C9);color:#fff;font-weight:800;font-size:16px;box-shadow:0 18px 40px -22px rgba(76,24,201,.9)">Je veux voir Maestro sur mon activité</a>
+        </div>
+        <div style="position:relative;aspect-ratio:4/3;border-radius:24px;background:linear-gradient(150deg,#8B45FF,#4B18C9 60%,#1F0668);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 50px 90px -50px rgba(43,10,120,.8)">
+          <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.08) 0 2px,transparent 2px 14px)"></div>
+          <div style="position:absolute;top:-25%;left:-15%;width:70%;height:70%;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.45),transparent 62%)"></div>
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:16px">
+            <div style="width:80px;height:80px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;color:#5416D8;box-shadow:0 20px 50px -15px rgba(0,0,0,.5)">▶</div>
+            <span style="font-weight:800;font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.85)">VIDÉO DÉMO — 45 S</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-sec">
+    <div class="p-wrap">
+      <h2 class="p-title">Pas de CRM, ou un CRM que <span>personne n’ouvre</span>&nbsp;?</h2>
+
+      <div class="p-pains">
+        <div class="p-card">
+          <div class="p-card-top">
+            <span class="p-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5" transform="rotate(12 17.5 6.5)"></rect><rect x="3" y="14" width="7" height="7" rx="1.5" transform="rotate(-10 6.5 17.5)"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span>
+            <span class="p-tag">Sans CRM</span>
+          </div>
+          <h3>Votre activité commerciale est éparpillée ?</h3>
+          <ul><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les prospects dans Excel.</li><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les échanges dans les mails.</li><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les relances dans l’agenda.</li><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les devis dans différents dossiers.</li></ul>
+        </div>
+        <span class="p-or" aria-hidden="true">ou</span>
+        <div class="p-card">
+          <div class="p-card-top">
+            <span class="p-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 13h8M8 16.5h5"></path></svg></span>
+            <span class="p-tag">Avec un CRM inadapté</span>
+          </div>
+          <h3>Vous avez déjà un CRM, mais il est devenu…</h3>
+          <ul><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Trop complexe à utiliser au quotidien.</li><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Un outil que votre équipe n’utilise pas vraiment.</li><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Un outil de saisie plus qu’un outil de pilotage.</li><li><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B6A7D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Une base de données à retraiter avant de pouvoir s’en servir.</li></ul>
+        </div>
+      </div>
+
+      <div class="p-link" aria-hidden="true"><i></i></div>
+      <p class="p-quote">Dans les deux cas, votre vision commerciale reste… <span>dans votre tête.</span></p>
+
+      <div class="r-box">
+        <p class="r-label">Résultat</p>
+        <div class="r-items">
+          <div class="r-item">
+            <span class="r-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D1490C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v5l3 2"></path><circle cx="12" cy="12" r="8.5"></circle></svg></span>
+            <p>Des relances qui passent à la trappe.</p>
+          </div>
+          <div class="r-item">
+            <span class="r-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D1490C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5c1.6 0 3 .4 4.3 1M21.5 12s-1.2 2.2-3.5 4"></path><path d="M3 3l18 18"></path></svg></span>
+            <p>Des opportunités qu’on perd de vue.</p>
+          </div>
+          <div class="r-item">
+            <span class="r-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D1490C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"></path></svg></span>
+            <p>Du temps passé à gérer l’outil plutôt qu’à développer son activité.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-turn">
+        <div>
+          <h3>C’est là que Maestro entre en scène.</h3>
+          <p>Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A à Z.</p>
+        </div>
+        <a href="#fonctionnalites">Voir comment <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(64px,7vw,104px) 24px">
+    <div style="max-width:1160px;margin:0 auto">
+      <h2 style="margin:0;max-width:26ch;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em">Tout votre commerce au même endroit, <span style="background:linear-gradient(110deg,#7C2AF7,#FF6B2C);-webkit-background-clip:text;background-clip:text;color:transparent">dans notre CRM.</span></h2>
+      <p style="margin:16px 0 0;max-width:52ch;font-size:18px;font-weight:600;line-height:1.5;color:#3B2168">Avec Maestro, vous savez où vous en êtes. Et quoi faire ensuite.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,3vw,44px);align-items:stretch;margin-top:clamp(32px,4vw,48px)">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div id="mae-steps" style="display:contents"></div>
+        </div>
+        <div style="position:sticky;top:96px;align-self:stretch;height:100%;border-radius:22px;background:linear-gradient(140deg,#8B45FF,#4B18C9 65%,#240873);padding:10px;box-shadow:0 44px 90px -55px rgba(43,10,120,.9)">
+          <div style="height:100%;min-height:340px;border-radius:16px;background-color:#F4EEFF;background-image:repeating-linear-gradient(135deg,rgba(101,34,232,.07) 0 2px,transparent 2px 12px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:0 24px">
+            <span style="font-weight:800;font-size:13px;letter-spacing:.14em;color:#5416D8"><span data-bind="activeVisual"></span></span>
+            <span style="font-weight:600;font-size:12px;color:#8A76B8">visuel Maestro à déposer</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin:clamp(28px,3.5vw,44px) 0 0;font-weight:800;font-size:clamp(20px,2.4vw,32px);line-height:1.15;letter-spacing:-.035em;color:#2B1558">Une seule vue pour décider. <span style="color:#7C2AF7">Une seule vision pour avancer.</span></p>
+    </div>
+  </section>
+
+  <section id="fonctionnalites" style="padding:clamp(64px,7vw,104px) 24px;background:#fff;border-top:1px solid rgba(101,34,232,.1)">
+    <div style="max-width:1240px;margin:0 auto">
+      <h2 style="margin:0;max-width:30ch;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em">Les fonctionnalités du <span style="background:linear-gradient(110deg,#7C2AF7,#FF6B2C);-webkit-background-clip:text;background-clip:text;color:transparent">CRM Maestro</span></h2>
+      <p style="margin:16px 0 0;font-size:18px;font-weight:600;color:#3B2168">Découvrez votre <span style="color:#7C2AF7">cockpit commercial</span>. Cliquez sur la flèche pour voir le détail.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:14px;align-items:start;margin-top:clamp(32px,4vw,48px)">
+                    <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16.5 7.5h4.5M16.5 11h4.5"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">CRM commercial</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Votre activité commerciale, au même endroit.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Prospects, clients, contacts, historique des échanges.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="4.5" height="16" rx="1.4"></rect><rect x="9.75" y="4" width="4.5" height="11" rx="1.4"></rect><rect x="16.5" y="4" width="4.5" height="7" rx="1.4"></rect></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Gestion des opportunités</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Votre pipeline, toujours à jour.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Pipeline, étapes, montant, responsable, échéances.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.2V12l3.2 2"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Actions commerciales</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Votre prochaine action, toujours visible.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Relances, prochaines étapes et suivi de l’activité.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8.5L19 7.5V21H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 16.5h4"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Devis &amp; facturation</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Vos devis suivis jusqu’à la signature.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Suivi commercial jusqu’à la contractualisation.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5h17v12h-17z"></path><path d="M8.5 7.5V5.2c0-.7.6-1.2 1.3-1.2h4.4c.7 0 1.3.5 1.3 1.2v2.3"></path><path d="M3.5 12.5h17"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Gestion des affaires &amp; mode projet</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Vos missions suivies jusqu’à la livraison.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Suivi de la production de la mission après signature.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Dashboard &amp; pilotage</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Vos chiffres de pilotage en un coup d’œil.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">CA réalisé, potentiel, prévisionnel, activité commerciale.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5c2.2 2.4 3.4 5.4 3.4 8.5S14.2 18.1 12 20.5c-2.2-2.4-3.4-5.4-3.4-8.5S9.8 5.9 12 3.5z"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Multi-BU / Multi-sites</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Votre vision d’ensemble, activité par activité.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Plusieurs équipes, sites ou Business Units ? Une vision globale avec un pilotage par activité.</p>
+          </details>
+          <details class="feat" style="padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C2AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l-2.2 2.2a3.5 3.5 0 01-5-5L4 10"></path><path d="M15 9l2.2-2.2a3.5 3.5 0 015 5L20 14"></path><path d="M9.5 14.5l5-5"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Connectivité</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#5416D8">Vos outils qui se parlent enfin.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Connexion possible avec vos outils métier.</p>
+          </details>
+          <details class="feat" style="grid-column:1/-1;border:1px solid rgba(255,107,44,.35);padding:26px;border-radius:18px;background:#F7F4FF">
+            <summary style="display:block;cursor:pointer;list-style:none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF6B2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg>
+              <span class="feat-title" style="display:block;margin-top:16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Intelligence augmentée</span>
+              <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px">
+                <span style="font-size:15px;font-weight:700;line-height:1.45;color:#D1490C">Votre CRM qui vous fait gagner du temps.</span>
+                <span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5416D8;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+              </span>
+            </summary>
+            <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.14);font-size:15px;font-weight:500;line-height:1.6;color:#3F2E66">Pilotez Maestro avec l’IA. Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité commerciale en quelques secondes.</p>
+          </details>
+      </div>
+      <div style="margin-top:clamp(32px,4vw,48px);padding:clamp(18px,2.2vw,26px);border-radius:26px;background:#F7F4FF">
+        <div style="position:relative;border-radius:18px;background:#fff;padding:10px;box-shadow:0 30px 60px -44px rgba(43,10,120,.7)">
+          <div style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background-color:#F4EEFF;background-image:repeating-linear-gradient(135deg,rgba(101,34,232,.07) 0 2px,transparent 2px 12px);display:flex;align-items:center;justify-content:center">
+            <span style="font-weight:700;font-size:12px;letter-spacing:.14em;color:#8A76B8;text-align:center;padding:0 24px"><span data-bind="shotPlaceholder"></span></span>
+            <span style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;background:rgba(22,10,51,.9);color:#fff;font-weight:700;font-size:13px;letter-spacing:-.01em"><span style="color:#FFB48C;font-size:11px"><span data-bind="shotNum"></span></span><span data-bind="shotLabel"></span></span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 6px 4px">
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <div id="mae-shots" style="display:contents"></div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="hv4" type="button" data-action="prev" aria-label="Visuel précédent" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(101,34,232,.25);background:#fff;color:#5416D8;font-weight:800;font-size:15px;cursor:pointer">←</button>
+              <button class="hv5" type="button" data-action="next" aria-label="Visuel suivant" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(101,34,232,.25);background:#fff;color:#5416D8;font-weight:800;font-size:15px;cursor:pointer">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pourqui" style="padding:clamp(64px,7vw,104px) 24px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px 48px;align-items:end">
+        <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em;font-size:clamp(28px,3.4vw,48px);line-height:1.06">Un CRM pour les cabinets de conseil, les organismes de formation et les <span style="color:#7C2AF7">PME de services</span></h2>
+        <p style="margin:0;font-size:19px;font-weight:600;line-height:1.5;color:#3B2168">Maestro est fait pour vous si vous vous reconnaissez dans l’un de ces profils.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px;margin-top:clamp(32px,4vw,48px)">
+        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.12);box-shadow:0 24px 50px -44px rgba(43,10,120,.6)">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5h17v12h-17z"></path><path d="M8.5 7.5V5.2c0-.7.6-1.2 1.3-1.2h4.4c.7 0 1.3.5 1.3 1.2v2.3"></path><path d="M3.5 12.5h17"></path></svg></span>
+            <h3 style="margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Société de conseil ou de formation</h3>
+          </div>
+          <p style="margin:0;font-size:17px;font-weight:700;line-height:1.4;color:#5416D8">Vous gérez plusieurs clients, missions, appels d’offres ou projets ?</p>
+          <p style="margin:0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous accompagne de la première prise de contact jusqu’au suivi de production de l’affaire.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.12);box-shadow:0 24px 50px -44px rgba(43,10,120,.6)">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3"></circle><circle cx="16.5" cy="9.5" r="2.4"></circle><path d="M3 18.5c0-2.6 2.5-4.5 5.5-4.5s5.5 1.9 5.5 4.5"></path><path d="M15 14.2c2.6.2 4.5 1.9 4.5 4.3"></path></svg></span>
+            <h3 style="margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">PME de services</h3>
+          </div>
+          <p style="margin:0;font-size:17px;font-weight:700;line-height:1.4;color:#5416D8">Plusieurs collaborateurs participent au développement commercial ?</p>
+          <p style="margin:0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous permet de partager une même information, suivre les opportunités et piloter votre activité avec une vision commune.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.12);box-shadow:0 24px 50px -44px rgba(43,10,120,.6)">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path><path d="M14.5 7h4v4"></path></svg></span>
+            <h3 style="margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">TPE en croissance</h3>
+          </div>
+          <p style="margin:0;font-size:17px;font-weight:700;line-height:1.4;color:#5416D8">Votre suivi commercial repose encore sur Excel, les mails ou la mémoire de chacun ?</p>
+          <p style="margin:0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous aide à structurer votre commerce sans l’alourdir.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.12);box-shadow:0 24px 50px -44px rgba(43,10,120,.6)">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"></path></svg></span>
+            <h3 style="margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Indépendant, consultant ou formateur</h3>
+          </div>
+          <p style="margin:0;font-size:17px;font-weight:700;line-height:1.4;color:#5416D8">Vous voulez professionnaliser votre suivi sans passer sur un outil complexe ?</p>
+          <p style="margin:0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous aide à structurer simplement vos prospects, clients et opportunités.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.12);box-shadow:0 24px 50px -44px rgba(43,10,120,.6)">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5c2.2 2.4 3.4 5.4 3.4 8.5S14.2 18.1 12 20.5c-2.2-2.4-3.4-5.4-3.4-8.5S9.8 5.9 12 3.5z"></path></svg></span>
+            <h3 style="margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Multi-sites ou multi-BU</h3>
+          </div>
+          <p style="margin:0;font-size:17px;font-weight:700;line-height:1.4;color:#5416D8">Plusieurs activités, entités ou équipes commerciales ?</p>
+          <p style="margin:0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous permet de garder une vision consolidée tout en suivant chaque activité séparément.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:30px;border-radius:20px;background:linear-gradient(150deg,#8B45FF,#4B18C9 60%,#240873);color:#fff;box-shadow:0 40px 80px -50px rgba(43,10,120,.9)">
+          <div>
+            <h3 style="margin:0;font-weight:800;font-size:clamp(24px,2.4vw,30px);line-height:1.1;letter-spacing:-.035em">Vous vous reconnaissez&nbsp;?</h3>
+            <p style="margin:12px 0 0;font-size:16px;font-weight:500;line-height:1.6;color:#EFE7FF">Il existe une formule Maestro adaptée à la taille et à l’organisation de votre structure.</p>
+          </div>
+          <a class="hv8" href="#offres" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#fff;color:#3B0FA3;font-weight:800;font-size:16px">Découvrir nos formules <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pourquoi" style="padding:clamp(64px,7vw,104px) 24px;background:#fff;border-top:1px solid rgba(101,34,232,.1)">
+    <div style="max-width:1240px;margin:0 auto">
+      <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em;max-width:28ch">Pourquoi choisir <span style="background:linear-gradient(110deg,#7C2AF7,#FF6B2C);-webkit-background-clip:text;background-clip:text;color:transparent">Maestro</span> plutôt qu’un autre CRM ?</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;margin-top:clamp(32px,4vw,48px)">
+          <div style="padding:30px;border-radius:20px;background:#F7F4FF">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path></svg></span>
+            <h3 style="margin:18px 0 8px;font-weight:800;font-size:21px;line-height:1.2;letter-spacing:-.03em;color:#160A33">Maestro se comprend tout de suite.</h3>
+            <p style="margin:0;font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Vous ouvrez Maestro, vous comprenez, vous agissez. Simple à comprendre, simple à utiliser, simple à piloter.</p>
+          </div>
+          <div style="padding:30px;border-radius:20px;background:#F7F4FF">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5h16"></path><path d="M5.5 16V10M10.5 16V6M15.5 16v-4M20 16V8"></path></svg></span>
+            <h3 style="margin:18px 0 8px;font-weight:800;font-size:21px;line-height:1.2;letter-spacing:-.03em;color:#160A33">Maestro grandit avec vous.</h3>
+            <p style="margin:0;font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Devis, facturation, plusieurs sites ou équipes : quand votre activité se développe, l’outil suit.</p>
+          </div>
+          <div style="padding:30px;border-radius:20px;background:#F7F4FF">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#8B45FF,#5416D8)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <h3 style="margin:18px 0 8px;font-weight:800;font-size:21px;line-height:1.2;letter-spacing:-.03em;color:#160A33">Maestro continue après la signature.</h3>
+            <p style="margin:0;font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">La plupart des CRM s’arrêtent au devis signé. Maestro suit aussi la production de la mission, jusqu’à la livraison.</p>
+          </div>
+          <div style="padding:30px;border-radius:20px;background:#F7F4FF">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#FF8A4C,#FF5A1A)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span>
+            <h3 style="margin:18px 0 8px;font-weight:800;font-size:21px;line-height:1.2;letter-spacing:-.03em;color:#160A33">Maestro se pilote avec l’IA.</h3>
+            <p style="margin:0;font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité en quelques secondes.</p>
+            <p style="margin:16px 0 0;padding:14px 18px;border-radius:16px 16px 16px 4px;background:#fff;border:1px solid rgba(101,34,232,.16);font-size:15px;font-weight:700;line-height:1.45;color:#3B0FA3">« Crée une opportunité de 12 k€ pour Dupont Conseil, relance jeudi. »</p>
+          </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;margin-top:16px">
+        <div style="border-radius:20px;background:#F7F4FF;padding:10px">
+          <div style="height:100%;min-height:260px;border-radius:14px;background:#fff;background-image:repeating-linear-gradient(135deg,rgba(101,34,232,.07) 0 2px,transparent 2px 12px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:24px">
+            <span style="font-weight:800;font-size:12px;letter-spacing:.14em;color:#5416D8">VISUEL — GIF</span>
+            <span style="font-weight:600;font-size:14px;color:#8A76B8">Création d’une opportunité en quelques secondes.</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,3.4vw,44px);border-radius:20px;background:linear-gradient(150deg,#2E0B8C,#5C1BE0 55%,#8B45FF);color:#fff">
+          <h3 style="margin:0;font-weight:800;font-size:clamp(24px,2.4vw,32px);line-height:1.1;letter-spacing:-.035em">Maestro ne vous laisse jamais seul.</h3>
+          <p style="margin:12px 0 0;font-size:17px;font-weight:500;line-height:1.6;color:#EFE7FF">On configure l’outil avec vous, on importe vos données et on forme votre équipe.</p>
+          <ul style="margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;font-size:16px;font-weight:700">
+            <li style="display:flex;gap:12px;align-items:center"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.18)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>Configuration selon votre activité</li>
+            <li style="display:flex;gap:12px;align-items:center"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.18)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>Import de vos données (Excel ou ancien CRM)</li>
+            <li style="display:flex;gap:12px;align-items:center"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.18)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>Formation de votre équipe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(64px,7vw,104px) 24px">
+    <div style="max-width:1240px;margin:0 auto">
+      <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em">Ils ont pris le <span style="color:#7C2AF7">rythme</span>.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:16px;margin-top:clamp(30px,3.6vw,46px)">
+        <div style="padding:30px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.1)">
+          <div style="font-weight:800;font-size:11px;letter-spacing:.18em;color:#A995CE">AVANT MAESTRO</div>
+          <h3 style="margin:12px 0 14px;font-weight:800;font-size:20px;letter-spacing:-.03em">Comment je travaillais.</h3>
+          <div style="height:6px;width:44px;background:#E3D3FF;border-radius:3px"></div>
+          <p style="margin:18px 0 0;font-size:14px;font-weight:600;color:#B6A7D8">[témoignage client à insérer]</p>
+        </div>
+        <div style="padding:30px;border-radius:20px;background:linear-gradient(140deg,#8B45FF,#4B18C9 70%,#240873);color:#fff">
+          <div style="font-weight:800;font-size:11px;letter-spacing:.18em;color:#FFD9C4">AVEC MAESTRO</div>
+          <h3 style="margin:12px 0 14px;font-weight:800;font-size:20px;letter-spacing:-.03em">Ce qui a changé.</h3>
+          <div style="height:6px;width:96px;background:#fff;border-radius:3px"></div>
+          <p style="margin:18px 0 0;font-size:14px;font-weight:600;color:rgba(255,255,255,.72)">[témoignage client à insérer]</p>
+        </div>
+        <div style="padding:30px;border-radius:20px;background:#fff;border:1px solid rgba(255,107,44,.35)">
+          <div style="font-weight:800;font-size:11px;letter-spacing:.18em;color:#D1490C">AUJOURD’HUI</div>
+          <h3 style="margin:12px 0 14px;font-weight:800;font-size:20px;letter-spacing:-.03em;color:#2B1558">Ce que cela m’apporte concrètement.</h3>
+          <div style="height:6px;width:148px;background:#FF6B2C;border-radius:3px"></div>
+          <p style="margin:18px 0 0;font-size:15px;font-weight:700;color:#D1490C">[ex. « plus aucune relance oubliée depuis 6 mois »]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offres" style="padding:clamp(64px,7vw,104px) 24px;background:#fff;border-top:1px solid rgba(101,34,232,.1)">
+    <div style="max-width:1240px;margin:0 auto">
+      <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em">Les tarifs du <span style="background:linear-gradient(110deg,#7C2AF7,#FF6B2C);-webkit-background-clip:text;background-clip:text;color:transparent">CRM Maestro</span></h2>
+      <p style="margin:16px 0 0;font-size:18px;font-weight:600;color:#3B2168">Maestro s’adapte à votre activité.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:16px;margin-top:clamp(30px,3.6vw,46px)">
+        <div style="display:flex;flex-direction:column;padding:34px;border-radius:22px;background:#F7F4FF">
+          <div style="font-weight:800;font-size:12px;letter-spacing:.18em;color:#A995CE">MAESTRO</div>
+          <h3 style="margin:8px 0 8px;font-weight:800;font-size:clamp(26px,2.8vw,34px);letter-spacing:-.04em">Essentiel</h3>
+          <div style="margin-bottom:18px;font-size:16px;font-weight:700;color:#5416D8">à partir de [X] €/mois</div>
+          <p style="margin:0 0 10px;font-size:18px;font-weight:700;line-height:1.3;color:#2B1558">Structurer son activité commerciale.</p>
+          <p style="margin:0 0 26px;font-size:16px;font-weight:500;line-height:1.55;color:#54427E;flex:1">Pour les petites structures qui souhaitent centraliser leur suivi.</p>
+          <a class="hv7" href="#demo" style="display:inline-flex;align-items:center;justify-content:center;padding:14px;border-radius:999px;border:1.5px solid rgba(101,34,232,.35);color:#5416D8;font-weight:800;font-size:16px">Demander une démo</a>
+        </div>
+        <div style="display:flex;flex-direction:column;padding:34px;border-radius:22px;background:linear-gradient(150deg,#8B45FF,#4B18C9 60%,#240873);color:#fff;box-shadow:0 50px 100px -55px rgba(43,10,120,.95)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <div style="font-weight:800;font-size:12px;letter-spacing:.18em;color:rgba(255,255,255,.8)">MAESTRO</div>
+            <span style="padding:6px 12px;border-radius:999px;background:#FF6B2C;font-weight:800;font-size:11px;letter-spacing:.1em">EN ÉQUIPE</span>
+          </div>
+          <h3 style="margin:8px 0 8px;font-weight:800;font-size:clamp(26px,2.8vw,34px);letter-spacing:-.04em">Business</h3>
+          <div style="margin-bottom:18px;font-size:16px;font-weight:700;color:#FFD9C4">[X] €/utilisateur/mois</div>
+          <p style="margin:0 0 10px;font-size:18px;font-weight:700;line-height:1.3">Développer ses ventes en équipe.</p>
+          <p style="margin:0 0 26px;font-size:16px;font-weight:500;line-height:1.55;color:#EFE7FF;flex:1">Pour les TPE/PME qui souhaitent partager l’information et suivre leurs opportunités.</p>
+          <a class="hv8" href="#demo" style="display:inline-flex;align-items:center;justify-content:center;padding:14px;border-radius:999px;background:#fff;color:#3B0FA3;font-weight:800;font-size:16px">Demander une démo</a>
+        </div>
+        <div style="display:flex;flex-direction:column;padding:34px;border-radius:22px;background:#F7F4FF">
+          <div style="font-weight:800;font-size:12px;letter-spacing:.18em;color:#A995CE">MAESTRO</div>
+          <h3 style="margin:8px 0 8px;font-weight:800;font-size:clamp(26px,2.8vw,34px);letter-spacing:-.04em">Pilotage</h3>
+          <div style="margin-bottom:18px;font-size:16px;font-weight:700;color:#5416D8">sur devis</div>
+          <p style="margin:0 0 10px;font-size:18px;font-weight:700;line-height:1.3;color:#2B1558">Prendre de la hauteur.</p>
+          <p style="margin:0 0 26px;font-size:16px;font-weight:500;line-height:1.55;color:#54427E;flex:1">Pour les organisations multi-activités, multi-sites ou multi-BU.</p>
+          <a class="hv9" href="#demo" style="display:inline-flex;align-items:center;justify-content:center;padding:14px;border-radius:999px;border:1.5px solid rgba(101,34,232,.35);color:#5416D8;font-weight:800;font-size:16px">Demander une démo</a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:26px;font-size:16px;font-weight:600;color:#54427E">
+        <span>Accompagnement au démarrage inclus dans toutes les offres</span><span style="color:#FF6B2C">·</span><span style="color:#5416D8">[Sans engagement]</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(64px,7vw,104px) 24px">
+    <div style="max-width:1160px;margin:0 auto">
+      <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em">Changer de CRM sans douleur.</h2>
+      <p style="margin:16px 0 0;max-width:64ch;font-size:18px;font-weight:600;line-height:1.55;color:#3B2168">Avec Maestro, vous n’êtes pas seul face au CRM. Nous vous accompagnons pour configurer l’outil, former vos équipes et installer les bons réflexes commerciaux.</p>
+
+      <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:clamp(18px,2.4vw,32px);margin-top:clamp(30px,3.6vw,46px)">
+        <div style="position:relative">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:12px;height:12px;border-radius:50%;background:#7C2AF7;flex:none"></span><span style="height:2px;flex:1;background:#EADFFF"></span></div>
+          <div style="margin-top:16px;font-weight:800;font-size:32px;letter-spacing:-.05em;color:#7C2AF7">01</div>
+          <h3 style="margin:6px 0 8px;font-weight:800;font-size:19px;letter-spacing:-.03em">On vous écoute.</h3>
+          <p style="margin:0;font-size:16px;font-weight:500;line-height:1.55;color:#54427E">Votre activité, votre organisation, votre façon de vendre.</p>
+        </div>
+        <div style="position:relative">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:12px;height:12px;border-radius:50%;background:#7C2AF7;flex:none"></span><span style="height:2px;flex:1;background:#EADFFF"></span></div>
+          <div style="margin-top:16px;font-weight:800;font-size:32px;letter-spacing:-.05em;color:#7C2AF7">02</div>
+          <h3 style="margin:6px 0 8px;font-weight:800;font-size:19px;letter-spacing:-.03em">On prépare votre Maestro.</h3>
+          <p style="margin:0;font-size:16px;font-weight:500;line-height:1.55;color:#54427E">Configuration selon vos besoins et import de vos données (Excel ou ancien CRM).</p>
+        </div>
+        <div style="position:relative">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:12px;height:12px;border-radius:50%;background:#7C2AF7;flex:none"></span><span style="height:2px;flex:1;background:#EADFFF"></span></div>
+          <div style="margin-top:16px;font-weight:800;font-size:32px;letter-spacing:-.05em;color:#7C2AF7">03</div>
+          <h3 style="margin:6px 0 8px;font-weight:800;font-size:19px;letter-spacing:-.03em">On vous forme.</h3>
+          <p style="margin:0;font-size:16px;font-weight:500;line-height:1.55;color:#54427E">Pour que chacun prenne en main l’outil et l’utilise vraiment au quotidien.</p>
+        </div>
+        <div style="position:relative">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:12px;height:12px;border-radius:50%;background:#FF6B2C;flex:none"></span></div>
+          <div style="margin-top:16px;font-weight:800;font-size:32px;letter-spacing:-.05em;color:#FF6B2C">04</div>
+          <h3 style="margin:6px 0 8px;font-weight:800;font-size:19px;letter-spacing:-.03em">Vous prenez la main.</h3>
+          <p style="margin:0 0 10px;font-size:16px;font-weight:500;line-height:1.55;color:#54427E">Pilotez désormais votre activité commerciale dans un environnement clair et structuré.</p>
+          <p style="margin:0;font-weight:800;font-size:18px;letter-spacing:-.025em;color:#2B1558">À vous de jouer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding:clamp(64px,7vw,104px) 24px;background:#fff;border-top:1px solid rgba(101,34,232,.1)">
+    <div style="max-width:1240px;margin:0 auto">
+      <h2 style="margin:0 0 clamp(28px,3.4vw,42px);font-weight:800;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.04em">Vos questions sur le <span style="background:linear-gradient(110deg,#7C2AF7,#FF6B2C);-webkit-background-clip:text;background-clip:text;color:transparent">CRM Maestro</span></h2>
+      <div id="mae-faq" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:clamp(28px,4vw,64px);align-items:start;border-top:1px solid rgba(101,34,232,.14)"></div>
+    </div>
+  </section>
+
+  <section id="demo" style="position:relative;padding:clamp(80px,9vw,130px) 24px;overflow:hidden;background:linear-gradient(140deg,#8B45FF 0%,#5C1BE0 38%,#2E0B8C 74%,#1B0553 100%);color:#fff">
+    <div style="position:absolute;top:-25%;left:-10%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.34),transparent 62%)"></div>
+    <div style="position:absolute;bottom:-30%;right:-8%;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 62%)"></div>
+    <div style="position:relative;max-width:1040px;margin:0 auto;text-align:center">
+      <h2 style="margin:0 auto;max-width:24ch;font-weight:800;font-size:clamp(32px,4.6vw,66px);line-height:1.02;letter-spacing:-.04em">Prêt à reprendre la main sur votre activité commerciale ?</h2>
+      <p style="margin:20px auto 0;max-width:56ch;font-size:19px;font-weight:600;line-height:1.5;color:#EFE7FF">En 30 minutes, on vous montre Maestro sur vos propres affaires.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px">
+        <a class="hv11" href="#demo" style="display:inline-flex;align-items:center;padding:18px 34px;border-radius:999px;background:#fff;color:#3B0FA3;font-weight:800;font-size:17px;box-shadow:0 22px 50px -22px rgba(0,0,0,.6)">Demander ma démo Maestro</a>
+        <a class="hv12" href="#offres" style="display:inline-flex;align-items:center;padding:18px 32px;border-radius:999px;border:1.5px solid rgba(255,255,255,.5);color:#fff;font-weight:700;font-size:17px">Voir les offres</a>
+      </div>
+      <p style="margin:40px 0 0;font-weight:800;font-size:clamp(21px,2.6vw,34px);line-height:1.1;letter-spacing:-.035em;color:#FFD9C4">Maestro. Gardez le tempo de vos ventes.</p>
+    </div>
+  </section>
+
+  <footer class="ft" style="background:#12062B;color:#CFC3EC;padding:clamp(52px,6vw,76px) 28px 28px;font-family:Manrope,Helvetica,sans-serif">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(32px,4vw,56px)">
+      <div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:11px;color:#fff">
+          <span style="width:26px;height:26px;background:linear-gradient(135deg,#A26BFF,#7C2AF7);clip-path:polygon(28% 0,100% 0,100% 72%,74% 72%,74% 48%,26% 96%,4% 74%,52% 26%,28% 26%);display:block"></span>
+          <span style="font-weight:800;font-size:18px;letter-spacing:-.03em;color:#fff">MAESTRO</span>
+          <span style="font-weight:800;font-size:10px;letter-spacing:.16em;color:#FF6B2C;padding-top:3px">CRM</span>
+        </a>
+        <p style="margin:16px 0 0;max-width:30ch;font-size:15px;font-weight:500;line-height:1.55;color:#A99CC9">Le CRM simple des TPE et PME de conseil, de formation et de services.</p>
+        <p style="margin:14px 0 0;font-size:15px;font-weight:800;color:#FFD9C4">Gardez le tempo de vos ventes.</p>
+      </div>
+      <div>
+        <div style="font-weight:800;font-size:15px;color:#fff;margin-bottom:16px">Produit</div>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;font-size:15px;font-weight:600">
+          <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="#pourqui">Pour qui ?</a></li>
+          <li><a href="#pourquoi">Pourquoi Maestro</a></li>
+          <li><a href="#offres">Tarifs</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+          <li><a href="#demo">Demander une démo</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-weight:800;font-size:15px;color:#fff;margin-bottom:16px">Contact</div>
+        <address style="font-style:normal;display:flex;flex-direction:column;gap:11px;font-size:15px;font-weight:600;line-height:1.5">
+          <span>[Raison sociale]<br>[Adresse]<br>[Code postal] [Ville], France</span>
+          <span>Tél. : [01 23 45 67 89]</span>
+          <span>E-mail : [contact@votre-domaine.fr]</span>
+          <span style="color:#A99CC9;font-weight:500">Du lundi au vendredi, 9 h – 18 h</span>
+        </address>
+      </div>
+      <div>
+        <div style="font-weight:800;font-size:15px;color:#fff;margin-bottom:16px">Informations légales</div>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;font-size:15px;font-weight:600">
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="politique-confidentialite.html#droits">Exercer vos droits RGPD</a></li>
+        </ul>
+        <p style="margin:18px 0 0;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:13px;font-weight:700;color:#CFC3EC">Données hébergées en [France / UE]</p>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:clamp(40px,5vw,60px) auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:#8D80AE">
+      <span>© 2026 [Raison sociale] — Maestro CRM. Tous droits réservés.</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></span>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var state = { open: 0, step: 0, shot: 0 };
+  var steps = [
+    { num: "01", title: "Centralisez.", text: "Prospects, clients, contacts, opportunités, devis, documents et informations commerciales au même endroit.", visual: "VUE CONTACTS & CLIENTS" },
+    { num: "02", title: "Suivez.", text: "Vos actions, vos échéances et vos relances pour ne plus laisser dormir une opportunité.", visual: "VUE RELANCES & ÉCHÉANCES" },
+    { num: "03", title: "Vendez.", text: "Gardez une vision claire de votre pipeline commercial et des affaires qui avancent.", visual: "VUE PIPELINE COMMERCIAL" },
+    { num: "04", title: "Pilotez.", text: "Votre chiffre d’affaires, votre potentiel et vos actions prioritaires en un coup d’œil, grâce au dashboard Maestro.", visual: "VUE DASHBOARD DE PILOTAGE" }
+  ];
+  var shots = ["Opportunités en cours", "CA signé", "Pipeline commercial", "Relances à faire", "Prévisionnel", "Activité équipe"];
+  var qs = [
+    "Combien coûte le CRM Maestro ? Y a-t-il un engagement ?",
+    "Est-ce compliqué de passer d’Excel à un CRM ? Mes contacts peuvent-ils être importés ?",
+    "Combien de temps faut-il pour prendre Maestro en main ?",
+    "Peut-on travailler à plusieurs dans Maestro ?",
+    "Puis-je gérer plusieurs activités, sites ou entités ?",
+    "Où sont hébergées mes données ? Maestro est-il conforme au RGPD ?",
+    "Comment fonctionne l’IA ?",
+    "Maestro peut-il se connecter à mes autres outils métier ?",
+    "Suis-je accompagné pour démarrer ?"
+  ];
+  // Réponses de la FAQ : remplacez les textes ci-dessous
+  var answers = qs.map(function () { return "[réponse à compléter]"; });
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function setState(p) { for (var k in p) state[k] = p[k]; render(); }
+
+  function render() {
+    var s = state.shot;
+    var binds = {
+      activeVisual: steps[state.step].visual,
+      shotPlaceholder: "CAPTURE MAESTRO — " + shots[s].toUpperCase(),
+      shotNum: pad(s + 1) + " / " + pad(shots.length),
+      shotLabel: shots[s]
+    };
+    document.querySelectorAll("[data-bind]").forEach(function (el) { el.textContent = binds[el.getAttribute("data-bind")]; });
+
+    // Étapes (Centralisez / Suivez / Vendez / Pilotez)
+    document.getElementById("mae-steps").innerHTML = steps.map(function (st, i) {
+      var on = state.step === i;
+      return '<div data-step="' + i + '" tabindex="0" role="button" style="padding:20px 22px;border-radius:18px;cursor:pointer;outline:none;transition:background .18s ease;background:' + (on ? "#fff" : "transparent") + ';box-shadow:' + (on ? "0 18px 40px -30px rgba(43,10,120,.7)" : "none") + '">' +
+        '<div style="display:flex;align-items:baseline;gap:12px">' +
+        '<span style="font-weight:800;font-size:12px;letter-spacing:.18em;color:' + (on ? "#7C2AF7" : "#B6A7D8") + '">' + st.num + '</span>' +
+        '<h3 style="margin:0;font-weight:800;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.035em;color:' + (on ? "#5416D8" : "#2B1558") + '">' + esc(st.title) + '</h3>' +
+        '<span style="margin-left:auto;font-weight:700;font-size:12px;letter-spacing:.06em;color:#7C2AF7;opacity:' + (on ? "1" : "0") + '">→ voir</span>' +
+        '</div>' +
+        '<p style="margin:10px 0 0;font-size:16px;font-weight:500;line-height:1.55;color:' + (on ? "#3B2168" : "#6B5A92") + '">' + esc(st.text) + '</p>' +
+        '</div>';
+    }).join("");
+
+    // Pastilles des captures
+    document.getElementById("mae-shots").innerHTML = shots.map(function (label, i) {
+      var on = i === s;
+      return '<button type="button" data-shot="' + i + '" style="padding:9px 14px;border-radius:999px;border:1px solid ' + (on ? "transparent" : "rgba(101,34,232,.2)") + ';background:' + (on ? "#5416D8" : "#fff") + ';color:' + (on ? "#fff" : "#54427E") + ';font-family:Manrope,Helvetica,sans-serif;font-weight:700;font-size:13px;cursor:pointer">' + esc(label) + '</button>';
+    }).join("");
+
+    // FAQ
+    var faqItem = function (q, i) {
+      var isOpen = state.open === i;
+      return '<div style="border-bottom:1px solid rgba(101,34,232,.14)">' +
+        '<button type="button" class="faq-q" data-faq="' + i + '" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 2px;background:none;border:0;cursor:pointer;text-align:left;font-family:Manrope,Helvetica,sans-serif;font-weight:700;font-size:clamp(16px,1.5vw,19px);letter-spacing:-.02em;color:#2B1558">' +
+        '<span>' + esc(q) + '</span>' +
+        '<span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#EFE6FF;color:#5416D8;font-weight:800;font-size:16px">' + (isOpen ? "–" : "+") + '</span>' +
+        '</button>' +
+        '<div style="' + (isOpen ? "display:block" : "display:none") + '">' +
+        '<p style="margin:0;padding:0 2px 22px;max-width:70ch;font-size:16px;font-weight:600;line-height:1.6;color:#8A76B8">' + esc(answers[i]) + '</p>' +
+        '</div></div>';
+    };
+    var half = Math.ceil(qs.length / 2);
+    document.getElementById("mae-faq").innerHTML = [qs.slice(0, half), qs.slice(half)].map(function (col, c) {
+      return '<div>' + col.map(function (q, j) { return faqItem(q, c * half + j); }).join("") + '</div>';
+    }).join("");
+  }
+
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-step],[data-shot],[data-faq],[data-action]");
+    if (!t) return;
+    if (t.hasAttribute("data-step")) setState({ step: +t.getAttribute("data-step") });
+    else if (t.hasAttribute("data-shot")) setState({ shot: +t.getAttribute("data-shot") });
+    else if (t.hasAttribute("data-faq")) { var i = +t.getAttribute("data-faq"); setState({ open: state.open === i ? -1 : i }); }
+    else if (t.getAttribute("data-action") === "prev") setState({ shot: (state.shot - 1 + shots.length) % shots.length });
+    else if (t.getAttribute("data-action") === "next") setState({ shot: (state.shot + 1) % shots.length });
+  });
+  function stepFrom(e) {
+    var t = e.target.closest && e.target.closest("[data-step]");
+    if (t && state.step !== +t.getAttribute("data-step")) setState({ step: +t.getAttribute("data-step") });
+  }
+  document.addEventListener("mouseover", stepFrom);
+  document.addEventListener("focusin", stepFrom);
+
+  render();
+})();
+</script>
+</body>
+</html>
