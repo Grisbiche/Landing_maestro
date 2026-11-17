@@ -181,7 +181,7 @@
           <li><a href="dpa.html">Accord de traitement des données (DPA)</a></li>
         </ul></div>
         <div><h4>Contact</h4><ul>
-          <li><a href="https://app.nexxt-maestro.fr/lead/b606d47317632b7143de72d913312d96" target="_blank" rel="noopener">Compléter le formulaire →</a></li>
+          <li><a href="#contact">Compléter le formulaire →</a></li>
         </ul></div>
       </div>
       <div class="s-foot-bottom">
@@ -191,5 +191,59 @@
     </div>
   </footer>
 
+<!-- Formulaire de contact en fenêtre -->
+<style>
+  .lead-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(18,11,46,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .2s ease;font-family:Poppins,Helvetica,Arial,sans-serif}
+  .lead-modal[hidden]{display:none !important}
+  .lead-modal.is-open{opacity:1}
+  .lead-box{position:relative;width:100%;max-width:720px;height:min(860px,100%);display:flex;flex-direction:column;border-radius:24px;background:#fff;overflow:hidden;box-shadow:0 50px 120px -40px rgba(10,4,40,.8);transform:translateY(12px);transition:transform .25s ease}
+  .lead-modal.is-open .lead-box{transform:none}
+  .lead-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px 16px 24px;border-bottom:1px solid rgba(101,34,232,.12)}
+  .lead-head b{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:20px;color:#160A33}
+  .lead-close{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(101,34,232,.2);background:#fff;color:#160A33;font-size:22px;line-height:1;cursor:pointer}
+  .lead-close:hover{background:#F1EAFF}
+  .lead-frame{flex:1;width:100%;border:0;background:#FAF8FF}
+  .lead-foot{flex:none;padding:10px 24px;font-size:12.5px;color:#7A6AA0;text-align:center;border-top:1px solid rgba(101,34,232,.08)}
+  .lead-foot a{color:#5A35DB;text-decoration:underline}
+  @media (max-width:640px){.lead-modal{padding:0}.lead-box{max-width:none;height:100%;border-radius:0}}
+  @media (prefers-reduced-motion:reduce){.lead-modal,.lead-box{transition:none}}
+</style>
+<div class="lead-modal" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-title" hidden>
+  <div class="lead-box">
+    <div class="lead-head"><b id="lead-title">Demander une démo</b><button type="button" class="lead-close" aria-label="Fermer">×</button></div>
+    <iframe class="lead-frame" title="Formulaire de contact Maestro" loading="lazy"></iframe>
+    <p class="lead-foot">Le formulaire ne s’affiche pas&nbsp;? <a href="https://app.nexxt-maestro.fr/lead/b606d47317632b7143de72d913312d96" target="_blank" rel="noopener">Ouvrez-le dans un nouvel onglet</a>.</p>
+  </div>
+</div>
+<script>
+(function () {
+  var URL = "https://app.nexxt-maestro.fr/lead/b606d47317632b7143de72d913312d96";
+  var modal = document.getElementById("lead-modal");
+  if (!modal) return;
+  var frame = modal.querySelector(".lead-frame"), lastFocus = null;
+  function open(e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    lastFocus = document.activeElement;
+    if (!frame.getAttribute("src")) frame.setAttribute("src", URL);
+    modal.hidden = false;
+    requestAnimationFrame(function () { modal.classList.add("is-open"); });
+    document.documentElement.style.overflow = "hidden";
+    modal.querySelector(".lead-close").focus();
+  }
+  function close() {
+    modal.classList.remove("is-open");
+    document.documentElement.style.overflow = "";
+    setTimeout(function () { modal.hidden = true; }, 200);
+    if (lastFocus) lastFocus.focus();
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href="#contact"]');
+    if (a) open(e);
+  });
+  modal.querySelector(".lead-close").addEventListener("click", close);
+  modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) close(); });
+})();
+</script>
 </body>
 </html>
