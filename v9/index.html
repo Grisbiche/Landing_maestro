@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maestro — Le CRM simple des PME de conseil et de formation</title>
+<meta name="description" content="Le CRM qui centralise vos prospects, opportunités, devis et missions. Pensé pour les TPE et PME de conseil, de formation et de services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#F7F4FF; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#6522E8; text-decoration:none; }
+  a:hover { color:#4A14B8; }
+  @keyframes maestro-logos { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .hv0:hover{color:#fff !important;filter:brightness(1.08) !important}
+  .hv1:hover{color:#fff !important;transform:translateY(-2px);box-shadow:0 0 0 6px rgba(180,79,208,.35),0 28px 56px -16px rgba(90,53,219,.95) !important;filter:brightness(1.05)}
+  .hv2:hover{background:rgba(255,255,255,.14) !important;color:#fff !important}
+  .hv3:hover{color:#fff !important;filter:brightness(1.08) !important}
+  .hv4:hover{background:#EFE6FF !important}
+  .hv5:hover{background:#EFE6FF !important}
+  .hv6:hover{color:#fff !important;filter:brightness(1.08) !important}
+  .hv7:hover{background:#EFE6FF !important;color:#5A35DB !important}
+  .hv8:hover{background:#F4EEFF !important;color:#3A22B0 !important}
+  .hv9:hover{background:#EFE6FF !important;color:#5A35DB !important}
+  .hv10:hover{color:#5A35DB !important}
+  .hv11:hover{background:#F4EEFF !important;color:#3A22B0 !important}
+  .hv12:hover{background:rgba(255,255,255,.14) !important;color:#fff !important}
+  .faq-q:hover{color:#5A35DB !important}
+  .feat summary::-webkit-details-marker{display:none}
+  .feat summary:hover .feat-title{color:#5A35DB !important}
+  .feat summary:focus-visible{outline:2px solid #7B4FF3;outline-offset:2px;border-radius:12px}
+  .feat[open] .feat-arrow{transform:rotate(180deg);background:#5A35DB !important;color:#fff !important}
+  .ft a{color:#CFC3EC}
+  .ft a:hover{color:#fff}
+
+  /* ---------- Hero V5 ---------- */
+  .m-head{position:sticky;top:0;z-index:60;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:14px max(20px,3vw);background:#fff;border-bottom:1px solid rgba(101,34,232,.1);font-family:Poppins,Helvetica,Arial,sans-serif}
+  .m-nav{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:600}
+  .m-nav a{color:#3D2A66}
+  .m-nav a:hover{color:#5A35DB}
+  .m-nav-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.22);box-shadow:0 6px 16px -10px rgba(76,24,201,.5)}
+  .m-nav-pill i{width:4px;height:4px;border-radius:50%;background:#B44FD0;display:block}
+  .m-head-cta{justify-self:end;display:inline-flex;align-items:center;padding:12px 22px;border-radius:999px;background:#160A33;color:#fff !important;font-weight:700;font-size:15px;white-space:nowrap}
+  .m-head-cta:hover{background:#3A22B0}
+  @media (max-width:980px){.m-nav{display:none}.m-head{grid-template-columns:1fr auto}}
+  @media (max-width:520px){.m-head{gap:12px}.m-head-cta{padding:10px 16px;font-size:14px}.m-head a:first-child span:last-child{display:none}}
+
+  .m-hero{position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) max(20px,3vw) 0;background:radial-gradient(60% 50% at 18% 0%,rgba(200,110,220,.35) 0%,rgba(200,110,220,0) 70%),radial-gradient(70% 60% at 82% 0%,rgba(139,69,255,.32) 0%,rgba(139,69,255,0) 72%),linear-gradient(180deg,#E8DCFF 0%,#F3ECFF 38%,#F9F7FF 100%);font-family:Poppins,Helvetica,Arial,sans-serif;text-align:center}
+  .m-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none;z-index:2}
+  .m-hero-in{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  .m-eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(101,34,232,.16);font-size:13.5px;font-weight:700;color:#4B3A78}
+  .m-eyebrow span{width:7px;height:7px;border-radius:50%;background:#B44FD0;display:block;flex:none}
+  .m-hero h1{margin:26px 0 0;max-width:20ch;font-weight:800;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.045em;color:#160A33;text-wrap:balance}
+  .m-grad{background:linear-gradient(100deg,#7B4FF3 10%,#B44FD0 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  @media (max-width:700px){.m-br{display:none}}
+  .m-sub{margin:22px 0 0;max-width:62ch;font-size:clamp(16px,1.4vw,19px);font-weight:500;line-height:1.6;color:#4A3B70}
+  .m-cta{margin-top:32px;display:inline-flex;align-items:center;gap:12px;padding:19px 36px;border-radius:999px;background:linear-gradient(110deg,#A85BE0 0%,#6A45F0 55%,#3F25C9 140%);color:#fff !important;font-weight:800;font-size:17px;box-shadow:0 0 0 5px rgba(180,79,208,.16),0 22px 44px -16px rgba(90,53,219,.8);transition:transform .18s ease,box-shadow .18s ease}
+  .m-cta:hover{transform:translateY(-2px);box-shadow:0 0 0 7px rgba(180,79,208,.22),0 28px 52px -16px rgba(90,53,219,.9)}
+  .m-cta span{font-size:20px;line-height:1}
+
+  .m-frame{position:relative;z-index:1;margin-top:clamp(48px,6vw,72px);width:100%;max-width:1060px;padding:12px;border-radius:28px;background:rgba(255,255,255,.55);border:1px solid rgba(101,34,232,.2);box-shadow:0 60px 120px -60px rgba(76,24,201,.55);text-align:left}
+  .m-app{border-radius:18px;background:#fff;overflow:hidden;border:1px solid rgba(101,34,232,.1)}
+  .m-app-bar{display:flex;align-items:center;gap:18px;padding:14px 18px;border-bottom:1px solid rgba(101,34,232,.08)}
+  .m-app-logo{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:#160A33}
+  .m-app-logo .x-old{width:18px;height:18px;background:linear-gradient(135deg,#9A7BFF,#5A35DB);clip-path:polygon(28% 0,100% 0,100% 72%,74% 72%,74% 48%,26% 96%,4% 74%,52% 26%,28% 26%);display:block}
+  .m-tabs{flex:1;display:flex;align-items:center;justify-content:center;gap:22px;font-size:12.5px;font-weight:600;color:#54427E;white-space:nowrap;min-width:0;overflow:hidden}
+  .m-tab-on{padding:8px 14px;border-radius:999px;background:#160A33;color:#fff}
+  .m-avatar{flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#C9A8FF,#B44FD0);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+  @media (max-width:760px){.m-tabs span:not(.m-tab-on){display:none}}
+  .m-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:12px;padding:14px;background:#FAF8FF}
+  @media (max-width:760px){.m-grid{grid-template-columns:minmax(0,1fr)}}
+  .m-card{background:#fff;border:1px solid rgba(101,34,232,.1);border-radius:16px;padding:16px;min-width:0}
+  .m-hello{position:relative;text-align:center;background:radial-gradient(90% 70% at 50% 100%,#F1EAFF,#fff 70%)}
+  .m-hello h3{margin:4px 0 0;font-size:19px;font-weight:800;letter-spacing:-.02em;color:#160A33}
+  .m-hello p{margin:4px 0 0;font-size:12.5px;color:#6B5A92;font-weight:500}
+  .m-ring{position:relative;width:180px;height:180px;margin:14px auto 6px}
+  .m-ring svg{display:block;max-width:100%}
+  .m-ring div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .m-ring strong{font-size:32px;font-weight:800;letter-spacing:-.04em;color:#160A33;font-variant-numeric:tabular-nums}
+  .m-ring span{font-size:11.5px;line-height:1.35;color:#6B5A92;font-weight:600}
+  .m-float{position:absolute;left:14px;top:96px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 11px;border-radius:12px;background:#fff;border:1px solid rgba(101,34,232,.14);box-shadow:0 14px 30px -18px rgba(43,10,120,.6);font-size:11px;font-weight:600;color:#54427E;text-align:left}
+  .m-float b{color:#160A33;font-size:13px}
+  .m-float em{font-style:normal;color:#1E8A57;font-weight:700}
+  @media (max-width:420px){.m-float{display:none}}
+  .m-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
+  .m-kpi-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;font-weight:700;color:#3D2A66}
+  .m-kpi-top b{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(101,34,232,.18);display:flex;align-items:center;justify-content:center;color:#5A35DB}
+  .m-kpi-val{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+  .m-kpi-val strong{font-size:24px;font-weight:800;letter-spacing:-.035em;color:#160A33;font-variant-numeric:tabular-nums}
+  .m-kpi p{margin:8px 0 0;font-size:11.5px;line-height:1.45;color:#7A6AA0;font-weight:500}
+  .m-bars{display:flex;align-items:flex-end;gap:12px;height:110px;margin-top:14px}
+  .m-bars div{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}
+  .m-bars i{display:block;width:100%;max-width:46px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#B39CFF,#5E3BE6)}
+  .m-bars span{font-size:10.5px;font-weight:600;color:#7A6AA0}
+  .m-todo{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:12.5px;font-weight:600;color:#2B1558}
+  .m-todo li{display:flex;align-items:center;gap:10px}
+  .m-todo i{flex:none;width:14px;height:14px;border-radius:4px;border:1.5px solid #B6A7D8}
+  .m-todo span{margin-left:auto;font-size:11px;color:#8A76B8;white-space:nowrap}
+  .m-note{position:relative;z-index:3;margin:-56px 0 28px;font-size:12px;font-weight:600;color:#8A76B8}
+
+  /* ---------- Bloc problème V5 ---------- */
+  .p-sec{padding:clamp(64px,7vw,104px) max(20px,3vw);background:#fff;border-top:1px solid rgba(101,34,232,.1);font-family:Poppins,Helvetica,Arial,sans-serif}
+  .p-wrap{max-width:1160px;margin:0 auto}
+  .p-title{margin:0 auto;text-align:center;font-weight:800;font-size:clamp(24px,2.9vw,40px);line-height:1.05;letter-spacing:-.04em;color:#160A33;text-wrap:balance}
+  .p-title span{color:#7B4FF3}
+  .p-pains{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px;margin-top:clamp(36px,4.5vw,56px)}
+  .p-card{display:flex;flex-direction:column;padding:clamp(26px,3vw,36px);border-radius:22px;background:#F7F4FF;border:1px solid rgba(101,34,232,.08)}
+  .p-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .p-ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#9A7BFF,#5A35DB)}
+  .p-tag{padding:6px 12px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.16);font-size:12.5px;font-weight:700;color:#5A35DB}
+  .p-card h3{margin:20px 0 18px;font-weight:800;font-size:clamp(20px,1.8vw,23px);line-height:1.2;letter-spacing:-.03em;color:#160A33}
+  .p-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+  .p-card li{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid rgba(101,34,232,.1);font-size:16.5px;font-weight:600;line-height:1.4;color:#3B2168}
+  .p-card li span{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid rgba(101,34,232,.14)}
+  .p-or{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid rgba(101,34,232,.2);box-shadow:0 10px 24px -12px rgba(43,10,120,.5);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#7B4FF3}
+  @media (max-width:860px){.p-or{display:none}}
+  .p-link{display:flex;justify-content:center;margin-top:24px}
+  .p-link i{display:block;width:2px;height:44px;background:linear-gradient(180deg,rgba(124,42,247,.1),#7B4FF3);position:relative}
+  .p-link i::after{content:"";position:absolute;left:50%;bottom:-2px;width:10px;height:10px;border-right:2px solid #7B4FF3;border-bottom:2px solid #7B4FF3;transform:translateX(-50%) rotate(45deg)}
+  .p-quote{margin:20px auto 0;max-width:34ch;text-align:center;font-style:italic;font-weight:700;font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.02em;color:#3B2168}
+  .p-quote span{color:#7B4FF3}
+  .r-box{margin-top:clamp(28px,3.5vw,40px);padding:clamp(22px,2.6vw,30px);border-radius:24px;background:#FBF5FD;border:1px solid rgba(180,79,208,.28);display:grid;grid-template-columns:auto 1fr;align-items:center;gap:20px 32px}
+  @media (max-width:860px){.r-box{grid-template-columns:1fr}}
+  .r-label{margin:0;padding:0 8px;font-weight:800;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.03em;color:#9A3AB0}
+  .r-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+  .r-item{display:flex;align-items:center;gap:14px;padding:18px;border-radius:16px;background:#fff;box-shadow:0 14px 30px -24px rgba(154,58,176,.6)}
+  .r-ico{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:#F3E2F7}
+  .r-item p{margin:0;font-size:16px;font-weight:700;line-height:1.4;color:#2B1558}
+  .p-turn{margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;padding:clamp(28px,3.6vw,44px);border-radius:24px;background:linear-gradient(120deg,#7B4FF3 0%,#5C1BE0 45%,#2E0B8C 100%);color:#fff;box-shadow:0 40px 80px -50px rgba(43,10,120,.9)}
+  .p-turn h3{margin:0;font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.05;letter-spacing:-.04em;color:#fff}
+  .p-turn p{margin:10px 0 0;max-width:52ch;font-size:17px;font-weight:500;line-height:1.55;color:#EFE7FF}
+  .p-turn a{flex:none;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#fff;color:#3A22B0;font-weight:800;font-size:16px}
+  .p-turn a:hover{background:#F4EEFF;color:#3A22B0}
+
+  .lg-sec{padding:clamp(28px,3.5vw,44px) max(20px,3vw);background:#fff;border-bottom:1px solid rgba(101,34,232,.08);font-family:Poppins,Helvetica,Arial,sans-serif}
+  .lg-wrap{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:clamp(20px,3vw,40px)}
+  .lg-text{flex:none;margin:0;font-weight:800;font-size:16px;line-height:1.45;letter-spacing:-.01em;color:#160A33}
+  .lg-sep{flex:none;width:1px;height:44px;background:rgba(101,34,232,.2)}
+  .lg-viewport{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .lg-track{display:flex;width:max-content;animation:maestro-logos 30s linear infinite}
+  .lg-set{display:flex;align-items:center;gap:clamp(36px,4vw,56px);padding-right:clamp(36px,4vw,56px)}
+  .lg-item{display:inline-flex;align-items:center;gap:10px;color:#A7A1B8;font-weight:800;font-size:18px;letter-spacing:-.02em;white-space:nowrap}
+  @media (max-width:760px){.lg-wrap{flex-direction:column;align-items:flex-start;gap:16px}.lg-sep{display:none}.lg-viewport{width:100%}}
+  @media (prefers-reduced-motion:reduce){.lg-track{animation:none}}
+  @media (min-width:900px){.p-title{white-space:nowrap}}
+  .w-sec{position:relative;overflow:hidden;padding:clamp(64px,7vw,104px) max(20px,3vw);background:radial-gradient(50% 60% at 10% 0%,rgba(139,69,255,.22),transparent 70%),radial-gradient(45% 55% at 95% 30%,rgba(120,190,255,.22),transparent 70%),linear-gradient(180deg,#F1EAFF,#F7F4FF);font-family:Poppins,Helvetica,Arial,sans-serif}
+  .w-wrap{max-width:1240px;margin:0 auto}
+  .w-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+  .w-head h2{margin:0;max-width:24ch;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.05;letter-spacing:-.04em;color:#160A33;text-wrap:balance}
+  .w-head h2 span{background:linear-gradient(110deg,#7B4FF3,#B44FD0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .w-nav{display:flex;gap:10px}
+  .w-btn{width:46px;height:46px;border-radius:50%;border:1px solid rgba(101,34,232,.25);background:#fff;color:#3A22B0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s ease,color .18s ease,opacity .18s ease}
+  .w-btn:hover:not(:disabled){background:#160A33;color:#fff;border-color:#160A33}
+  .w-btn:disabled{opacity:.35;cursor:default}
+  .w-track{display:flex;gap:16px;margin-top:clamp(28px,3.5vw,44px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:4px 2px 24px}
+  .w-track::-webkit-scrollbar{display:none}
+  .w-track:focus-visible{outline:2px solid #7B4FF3;outline-offset:4px;border-radius:12px}
+  .w-card{flex:0 0 calc((100% - 48px) / 4);min-width:0;scroll-snap-align:start;display:flex;flex-direction:column;padding:12px 12px 22px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.95);box-shadow:0 30px 60px -48px rgba(43,10,120,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  @media (max-width:1060px){.w-card{flex-basis:calc((100% - 32px) / 3)}}
+  @media (max-width:800px){.w-card{flex-basis:calc((100% - 16px) / 2)}}
+  @media (max-width:560px){.w-card{flex-basis:86%}}
+  .w-card h3{margin:20px 10px 0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33}
+  .w-card > p{margin:8px 10px 0;font-size:15px;font-weight:500;line-height:1.55;color:#3F2E66}
+  .w-illu{height:178px;border-radius:16px;background:linear-gradient(180deg,#F7F3FF,#EFE8FF);border:1px solid rgba(101,34,232,.1);display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+  .w-ui{width:100%;display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700;color:#2B1558}
+  .w-row{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:10px;background:#fff;border:1px solid rgba(101,34,232,.08);opacity:.7}
+  .w-row i{flex:none;width:14px;height:14px;border-radius:4px;border:1.5px solid #C9BCEB;display:inline-flex;align-items:center;justify-content:center}
+  .w-line{height:6px;border-radius:3px;background:#E7DFFB}
+  .w-row--on{opacity:1;box-shadow:0 12px 24px -16px rgba(43,10,120,.6);transform:scale(1.03)}
+  .w-row--on .w-done{background:#7B4FF3;border-color:#7B4FF3;color:#fff}
+  .w-row b{min-width:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .w-row em{margin-left:auto;font-style:normal;padding:2px 7px;border-radius:999px;background:#FFE9E0;color:#C2410C;font-size:10.5px;white-space:nowrap}
+  .w-grow{align-items:stretch}
+  .w-bars{display:flex;align-items:flex-end;gap:8px;height:92px;padding:0 6px}
+  .w-bars i{flex:1;border-radius:6px 6px 3px 3px;background:#DCCFFF}
+  .w-bars .w-hi{background:linear-gradient(180deg,#B39CFF,#5E3BE6)}
+  .w-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .w-chips span{padding:4px 9px;border-radius:999px;background:#fff;border:1px solid rgba(101,34,232,.14);font-size:11px;color:#5A35DB}
+  .w-step{display:grid;grid-template-columns:18px 1fr auto;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#fff;border:1px solid rgba(101,34,232,.08)}
+  .w-step i{width:18px;height:18px;border-radius:50%;border:1.5px solid #C9BCEB;display:inline-flex;align-items:center;justify-content:center}
+  .w-ok i{background:#2BB673;border-color:#2BB673;color:#fff}
+  .w-step .w-mid{border-color:#7B4FF3;background:radial-gradient(circle,#7B4FF3 40%,transparent 45%)}
+  .w-step em{font-style:normal;font-size:10.5px;color:#7A6AA0}
+  .w-prog{width:52px;height:6px;border-radius:3px;background:#EDE5FF;overflow:hidden}
+  .w-prog span{display:block;height:100%;background:linear-gradient(90deg,#9A7BFF,#B44FD0)}
+  .w-todo{opacity:.6}
+  .w-chat{gap:10px}
+  .w-me{margin:0 0 0 auto;max-width:92%;padding:8px 11px;border-radius:14px 14px 4px 14px;background:#160A33;color:#fff;font-size:11.5px;line-height:1.4;font-weight:600}
+  .w-bot{margin:0;max-width:88%;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:14px 14px 14px 4px;background:#fff;border:1px solid rgba(101,34,232,.12);font-size:11.5px;color:#2B1558;font-weight:700}
+  .w-bot span{flex:none;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#A85BE0,#6A45F0);color:#fff;display:inline-flex;align-items:center;justify-content:center}
+  .w-avatars{display:flex;align-items:center;margin-bottom:2px}
+  .w-avatars span{width:28px;height:28px;border-radius:50%;border:2px solid #fff;color:#fff;font-size:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-right:-8px}
+  .w-avatars b{margin-left:16px;font-size:12px}
+  .w-check{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:10px;background:#fff;border:1px solid rgba(101,34,232,.08)}
+  .w-check i{flex:none;width:16px;height:16px;border-radius:50%;background:#7B4FF3;color:#fff;display:inline-flex;align-items:center;justify-content:center}
+  .w-check--next{opacity:.65}
+  .w-check--next i{background:transparent;border:1.5px solid #C9BCEB}
+  .a-sec{padding:clamp(64px,7vw,104px) max(20px,3vw);font-family:Poppins,Helvetica,Arial,sans-serif}
+  .a-panel{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(28px,4vw,56px);align-items:center;padding:clamp(28px,4vw,56px);border-radius:28px;background:radial-gradient(70% 90% at 0% 0%,#E3D4FF 0%,transparent 70%),radial-gradient(60% 80% at 100% 100%,#F2D8F5 0%,transparent 70%),linear-gradient(120deg,#EDE3FF,#F6EEFF 50%,#F8ECFA)}
+  .a-left h2{margin:0;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.05;letter-spacing:-.04em;color:#160A33}
+  .a-left p{margin:16px 0 0;max-width:46ch;font-size:17px;font-weight:500;line-height:1.6;color:#3B2168}
+  .a-btn{margin-top:28px;display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:#160A33;color:#fff !important;font-weight:700;font-size:15px}
+  .a-btn:hover{background:#3A22B0}
+  .a-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+  .a-block{padding:24px;border-radius:20px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .a-num{display:block;font-weight:800;font-size:clamp(34px,3.4vw,46px);line-height:1;letter-spacing:-.05em;background:linear-gradient(110deg,#7B4FF3,#B44FD0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .a-block h3{margin:14px 0 6px;font-weight:800;font-size:18px;letter-spacing:-.025em;color:#160A33}
+  .a-block p{margin:0;font-size:15px;font-weight:500;line-height:1.55;color:#3F2E66}
+
+  /* ================= V6 : système de sections harmonisé ================= */
+  .s-sec{padding:clamp(64px,7vw,104px) max(20px,3vw);font-family:Poppins,Helvetica,Arial,sans-serif}
+  .s-white{background:#fff}
+  .s-wrap{max-width:1240px;margin:0 auto}
+  .s-head{max-width:760px;margin:0 auto clamp(36px,4.5vw,56px);text-align:center}
+  .s-h2{margin:0;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.08;letter-spacing:-.04em;color:#160A33;text-wrap:balance}
+  .s-grad{background:linear-gradient(110deg,#7B4FF3,#B44FD0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .s-lead{margin:16px auto 0;max-width:56ch;font-size:17px;font-weight:500;line-height:1.6;color:#4A3B70}
+  .s-split .s-lead{margin-left:0}
+  .s-btn-dark{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:#160A33;color:#fff !important;font-weight:700;font-size:15px;transition:background .18s ease}
+  .s-btn-dark:hover{background:#3A22B0}
+  .s-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;background:#fff;border:1px solid rgba(22,10,51,.18);color:#160A33 !important;font-weight:700;font-size:15px;transition:border-color .18s ease}
+  .s-btn-ghost:hover{border-color:#160A33}
+  .s-btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;background:linear-gradient(110deg,#A85BE0 0%,#6A45F0 60%,#3F25C9 150%);color:#fff !important;font-weight:800;font-size:15px;box-shadow:0 16px 32px -16px rgba(90,53,219,.8)}
+  .s-soft-panel{background:radial-gradient(80% 90% at 0% 0%,#E3D4FF 0%,transparent 70%),radial-gradient(70% 80% at 100% 100%,#F2D8F5 0%,transparent 70%),linear-gradient(120deg,#EDE3FF,#F6EEFF 50%,#F8ECFA)}
+
+  /* Vidéo */
+  .s-split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(36px,5vw,72px);align-items:center}
+  .s-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px;margin-top:26px}
+  .s-flow i{font-style:normal;color:#B6A7D8}
+  .s-pill{padding:8px 14px;border-radius:999px;background:#F6F2FD;font-size:14px;font-weight:600;color:#3B2168}
+  .s-pill--on{background:#EFE6FF;color:#5A35DB;font-weight:700}
+  .s-frame{padding:10px;border-radius:26px;background:rgba(255,255,255,.6);border:1px solid rgba(101,34,232,.18);box-shadow:0 50px 100px -60px rgba(76,24,201,.55)}
+  .s-video{aspect-ratio:16/10;max-width:100%;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:radial-gradient(60% 70% at 20% 10%,rgba(200,110,220,.45),transparent 70%),radial-gradient(70% 80% at 85% 20%,rgba(139,69,255,.45),transparent 70%),linear-gradient(180deg,#E8DCFF,#F6F1FF)}
+  .s-play{width:78px;height:78px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(255,255,255,.45),0 20px 40px -18px rgba(76,24,201,.7)}
+  .s-video-label{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#3A22B0}
+
+  /* Problème (adoucissement) */
+  .p-card{background:#F6F2FD !important;border-color:transparent !important}
+  .p-ico{background:#fff !important;border:1px solid rgba(101,34,232,.12)}
+  .p-card li span{background:#fff}
+  .r-box{background:#FBF5FD !important}
+  .p-turn{background:radial-gradient(80% 90% at 0% 0%,#E3D4FF 0%,transparent 70%),radial-gradient(70% 80% at 100% 100%,#F2D8F5 0%,transparent 70%),linear-gradient(120deg,#EDE3FF,#F6EEFF 50%,#F8ECFA) !important;color:#160A33 !important;box-shadow:none !important}
+  .p-turn h3{color:#160A33 !important}
+  .p-turn p{color:#3B2168 !important}
+  .p-turn a.s-btn-dark{background:#160A33 !important;color:#fff !important}
+
+  /* Bento */
+  .s-bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
+  .s-card{display:flex;flex-direction:column;padding:clamp(24px,2.8vw,34px);border-radius:24px;background:#F6F2FD;min-width:0}
+  .s-card h3{margin:0;font-weight:800;font-size:clamp(20px,1.9vw,24px);letter-spacing:-.03em;color:#160A33}
+  .s-card > p{margin:8px 0 0;max-width:44ch;font-size:15.5px;font-weight:500;line-height:1.6;color:#4A3B70}
+  .s-illu{margin-top:24px;flex:1;min-height:200px;display:flex;align-items:center;justify-content:center;padding:8px}
+  .b-contact,.b-list,.b-pipe{width:100%;max-width:400px;background:#fff;border:1px solid rgba(101,34,232,.1);border-radius:18px;padding:16px;box-shadow:0 30px 60px -44px rgba(43,10,120,.6)}
+  .b-contact-top{display:flex;align-items:center;gap:12px}
+  .b-contact-top b{display:block;font-size:15px;color:#160A33}
+  .b-contact-top small{display:block;font-size:12px;color:#7A6AA0;font-weight:600}
+  .b-av{flex:none;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#B39CFF,#5E3BE6);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .b-tag{margin-left:auto;padding:4px 10px;border-radius:999px;background:#E9FBEF;color:#1E8A57;font-size:11.5px;font-weight:700}
+  .b-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+  .b-meta span{padding:10px;border-radius:12px;background:#F6F2FD;font-size:12px;color:#54427E;font-weight:600;text-align:center}
+  .b-meta b{display:block;font-size:18px;color:#160A33;font-variant-numeric:tabular-nums}
+  .b-last{margin-top:12px;font-size:12px;font-weight:600;color:#7A6AA0}
+  .b-list{display:flex;flex-direction:column;gap:8px}
+  .b-row{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:#FAF8FF;border:1px solid rgba(101,34,232,.08);font-size:13px}
+  .b-row i{flex:none;width:16px;height:16px;border-radius:5px;border:1.5px solid #C9BCEB;display:inline-flex;align-items:center;justify-content:center}
+  .b-row b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#2B1558;font-weight:700}
+  .b-row--done{opacity:.7}
+  .b-row--done i{background:#7B4FF3;border-color:#7B4FF3;color:#fff}
+  .b-pill{margin-left:auto;flex:none;padding:3px 9px;border-radius:999px;background:#EFE6FF;color:#5A35DB;font-size:11px;font-weight:700}
+  .b-pill--hot{background:#FFE9E0;color:#C2410C}
+  .b-pill--ok{background:#E9FBEF;color:#1E8A57}
+  .b-pipe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .b-pipe div{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .b-pipe small{font-size:11px;font-weight:700;color:#7A6AA0;margin-bottom:2px}
+  .b-pipe span{padding:8px 9px;border-radius:10px;background:#FAF8FF;border:1px solid rgba(101,34,232,.08);font-size:11.5px;font-weight:700;color:#2B1558;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .b-pipe em{display:block;font-style:normal;font-weight:600;color:#7A6AA0}
+  .b-pipe .b-hot{background:#F8EEFB;border-color:rgba(180,79,208,.35)}
+  .b-pipe .b-won{background:#F0FBF4;border-color:rgba(30,138,87,.2)}
+  .b-gauge{position:relative;display:flex;flex-direction:column;align-items:center}
+  .b-gauge svg{max-width:100%;height:auto}
+  .b-gauge-val{margin-top:-46px;text-align:center}
+  .b-gauge-val strong{display:block;font-size:34px;font-weight:800;letter-spacing:-.04em;color:#160A33;font-variant-numeric:tabular-nums}
+  .b-gauge-val span{font-size:12.5px;font-weight:600;color:#7A6AA0}
+  .b-float{position:absolute;top:-6px;left:-30px;padding:8px 12px;border-radius:12px;background:#fff;border:1px solid rgba(101,34,232,.14);box-shadow:0 14px 30px -18px rgba(43,10,120,.6);font-size:12px;font-weight:600;color:#54427E;white-space:nowrap}
+  .b-float b{color:#160A33}
+  @media (max-width:480px){.b-float{left:0;top:-30px}}
+  .s-closing{margin:clamp(32px,4vw,48px) 0 0;text-align:center;font-weight:800;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.035em;color:#160A33}
+
+  /* Témoignages */
+  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:start}
+  @media (min-width:960px){.t-grid > :nth-child(2){margin-top:36px}}
+  .t-card{margin:0;display:flex;flex-direction:column;gap:18px;padding:30px;border-radius:24px;background:#fff;border:1px solid rgba(101,34,232,.08);box-shadow:0 30px 60px -50px rgba(43,10,120,.5)}
+  .t-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .t-q{width:34px;height:34px;border-radius:50%;background:#160A33;color:#C9A8FF;display:inline-flex;align-items:center;justify-content:center}
+  .t-tag{padding:5px 11px;border-radius:999px;background:#F6F2FD;font-size:12px;font-weight:700;color:#5A35DB}
+  .t-card blockquote{margin:0;font-size:16.5px;font-weight:600;line-height:1.6;color:#2B1558}
+  .t-card figcaption{display:flex;align-items:center;gap:12px}
+  .t-av{flex:none;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#E3D4FF,#F2D8F5);color:#5A35DB;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .t-card figcaption b{display:block;font-size:14.5px;color:#160A33}
+  .t-card figcaption small{display:block;font-size:13px;font-weight:600;color:#7A6AA0}
+
+  /* Tarifs */
+  .o-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:stretch}
+  .o-plan{display:flex;flex-direction:column;padding:clamp(28px,3vw,36px);border-radius:24px;background:#F6F2FD}
+  .o-plan--feat{background:radial-gradient(80% 90% at 0% 0%,#E3D4FF 0%,transparent 70%),radial-gradient(70% 80% at 100% 100%,#F2D8F5 0%,transparent 70%),linear-gradient(120deg,#EDE3FF,#F6EEFF 50%,#F8ECFA);border:1px solid rgba(255,255,255,.9);box-shadow:0 40px 80px -50px rgba(76,24,201,.6)}
+  .o-top{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:26px}
+  .o-top small{font-weight:800;font-size:12px;letter-spacing:.16em;color:#A995CE}
+  .o-badge{padding:5px 11px;border-radius:999px;background:#B44FD0;color:#fff;font-size:11.5px;font-weight:800}
+  .o-plan h3{margin:12px 0 0;font-weight:800;font-size:clamp(26px,2.4vw,32px);letter-spacing:-.04em;color:#160A33}
+  .o-price{margin-top:8px;font-size:16px;font-weight:700;color:#5A35DB;font-variant-numeric:tabular-nums}
+  .o-plan hr{width:100%;border:0;border-top:1px solid rgba(101,34,232,.14);margin:22px 0}
+  .o-plan strong{font-size:17px;font-weight:800;color:#160A33}
+  .o-plan p{margin:8px 0 26px;flex:1;font-size:15.5px;font-weight:500;line-height:1.6;color:#4A3B70}
+  .o-note{margin:24px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px;font-size:15px;font-weight:600;color:#4A3B70}
+  .o-dot{color:#B44FD0}
+
+  /* FAQ */
+  .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:12px;align-items:start}
+  .f-col{display:flex;flex-direction:column;gap:12px}
+  .f-item{border-radius:18px;background:#F6F2FD;transition:background .18s ease}
+  .f-item[open]{background:#EFE7FF}
+  .f-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 22px;font-weight:700;font-size:16px;line-height:1.4;color:#160A33}
+  .f-item summary::-webkit-details-marker{display:none}
+  .f-item summary i{flex:none;position:relative;width:30px;height:30px;border-radius:50%;background:#fff}
+  .f-item summary i::before,.f-item summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;border-radius:1px;background:#5A35DB;transform:translate(-50%,-50%)}
+  .f-item summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s ease}
+  .f-item[open] summary i::after{transform:translate(-50%,-50%) rotate(0deg)}
+  .f-item p{margin:0;padding:0 22px 20px;font-size:15.5px;font-weight:500;line-height:1.6;color:#6B5A92}
+
+  /* CTA final + footer */
+  .s-final{padding:clamp(80px,9vw,128px) max(20px,3vw) clamp(56px,6vw,80px);background:radial-gradient(55% 70% at 15% 0%,rgba(200,110,220,.35),transparent 70%),radial-gradient(60% 75% at 85% 0%,rgba(139,69,255,.32),transparent 72%),linear-gradient(180deg,#E8DCFF 0%,#F4EEFF 45%,#fff 100%);font-family:Poppins,Helvetica,Arial,sans-serif;text-align:center}
+  .s-final-in{max-width:760px;margin:0 auto}
+  .s-final .s-h2{font-size:clamp(32px,3.8vw,54px)}
+  .s-final-actions{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px}
+  .s-foot{background:#fff;padding:clamp(40px,5vw,64px) max(20px,3vw) 28px;font-family:Poppins,Helvetica,Arial,sans-serif;color:#4A3B70}
+  .s-foot-in{max-width:1240px;margin:0 auto}
+  .s-foot-grid{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:36px clamp(24px,4vw,56px)}
+  @media (max-width:860px){.s-foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.s-foot-brand{grid-column:1/-1}}
+  .s-foot-logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.03em;color:#160A33 !important}
+  .s-foot-logo .x-old{width:26px;height:26px;background:linear-gradient(135deg,#9A7BFF,#5A35DB);clip-path:polygon(28% 0,100% 0,100% 72%,74% 72%,74% 48%,26% 96%,4% 74%,52% 26%,28% 26%);display:block}
+  .s-foot-logo em{font-style:normal;font-weight:800;font-size:10px;letter-spacing:.16em;color:#B44FD0;padding-top:3px}
+  .s-foot-brand p{margin:16px 0 0;max-width:44ch;font-size:15px;font-weight:500;line-height:1.65}
+  .s-foot h4{margin:4px 0 16px;font-weight:800;font-size:15px;color:#160A33}
+  .s-foot ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;font-size:15px;font-weight:500}
+  .s-foot ul a{color:#4A3B70}
+  .s-foot ul a:hover{color:#5A35DB}
+  .s-foot-bottom{margin-top:clamp(36px,4vw,52px);padding-top:22px;border-top:1px solid rgba(101,34,232,.12);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13.5px;font-weight:500;color:#7A6AA0}
+
+  /* ================= Charte Maestro 2026 : Jost (titres) + Poppins (texte) ================= */
+  h1, h2, h3, .feat-title, .s-h2, .p-title, .r-label, .a-num, .o-plan h3 { font-family: Jost, Futura, "Century Gothic", Helvetica, sans-serif !important; font-weight: 600 !important; letter-spacing: -.015em !important; }
+  h1 { font-weight: 500 !important; letter-spacing: -.025em !important; }
+  .m-logo { display:flex; align-items:center; gap:10px; color:#120B2E !important; }
+
+  /* ================= V7b : dégradés intensifiés, touche d'orange ================= */
+  .s-final{background:radial-gradient(38% 45% at 10% 0%,rgba(255,150,100,.32),transparent 70%),radial-gradient(55% 55% at 32% 0%,rgba(180,79,208,.30),transparent 72%),radial-gradient(70% 70% at 85% 0%,rgba(105,60,245,.55),transparent 72%),linear-gradient(180deg,#D9C6FF 0%,#ECE1FF 40%,#fff 100%) !important}
+  .s-soft-panel,.o-plan--feat,.pb-turn{background:radial-gradient(70% 90% at 0% 0%,#D2BBFF 0%,transparent 70%),radial-gradient(40% 60% at 100% 100%,rgba(255,150,100,.30) 0%,transparent 70%),radial-gradient(60% 80% at 100% 0%,#E9C8F6 0%,transparent 70%),linear-gradient(120deg,#E3D4FF,#EFE5FF 55%,#F6E4F6) !important}
+  .s-video{background:radial-gradient(38% 45% at 10% 0%,rgba(255,150,100,.32),transparent 70%),radial-gradient(55% 55% at 32% 0%,rgba(180,79,208,.30),transparent 72%),radial-gradient(70% 70% at 85% 0%,rgba(105,60,245,.55),transparent 72%),linear-gradient(180deg,#D9C6FF 0%,#ECE1FF 40%,#F9F7FF 100%) !important}
+  .w-sec{background:radial-gradient(50% 60% at 8% 0%,rgba(105,60,245,.30),transparent 70%),radial-gradient(35% 45% at 100% 100%,rgba(255,150,100,.18),transparent 70%),radial-gradient(45% 55% at 95% 20%,rgba(180,79,208,.20),transparent 70%),linear-gradient(180deg,#ECE2FF,#F7F4FF) !important}
+  .m-cta,.s-btn-cta{background:linear-gradient(110deg,#FF8A5C -18%,#C04FD0 22%,#6A45F0 62%,#3F25C9 112%) !important}
+  .s-grad,.m-grad,.a-num{background:linear-gradient(105deg,#5B35E8 0%,#8F45E6 55%,#C04FD0 82%,#FF8A5C 118%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .m-eyebrow span{background:#FF8A5C !important}
+  .o-badge{background:linear-gradient(110deg,#FF8A5C -18%,#C04FD0 22%,#6A45F0 62%,#3F25C9 112%) !important}
+
+  /* Changer de CRM : contour dégradé sur fond blanc */
+  .a-sec{background:#fff}
+  .a-panel{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(120deg,#6A45F0,#C04FD0 60%,#FF8A5C) border-box !important;border:2px solid transparent;box-shadow:0 50px 100px -70px rgba(90,53,219,.55)}
+  .a-block{background:#F6F2FD !important;border:1px solid rgba(101,34,232,.06) !important;backdrop-filter:none !important}
+
+  /* Bloc « Pas de CRM » */
+  .pb-tag{align-self:flex-start;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:#fff;font-size:12.5px;font-weight:600;color:#5A35DB}
+  .pb-list{margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .pb-list li{display:flex;align-items:center;gap:12px;font-size:15.5px;font-weight:500;line-height:1.45;color:#2B1558}
+  .pb-list li span{flex:none;width:22px;height:22px;border-radius:50%;background:#fff;color:#9A3AB0;display:inline-flex;align-items:center;justify-content:center}
+  .pb-scatter{position:relative;min-height:210px}
+  .pb-chip{position:absolute;display:inline-flex;align-items:center;gap:9px;padding:10px 14px 10px 10px;border-radius:14px;background:#fff;border:1px solid rgba(101,34,232,.1);box-shadow:0 20px 40px -26px rgba(43,10,120,.55);font-size:12.5px;font-weight:600;color:#2B1558;white-space:nowrap}
+  .pb-chip i{font-style:normal;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+  @media (max-width:520px){.pb-chip{font-size:11px}.pb-scatter{min-height:230px}}
+  .pb-form{width:100%;max-width:400px;background:#fff;border:1px solid rgba(101,34,232,.1);border-radius:18px;padding:16px;box-shadow:0 30px 60px -44px rgba(43,10,120,.6)}
+  .pb-form-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:#160A33}
+  .pb-form-top span{padding:3px 9px;border-radius:999px;background:#FCE7EF;color:#B4325F;font-size:11px;font-weight:700;white-space:nowrap}
+  .pb-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+  .pb-fields i{height:26px;border-radius:8px;background:#F4F1FA;border:1px solid rgba(101,34,232,.08)}
+  .pb-form-foot{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:11.5px;font-weight:600;color:#7A6AA0}
+  .pb-form-foot em{width:8px;height:8px;border-radius:50%;background:#E0A400;flex:none}
+  .pb-result{margin-top:16px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px 32px}
+  @media (max-width:860px){.pb-result{grid-template-columns:1fr}}
+  .pb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+  .pb-res div{display:flex;align-items:center;gap:12px;padding:16px;border-radius:16px;background:#fff;font-size:15px;font-weight:600;line-height:1.4;color:#160A33}
+  .pb-res span{flex:none;width:38px;height:38px;border-radius:11px;background:#F3E2F7;color:#9A3AB0;display:inline-flex;align-items:center;justify-content:center}
+  .pb-turn{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;padding:clamp(28px,3.6vw,44px);border-radius:24px}
+  .pb-turn h3{margin:0;font-size:clamp(24px,2.6vw,34px);line-height:1.1;color:#160A33}
+  .pb-turn p{margin:10px 0 0;max-width:52ch;font-size:16.5px;font-weight:500;line-height:1.55;color:#2B1558}
+
+  /* ================= V8 ================= */
+  /* Hero : dégradé foncé de la charte */
+  .m-hero{background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important}
+  .m-hero h1{color:#fff !important}
+  .m-hero .m-grad{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
+  .m-sub{color:#E4DAFF !important}
+  .m-eyebrow{background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.28) !important;color:#fff !important}
+  .m-eyebrow span{background:#FF8A5C !important}
+  .m-hero .m-cta{background:#fff !important;color:#2A1890 !important;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important}
+  .m-frame{background:rgba(255,255,255,.14) !important;border-color:rgba(255,255,255,.3) !important;box-shadow:0 60px 120px -50px rgba(10,4,40,.8) !important}
+
+  /* Panneaux foncés : formule Business, « Vous vous reconnaissez », « C'est là que Maestro… » */
+  .o-plan--feat,.s-soft-panel,.pb-turn{background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;border-color:transparent !important;box-shadow:0 50px 100px -55px rgba(30,16,96,.9) !important}
+  .o-plan--feat h3,.o-plan--feat strong,.s-soft-panel h3,.pb-turn h3{color:#fff !important}
+  .o-plan--feat p,.s-soft-panel p,.pb-turn p{color:#E4DAFF !important}
+  .o-plan--feat .o-top small{color:rgba(255,255,255,.7) !important}
+  .o-plan--feat .o-price{color:#FFBE98 !important}
+  .o-plan--feat hr{border-top-color:rgba(255,255,255,.18) !important}
+  .o-plan--feat .s-btn-cta,.s-soft-panel .s-btn-dark,.pb-turn .s-btn-dark{background:#fff !important;color:#2A1890 !important;box-shadow:none !important}
+
+  /* Changer de CRM : panneau dégradé clair, blocs blancs translucides */
+  .a-panel{background:radial-gradient(70% 90% at 0% 0%,#D9C6FF 0%,transparent 70%),radial-gradient(45% 60% at 100% 100%,rgba(255,170,130,.38) 0%,transparent 70%),radial-gradient(60% 80% at 100% 0%,#EFD5F7 0%,transparent 70%),linear-gradient(120deg,#E8DCFF,#F3ECFF 55%,#FBEDF3) !important;border:0 !important;box-shadow:none !important}
+  .a-block{background:rgba(255,255,255,.62) !important;border:1px solid rgba(255,255,255,.9) !important;backdrop-filter:blur(6px) !important}
+
+  /* Pourquoi Maestro : mosaïque */
+  .w-sec{background:radial-gradient(70% 90% at 0% 0%,#D9C6FF 0%,transparent 70%),radial-gradient(45% 60% at 100% 100%,rgba(255,170,130,.38) 0%,transparent 70%),radial-gradient(60% 80% at 100% 0%,#EFD5F7 0%,transparent 70%),linear-gradient(120deg,#E8DCFF,#F3ECFF 55%,#FBEDF3) !important}
+  .w-head{justify-content:center !important;text-align:center}
+  .w-head h2{max-width:22ch !important}
+  .w-grid{display:grid !important;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;overflow:visible !important;padding:0 !important}
+  .w-grid .w-card{grid-column:span 2}
+  .w-grid .w-card:nth-child(n+4){grid-column:span 3}
+  @media (max-width:980px){.w-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.w-grid .w-card,.w-grid .w-card:nth-child(n+4){grid-column:span 1}.w-grid .w-card:last-child{grid-column:1/-1}}
+  @media (max-width:620px){.w-grid{grid-template-columns:1fr}.w-grid .w-card:last-child{grid-column:auto}}
+
+  /* Fonctionnalités : carrousel */
+  .fc{position:relative;margin-top:clamp(32px,4vw,48px)}
+  .fc-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 28px}
+  .fc-track::-webkit-scrollbar{display:none}
+  .fc-track:focus-visible{outline:2px solid #7B4FF3;outline-offset:4px;border-radius:12px}
+  .fc .w-card{background:#F8F5FE;border-color:rgba(101,34,232,.08);box-shadow:none}
+  .fc .w-illu{background:linear-gradient(180deg,#fff,#F3EEFF)}
+  .fc-line{margin:6px 10px 0 !important;font-size:15px !important;font-weight:500 !important;color:#5A35DB !important}
+  .fc-arrow{position:absolute;top:96px;z-index:2;width:48px;height:48px;border-radius:50%;border:1px solid rgba(101,34,232,.18);background:#fff;color:#2A1890;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 14px 30px -14px rgba(43,10,120,.55);transition:background .18s ease,color .18s ease}
+  .fc-arrow:hover{background:#120B2E;color:#fff;border-color:#120B2E}
+  .fc-arrow--prev{left:-24px}
+  .fc-arrow--next{right:-24px}
+  @media (max-width:1300px){.fc-arrow--prev{left:-8px}.fc-arrow--next{right:-8px}}
+  .fc-av{flex:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#9A7BFF,#5A35DB);color:#fff;font-size:9px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+  .fc-av--b{background:linear-gradient(135deg,#F0AEEA,#B44FD0)}
+  .fc-av--c{background:linear-gradient(135deg,#FFBE98,#E07A5A)}
+  .w-row em.fc-tag{background:#EFE6FF;color:#5A35DB}
+  .w-row em.fc-tag--ok,.fc-doc em.fc-tag--ok{background:#E9FBEF;color:#1E8A57}
+  .fc-pipe{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .fc-pipe div{display:flex;flex-direction:column;gap:5px;min-width:0}
+  .fc-pipe small{font-size:10.5px;font-weight:700;color:#7A6AA0}
+  .fc-pipe span{padding:7px 8px;border-radius:9px;background:#fff;border:1px solid rgba(101,34,232,.08);font-size:11px;font-weight:700;color:#2B1558;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fc-pipe em{display:block;font-style:normal;font-weight:600;color:#7A6AA0}
+  .fc-pipe .fc-hot{background:#F8EEFB;border-color:rgba(180,79,208,.3)}
+  .fc-pipe .fc-won{background:#F0FBF4;border-color:rgba(30,138,87,.2)}
+  .fc-doc{width:100%;padding:14px;border-radius:12px;background:#fff;border:1px solid rgba(101,34,232,.1);display:flex;flex-direction:column;gap:4px}
+  .fc-doc-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;color:#160A33}
+  .fc-doc em{font-style:normal;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:700}
+  .fc-doc small{font-size:11px;font-weight:600;color:#7A6AA0}
+  .fc-doc strong{font-size:20px;font-weight:700;color:#160A33;font-variant-numeric:tabular-nums;margin-top:2px}
+  .fc-doc-steps{display:flex;gap:5px;margin-top:6px}
+  .fc-doc-steps span{flex:1;padding:5px 0;border-radius:8px;background:#F4F1FA;text-align:center;font-size:10.5px;font-weight:700;color:#A99CC9}
+  .fc-doc-steps span.on{background:#EFE6FF;color:#5A35DB}
+  .fc-gauge{display:flex;flex-direction:column;align-items:center}
+  .fc-gauge svg{max-width:100%;height:auto}
+  .fc-gauge div{margin-top:-40px;text-align:center}
+  .fc-gauge strong{display:block;font-size:28px;font-weight:700;color:#160A33;font-variant-numeric:tabular-nums}
+  .fc-gauge span{font-size:11px;font-weight:600;color:#7A6AA0}
+  .fc-bu{width:100%;display:flex;flex-direction:column;gap:8px}
+  .fc-bu-total{display:flex;align-items:baseline;justify-content:space-between;padding:8px 12px;border-radius:10px;background:#fff;border:1px solid rgba(101,34,232,.1)}
+  .fc-bu-total small{font-size:11px;font-weight:600;color:#7A6AA0}
+  .fc-bu-total b{font-size:18px;color:#160A33;font-variant-numeric:tabular-nums}
+  .fc-bu-row{display:grid;grid-template-columns:48px 1fr 46px;align-items:center;gap:8px;font-size:11.5px;font-weight:600;color:#2B1558}
+  .fc-bu-row i{height:8px;border-radius:4px;background:#EDE5FF;overflow:hidden}
+  .fc-bu-row i b{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#7B4FF3,#C04FD0)}
+  .fc-bu-row em{font-style:normal;text-align:right;color:#7A6AA0;font-variant-numeric:tabular-nums}
+  .fc-hub{width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+  .fc-hub-col{display:flex;flex-direction:column;gap:12px}
+  .fc-hub-col span{position:relative;padding:7px 8px;border-radius:9px;background:#fff;border:1px solid rgba(101,34,232,.12);font-size:10.5px;font-weight:700;color:#2B1558;text-align:center}
+  .fc-hub-center{width:58px;height:58px;border-radius:50%;background:#fff;border:1px solid rgba(101,34,232,.14);box-shadow:0 0 0 8px rgba(123,79,243,.10),0 14px 30px -16px rgba(43,10,120,.6);display:flex;align-items:center;justify-content:center}
+  .fc-card{flex:0 0 calc((100% - 48px) / 4);scroll-snap-align:start;min-width:0}
+  @media (max-width:1060px){.fc-card{flex-basis:calc((100% - 32px) / 3)}}
+  @media (max-width:800px){.fc-card{flex-basis:calc((100% - 16px) / 2)}}
+  @media (max-width:560px){.fc-card{flex-basis:86%}}
+
+  /* ================= Bloc « Tout votre commerce » façon étapes + widget ================= */
+  .hw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(36px,5vw,72px);align-items:center}
+  .hw-left .s-lead{margin-left:0}
+  .hw-steps{margin-top:30px;display:flex;flex-direction:column}
+  .hw-step{display:flex;gap:16px;align-items:flex-start;width:100%;padding:20px 4px;border:0;border-bottom:1px solid rgba(101,34,232,.12);background:none;text-align:left;font:inherit;cursor:pointer;opacity:.62;transition:opacity .2s ease}
+  .hw-step:first-child{border-top:1px solid rgba(101,34,232,.12)}
+  .hw-step:hover,.hw-step.is-on{opacity:1}
+  .hw-step:focus-visible{outline:2px solid #7B4FF3;outline-offset:2px;border-radius:12px}
+  .hw-ico{flex:none;width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#2B1558}
+  .hw-i1{background:#EFE6FF;color:#5A35DB}.hw-i2{background:#FCE4F4;color:#A2389F}.hw-i3{background:#FFE9DC;color:#C2552A}.hw-i4{background:#E3ECFF;color:#3F4FD0}
+  .hw-txt b{display:block;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:21px;letter-spacing:-.015em;color:#160A33;margin-top:8px}
+  .hw-txt span{display:block;margin-top:6px;font-size:15.5px;font-weight:500;line-height:1.6;color:#4A3B70}
+  .hw-frame{border-radius:30px;padding:clamp(20px,3vw,40px);background:radial-gradient(70% 60% at 0% 0%,#DCCBFF,transparent 70%),radial-gradient(60% 60% at 100% 100%,#D9E7FF,transparent 70%),radial-gradient(40% 40% at 100% 0%,rgba(255,170,130,.25),transparent 70%),linear-gradient(160deg,#E8DEFF,#EFE9FF 55%,#E1ECFF);border:1px solid rgba(255,255,255,.8);box-shadow:0 50px 100px -70px rgba(76,24,201,.6)}
+  .hw-frame-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;padding:clamp(8px,2vw,24px) 0;background-image:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55));background-size:2px 100%;background-repeat:no-repeat;background-position:center}
+  .hw-panel{width:100%}
+  .hw-card{position:relative;min-height:320px;padding:20px;border-radius:22px;background:#fff;box-shadow:0 30px 60px -40px rgba(43,10,120,.55)}
+  .hw-card-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .hw-card-top b,.hw-mini b{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:18px;color:#160A33}
+  .hw-card-ico{flex:none;width:36px;height:36px;border-radius:50%;background:#F1EAFF;color:#5A35DB;display:inline-flex;align-items:center;justify-content:center}
+  .hw-card-go{margin-left:auto;flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(101,34,232,.14);display:inline-flex;align-items:center;justify-content:center;color:#160A33}
+  .hw-pill{font-style:normal;flex:none;padding:3px 10px;border-radius:999px;background:#EFE6FF;color:#5A35DB;font-size:11.5px;font-weight:700;white-space:nowrap}
+  .hw-pill--ok{background:#E9FBEF;color:#1E8A57}.hw-pill--hot{background:#FFE9E0;color:#C2410C}
+  .hw-client-top{display:flex;align-items:center;gap:12px}
+  .hw-client-top b{display:block;font-size:15px;color:#160A33}
+  .hw-client-top small{display:block;font-size:12px;font-weight:600;color:#7A6AA0}
+  .hw-client-top em{margin-left:auto}
+  .hw-av{flex:none;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#9A7BFF,#5A35DB);color:#fff;font-weight:700;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+  .hw-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+  .hw-kpis span{padding:10px;border-radius:12px;background:#F7F4FE;font-size:12px;font-weight:600;color:#6B5A92;text-align:center}
+  .hw-kpis b{display:block;font-size:18px;color:#160A33;font-variant-numeric:tabular-nums}
+  .hw-line{display:flex;justify-content:space-between;gap:10px;padding:10px 2px 0;margin-top:10px;border-top:1px solid rgba(101,34,232,.08);font-size:13px;color:#7A6AA0;font-weight:500}
+  .hw-line b{color:#160A33;font-weight:600}
+  .hw-todo{display:flex;flex-direction:column;gap:8px}
+  .hw-todo div{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:#F9F7FE;border:1px solid rgba(101,34,232,.07);font-size:13.5px}
+  .hw-todo i{flex:none;width:16px;height:16px;border-radius:5px;border:1.5px solid #C9BCEB;display:inline-flex;align-items:center;justify-content:center}
+  .hw-todo b{min-width:0;flex:1;color:#2B1558;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hw-todo .is-done{opacity:.7}.hw-todo .is-done i{background:#7B4FF3;border-color:#7B4FF3;color:#fff}
+  .hw-donut-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px}
+  .hw-donut{flex:none;width:170px;height:170px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .hw-donut span{width:96px;height:96px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .hw-donut b{font-size:19px;color:#160A33;font-variant-numeric:tabular-nums}
+  .hw-donut small{font-size:11px;font-weight:600;color:#7A6AA0}
+  .hw-legend{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+  .hw-legend li{display:flex;gap:10px;align-items:flex-start}
+  .hw-legend i{flex:none;width:11px;height:11px;border-radius:50%;margin-top:4px}
+  .hw-legend b{display:block;font-size:14px;color:#160A33;font-weight:600}
+  .hw-legend small{display:block;font-size:12px;color:#7A6AA0;font-weight:500;font-variant-numeric:tabular-nums}
+  .hw-pilot{display:flex;flex-direction:column;align-items:center}
+  .hw-gauge{position:relative;display:flex;flex-direction:column;align-items:center}
+  .hw-gauge svg{max-width:100%;height:auto}
+  .hw-gauge div{margin-top:-44px;text-align:center}
+  .hw-gauge b{display:block;font-size:30px;color:#160A33;font-variant-numeric:tabular-nums}
+  .hw-gauge small{font-size:12px;font-weight:600;color:#7A6AA0}
+  .hw-pilot .hw-kpis{width:100%}
+  .hw-connect{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:linear-gradient(110deg,#9A7BFF,#7B4FF3 50%,#C04FD0);color:#fff !important;font-weight:600;font-size:14.5px;box-shadow:0 0 0 6px rgba(255,255,255,.55),0 18px 36px -16px rgba(90,53,219,.8)}
+  .hw-mini{width:100%;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(6px)}
+  .hw-mini .hw-card-go{background:#fff}
+
+  /* ================= Menu & CTA plus pétants ================= */
+  .m-nav a{font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:13px !important;text-transform:uppercase;letter-spacing:.16em;color:#2B1558 !important}
+  .m-nav a:hover{color:#7B4FF3 !important}
+  .m-head-cta,.m-hero .m-cta{background:linear-gradient(110deg,#FF8A5C 0%,#E0569E 32%,#9B5CFF 68%,#6A45F0 100%) !important;color:#fff !important;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600 !important;letter-spacing:.01em;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+  .m-head-cta{box-shadow:0 10px 26px -10px rgba(224,86,158,.75)}
+  .m-head-cta:hover{background:linear-gradient(110deg,#FF8A5C 0%,#E0569E 32%,#9B5CFF 68%,#6A45F0 100%) !important;filter:brightness(1.08);transform:translateY(-1px)}
+  .m-hero .m-cta{font-size:18px !important;background:linear-gradient(110deg,#FFA061 0%,#FF6F8E 48%,#D95BDA 100%) !important;box-shadow:0 0 0 6px rgba(255,255,255,.18),0 22px 48px -12px rgba(255,111,142,.9) !important}
+  .m-hero .m-cta:hover{filter:brightness(1.08);transform:translateY(-2px)}
+
+  /* ================= V8c ================= */
+  .m-hero{background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 50%,rgba(214,198,255,.55) 68%,rgba(244,239,255,.93) 86%,#fff 100%),radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important}
+  .m-hero::after{height:200px !important}
+  .one-line{max-width:none !important}
+  @media (min-width:960px){.one-line{white-space:nowrap}}
+  .s-head--wide{max-width:none !important}
+
+  /* Tout votre commerce : panneau foncé */
+  .hw-frame{background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;border-color:transparent !important;box-shadow:0 50px 100px -55px rgba(30,16,96,.9) !important}
+  .hw-frame-in{background-image:linear-gradient(rgba(255,255,255,.22),rgba(255,255,255,.22)) !important}
+  .hw-claim{position:relative;margin:6px 0 0;text-align:center;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.25;letter-spacing:-.015em;color:#fff}
+
+  /* Pourquoi : fond foncé, cartes sans visuel */
+  .w-sec{background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important}
+  .w-head h2{color:#fff !important}
+  .w-head h2 span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
+  .w-grid .w-card{padding:28px 26px !important;background:rgba(255,255,255,.96) !important;box-shadow:0 40px 80px -50px rgba(10,4,40,.8) !important}
+  .w-grid .w-card h3{margin:0 !important}
+  .w-grid .w-card > p{margin:10px 0 0 !important}
+
+  /* Bloc final : couleur du hero qui se fond dans le blanc */
+  .s-final{background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 60%,rgba(214,198,255,.6) 78%,rgba(244,239,255,.95) 92%,#fff 100%),radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;padding-bottom:clamp(140px,14vw,200px) !important}
+  .s-final .s-h2{color:#fff !important}
+  .s-final .s-grad{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
+  .s-final .s-lead{color:#E4DAFF !important}
+  .s-final .m-cta{background:#fff !important;color:#2A1890 !important;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important}
+  .s-final .s-btn-ghost{background:transparent !important;border-color:rgba(255,255,255,.5) !important;color:#fff !important}
+
+  /* ================= V8d ================= */
+  /* Boutons pilule + pastille flèche */
+  .cta-dot{flex:none;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;transition:transform .25s ease}
+  .m-head-cta{display:inline-flex !important;align-items:center;gap:12px;padding:7px 7px 7px 20px !important;background:#7B4FF3 !important;color:#fff !important;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500 !important;font-size:15px !important;letter-spacing:.01em;box-shadow:0 12px 26px -12px rgba(123,79,243,.9) !important;filter:none !important}
+  .m-head-cta:hover{background:#5A35DB !important;transform:none !important}
+  .m-head-cta .cta-dot{width:32px;height:32px;background:#fff;color:#7B4FF3}
+  .m-hero .m-cta,.s-final .m-cta,.wy-left .m-cta,.a-left .m-cta{display:inline-flex !important;align-items:center;gap:16px !important;padding:9px 9px 9px 30px !important;background:#fff !important;color:#1E1060 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:18px !important;letter-spacing:.01em;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important;filter:none !important}
+  .m-cta .cta-dot{width:46px;height:46px;background:linear-gradient(135deg,#FF8A5C 0%,#E0569E 50%,#9B5CFF 100%);color:#fff}
+  .m-hero .m-cta:hover,.s-final .m-cta:hover,.m-head-cta:hover{transform:none !important;filter:none !important}
+  .m-cta:hover .cta-dot,.m-head-cta:hover .cta-dot{transform:rotate(-45deg)}
+
+  /* Logos clients */
+  .lg-set{gap:clamp(44px,5vw,72px) !important;padding-right:clamp(44px,5vw,72px) !important}
+  .lg-item img{display:block;width:auto;max-width:none;filter:grayscale(1);opacity:.6;transition:filter .2s ease,opacity .2s ease}
+  .lg-item:hover img{filter:none;opacity:1}
+  .lg-text{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600 !important;font-size:20px !important;line-height:1.2 !important}
+
+  /* Résultat mis en avant */
+  .rs-box{margin-top:16px;padding:clamp(28px,3.6vw,44px);border-radius:26px;background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%);box-shadow:0 50px 100px -55px rgba(30,16,96,.9)}
+  .rs-box h3{margin:0 0 22px;font-size:clamp(28px,3vw,40px);color:#fff}
+  .rs-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+  .rs-item{display:flex;align-items:center;gap:16px;padding:22px;border-radius:18px;background:#fff}
+  .rs-item span{flex:none;width:48px;height:48px;border-radius:14px;background:#FCE4F4;color:#A2389F;display:inline-flex;align-items:center;justify-content:center}
+  .rs-item p{margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#160A33}
+  .pb-turn{background:radial-gradient(70% 90% at 0% 0%,#D9C6FF 0%,transparent 70%),radial-gradient(45% 60% at 100% 100%,rgba(255,170,130,.38) 0%,transparent 70%),radial-gradient(60% 80% at 100% 0%,#EFD5F7 0%,transparent 70%),linear-gradient(120deg,#E8DCFF,#F3ECFF 55%,#FBEDF3) !important;box-shadow:none !important;padding:clamp(22px,2.8vw,32px) clamp(24px,3.4vw,40px) !important}
+  .pb-turn h3{color:#160A33 !important;font-size:clamp(20px,2vw,26px) !important}
+  .pb-turn p{color:#3B2168 !important;font-size:15.5px !important}
+  .pb-turn .s-btn-dark{background:#120B2E !important;color:#fff !important}
+
+  /* Tout votre commerce : sans trait, pictos carrés */
+  .hw-frame-in{background-image:none !important}
+  .hw-ico{border-radius:14px !important}
+
+  /* Fonctionnalités : fond du hero qui se fond en blanc, titre avant le visuel */
+  #fonctionnalites{border-top:0 !important;background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 46%,rgba(214,198,255,.6) 60%,rgba(244,239,255,.95) 72%,#fff 82%),radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important}
+  #fonctionnalites > div > h2{color:#fff !important}
+  #fonctionnalites > div > h2 span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
+  #fonctionnalites > div > p{color:#E4DAFF !important}
+  #fonctionnalites > div > p span{color:#FFBE98 !important}
+  .fc .w-card{background:#fff !important;box-shadow:0 30px 60px -40px rgba(10,4,40,.7) !important}
+  .fc-card h3{margin:10px 10px 14px !important;min-height:2.5em}
+  .fc-arrow{top:150px !important}
+
+  /* Pour qui : en-tête centré, phrase fine */
+  .pq-head{max-width:900px;margin:0 auto;text-align:center}
+  .pq-head p{margin:18px 0 0 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:14px !important;letter-spacing:.16em;text-transform:uppercase;color:#5A35DB !important}
+
+  /* Pourquoi : deux colonnes lisibles */
+  .wy-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,96px);align-items:start}
+  @media (max-width:900px){.wy-wrap{grid-template-columns:1fr}}
+  .wy-left{position:sticky;top:110px}
+  @media (max-width:900px){.wy-left{position:static}}
+  .wy-title{margin:0;font-size:clamp(30px,3.4vw,48px);line-height:1.08;color:#fff !important}
+  .wy-title span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wy-cta{margin-top:32px}
+  .wy-list{display:flex;flex-direction:column}
+  .wy-item{display:flex;gap:20px;align-items:flex-start;padding:26px 0;border-top:1px solid rgba(255,255,255,.16)}
+  .wy-item:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+  .wy-ico{flex:none;width:52px;height:52px;border-radius:15px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;display:inline-flex;align-items:center;justify-content:center}
+  .wy-item h3{margin:4px 0 0;font-size:clamp(20px,1.9vw,24px);color:#fff}
+  .wy-item p{margin:8px 0 0;max-width:52ch;font-size:16.5px;font-weight:400;line-height:1.65;color:#E4DAFF}
+
+  /* Changer de CRM : dégradé foncé */
+  .a-panel{background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;box-shadow:0 50px 100px -55px rgba(30,16,96,.9) !important}
+  .a-left h2{color:#fff !important}
+  .a-left p{color:#E4DAFF !important}
+  .a-cta{margin-top:28px}
+  .a-block{background:rgba(255,255,255,.1) !important;border:1px solid rgba(255,255,255,.2) !important;backdrop-filter:blur(6px) !important}
+  .a-block h3{color:#fff !important}
+  .a-block p{color:#E4DAFF !important}
+  .a-num{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important}
+
+  /* ================= Tarifs détaillés ================= */
+  .o-grid{align-items:stretch}
+  .o-plan .o-badge{text-transform:none}
+  .o-amount{margin-top:10px;display:flex;align-items:baseline;gap:8px}
+  .o-amount b{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:clamp(40px,4vw,52px);line-height:1;letter-spacing:-.02em;color:#160A33;font-variant-numeric:tabular-nums}
+  .o-amount span{font-size:14px;font-weight:500;color:#6B5A92}
+  .o-users{display:flex;align-items:center;gap:12px;margin-top:18px;padding:12px 14px;border-radius:14px;background:#fff}
+  .o-users-ico{flex:none;width:36px;height:36px;border-radius:11px;background:#EFE6FF;color:#5A35DB;display:inline-flex;align-items:center;justify-content:center}
+  .o-users strong{display:block;font-size:15px;font-weight:600 !important;color:#160A33}
+  .o-users small{display:block;font-size:12.5px;font-weight:500;color:#6B5A92}
+  .o-plan hr{margin:20px 0 !important}
+  .o-plan p.o-label{margin:0 0 6px !important;flex:none !important;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500 !important;font-size:12px !important;letter-spacing:.16em;text-transform:uppercase;color:#8A76B8 !important}
+  .o-plan p.o-who{margin:0 0 18px !important;flex:none !important;font-size:15px !important;font-weight:500;color:#160A33 !important}
+  .o-plan p.o-promise{margin:0 0 14px !important;flex:none !important;font-size:15px !important;line-height:1.6;color:#4A3B70 !important}
+  .o-incl{margin:0 0 8px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .o-incl li{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:#2B1558}
+  .o-incl span{flex:none;width:20px;height:20px;border-radius:50%;background:#EFE6FF;color:#5A35DB;display:inline-flex;align-items:center;justify-content:center}
+  .o-plan .s-btn-ghost,.o-plan .s-btn-cta{margin-top:auto}
+  .o-plan > :nth-last-child(2){margin-bottom:26px}
+  .o-plan--feat .o-amount b{color:#fff}
+  .o-plan--feat .o-amount span{color:#E4DAFF}
+  .o-plan--feat .o-users{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}
+  .o-plan--feat .o-users-ico{background:rgba(255,255,255,.16);color:#fff}
+  .o-plan--feat .o-users strong{color:#fff !important}
+  .o-plan--feat .o-users small{color:#E4DAFF}
+  .o-plan--feat p.o-label{color:rgba(255,255,255,.65) !important}
+  .o-plan--feat p.o-who{color:#fff !important}
+  .o-plan--feat p.o-promise{color:#E4DAFF !important}
+  .o-plan--feat .o-incl li{color:#fff}
+  .o-plan--feat .o-incl span{background:rgba(255,255,255,.18);color:#fff}
+
+  /* ================= V8f ================= */
+  .m-nav-pill{background:none !important;border:0 !important;box-shadow:none !important;padding:0 !important}
+  .s-final{background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 34%,rgba(214,198,255,.18) 46%,rgba(222,208,255,.42) 58%,rgba(234,224,255,.66) 70%,rgba(244,239,255,.86) 82%,rgba(250,248,255,.96) 92%,#fff 100%),radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;padding-bottom:clamp(180px,18vw,260px) !important}
+  .s-foot-bottom a{color:#5A35DB;font-weight:600}
+
+  /* Tarifs */
+  .o-note{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:400 !important;font-size:13.5px !important;letter-spacing:.14em;text-transform:uppercase;color:#6B5A92 !important}
+  .o-plan > strong{margin-top:0}
+
+  /* Tout votre commerce */
+  .hw-sec .s-head{margin-bottom:clamp(36px,4.5vw,56px)}
+  .hw-steps{margin-top:0 !important}
+
+  /* Pourquoi : accordéon */
+  .wy-item{display:block !important;padding:0 !important}
+  .wy-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:20px;padding:22px 0}
+  .wy-item summary::-webkit-details-marker{display:none}
+  .wy-item summary h3{flex:1;margin:0 !important}
+  .wy-arrow{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);color:#fff;display:inline-flex;align-items:center;justify-content:center;transition:transform .25s ease,background .2s ease,color .2s ease}
+  .wy-item summary:hover .wy-arrow{background:rgba(255,255,255,.14)}
+  .wy-item[open] .wy-arrow{transform:rotate(180deg);background:#fff;color:#2A1890}
+  .wy-item > p{margin:0 0 24px 72px !important}
+  @media (max-width:520px){.wy-item > p{margin-left:0 !important}}
+  .wy-left{top:140px}
+
+  /* Fonctionnalités : visuel en bas */
+  .fc-card{display:flex;flex-direction:column}
+  .fc-card .w-illu{margin-top:auto;margin-bottom:0}
+  .fc-card > p:last-of-type{margin-bottom:18px !important}
+  .fc-card h3{min-height:0 !important;margin:14px 10px 0 !important}
+  .fc-arrow{top:50% !important;transform:translateY(-50%)}
+
+  /* Pas de CRM : lisibilité */
+  .pb-sec .s-bento{gap:20px}
+  .pb-sec .s-bento .s-card{background:#fff !important;border:1px solid rgba(101,34,232,.12);box-shadow:0 30px 60px -50px rgba(43,10,120,.5);padding:clamp(28px,3.2vw,40px)}
+  .pb-sec .pb-tag{background:#F1EAFF;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .pb-sec .s-card h3{font-size:clamp(22px,2.1vw,27px) !important;line-height:1.25}
+  .pb-sec .pb-list{margin-top:20px;gap:0}
+  .pb-sec .pb-list li{padding:14px 0;border-top:1px solid rgba(101,34,232,.1);font-size:17px;font-weight:400;color:#2B1558;gap:14px}
+  .pb-sec .pb-list li:last-child{border-bottom:1px solid rgba(101,34,232,.1)}
+  .pb-sec .pb-list li span{width:26px;height:26px;background:#FCE4F4;color:#A2389F}
+  .pb-sec .rs-box{margin-top:20px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:20px clamp(28px,4vw,56px)}
+  @media (max-width:860px){.pb-sec .rs-box{grid-template-columns:1fr}}
+  .pb-sec .rs-box h3{margin:0 !important}
+  .pb-sec .rs-items{gap:0}
+  .pb-sec .rs-item{background:none;border-radius:0;padding:6px clamp(16px,2vw,28px);flex-direction:column;align-items:flex-start;gap:14px;border-left:1px solid rgba(255,255,255,.2)}
+  .pb-sec .rs-item span{background:rgba(255,255,255,.14);color:#fff}
+  .pb-sec .rs-item p{color:#fff;font-size:18px;font-weight:500;line-height:1.45}
+  @media (max-width:860px){.pb-sec .rs-item{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:18px 0;flex-direction:row;align-items:center}}
+  .pb-sec .pb-turn{margin-top:20px}
+
+  /* ================= Typo fine ================= */
+  .m-sub,.s-lead,#fonctionnalites > div > p,.hw-txt span,.pb-list li,.rs-item p,.pb-turn p,.fc-card > p,.fc-line,.wy-item > p,.o-plan > p,.a-left p,.a-block p,.f-item p,.t-card blockquote,.s-foot-brand p,#pourqui details > p,#pourqui summary > span:nth-child(2),.s-soft-panel p{font-weight:300 !important;letter-spacing:.005em}
+  #pourqui summary > span:nth-child(2){font-size:17px !important;line-height:1.55 !important}
+  .s-lead,#fonctionnalites > div > p{font-size:18px !important}
+  .fc-line{font-weight:400 !important}
+  .rs-item p{font-size:19px !important}
+  .pb-list li{font-size:17.5px !important}
+  .m-sub{font-size:18px !important}
+  .hw-step{opacity:.75 !important}
+  .hw-step.is-on,.hw-step:hover{opacity:1 !important}
+  .s-foot ul{font-weight:300}
+
+  /* ================= V8g ================= */
+  .s-final{padding-top:clamp(56px,6vw,84px) !important;padding-bottom:clamp(240px,22vw,320px) !important}
+  .f-item summary{font-weight:400 !important;font-family:Poppins,Helvetica,Arial,sans-serif}
+  .o-top small{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:300 !important;font-size:13px !important;letter-spacing:.24em !important;text-transform:uppercase;color:#8A76B8}
+  .wy-hl{font-style:normal;background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Pourquoi : blocs arrondis */
+  .wy-list{gap:12px}
+  .wy-item{border:1px solid rgba(255,255,255,.16) !important;border-radius:20px;background:rgba(255,255,255,.07);padding:0 22px !important;transition:background .2s ease}
+  .wy-item:last-child{border-bottom:1px solid rgba(255,255,255,.16) !important}
+  .wy-item[open]{background:rgba(255,255,255,.13)}
+  .wy-item summary{padding:18px 0 !important}
+
+  /* Fonctionnalités : picto + flèche */
+  .fc-head{display:flex;align-items:center;gap:12px;margin:12px 10px 0}
+  .fc-head h3{margin:0 !important}
+  .fc-ico{flex:none;width:40px;height:40px;border-radius:12px;background:#F1EAFF;color:#5A35DB;display:inline-flex;align-items:center;justify-content:center}
+  .fc-more{margin:12px 10px 18px}
+  .fc-more summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .fc-more summary::-webkit-details-marker{display:none}
+  .fc-more .fc-line{display:block;margin:0 !important;font-size:15px;color:#5A35DB;line-height:1.5}
+  .fc-arr{flex:none;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5A35DB;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s ease,background .2s ease,color .2s ease}
+  .fc-more[open] .fc-arr{transform:rotate(180deg);background:#5A35DB;color:#fff}
+  .fc-more p{margin:12px 0 0 !important;padding-top:12px;border-top:1px solid rgba(101,34,232,.12);font-size:15px;font-weight:300;line-height:1.6;color:#3F2E66}
+
+  .t-card blockquote{font-size:16px !important;line-height:1.65 !important}
+  .t-note{margin:18px 0 0;text-align:center;font-size:13px;color:#8A76B8}
+
+  /* ================= V8i ================= */
+  .s-grad,.m-grad,.wy-hl,.wy-title span{padding-right:.08em;margin-right:-.08em;padding-bottom:.06em}
+  .t-note{margin:22px 0 0;text-align:center;font-size:13px;font-weight:300;color:#8A76B8}
+
+  .sc-band{position:relative;overflow:hidden;padding:clamp(72px,8vw,112px) max(20px,3vw);background:radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%);text-align:center;font-family:Poppins,Helvetica,Arial,sans-serif}
+  .sc-in{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+  .sc-band h2{margin:0;font-size:clamp(32px,4vw,56px) !important;line-height:1.08;color:#fff}
+  .sc-band h2 span{background:linear-gradient(105deg,#D3C2FF 0%,#F0AEEA 65%,#FFBE98 110%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+  .sc-band p{margin:18px 0 0;max-width:60ch;font-size:18px;font-weight:300;line-height:1.6;color:#E4DAFF}
+  .sc-cta{margin-top:34px}
+  .sc-band .m-cta{display:inline-flex !important;align-items:center;gap:16px !important;padding:9px 9px 9px 30px !important;background:#fff !important;color:#1E1060 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:18px !important;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important}
+
+  /* Tout votre commerce : blocs arrondis */
+  .hw-steps{gap:10px}
+  .hw-step{border:1px solid transparent !important;border-radius:20px;padding:18px 20px !important;background:#F7F4FE !important;transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .2s ease}
+  .hw-step:first-child{border-top:1px solid transparent !important}
+  .hw-step.is-on{background:#fff !important;border-color:rgba(101,34,232,.18) !important;box-shadow:0 24px 50px -36px rgba(43,10,120,.6)}
+
+  /* ================= V8j ================= */
+  /* Pas de CRM */
+  .pb-sec .pb-list li{border-top:0 !important;border-bottom:0 !important;padding:9px 0 !important}
+  .pb-sec .rs-box{background:#F7F4FE !important;box-shadow:none !important;border:1px solid rgba(101,34,232,.1)}
+  .pb-sec .rs-box h3{color:#160A33 !important}
+  .pb-sec .rs-item{border-left-color:rgba(101,34,232,.14) !important}
+  .pb-sec .rs-item span{background:#FCE4F4 !important;color:#A2389F !important}
+  .pb-sec .rs-item p{color:#160A33 !important}
+  @media (max-width:860px){.pb-sec .rs-item{border-top-color:rgba(101,34,232,.14) !important}}
+
+  /* Bandeau entre en scène */
+  .sc-band{background:linear-gradient(180deg,rgba(214,198,255,0) 0%,rgba(214,198,255,0) 45%,rgba(214,198,255,.3) 60%,rgba(230,220,255,.62) 74%,rgba(244,239,255,.88) 87%,#fff 100%),radial-gradient(60% 55% at 0% 0%,rgba(178,78,170,.85),rgba(178,78,170,0) 70%),radial-gradient(70% 70% at 70% 45%,rgba(78,48,222,.55),rgba(78,48,222,0) 75%),linear-gradient(160deg,#8A47C0 0%,#5634D6 28%,#4329CF 52%,#2C1A9E 78%,#1E1265 100%) !important;padding-bottom:clamp(170px,16vw,230px) !important}
+  .sc-in{max-width:1100px}
+  .sc-band p.sc-line{max-width:none}
+  @media (min-width:900px){.sc-band p.sc-line{white-space:nowrap}}
+
+  /* ================= Responsive tablette & mobile ================= */
+  @media (max-width:1024px){
+    .s-sec,.w-sec,.a-sec,.hw-sec,.pb-sec,.sc-band{padding-left:max(24px,env(safe-area-inset-left,0px)) !important;padding-right:max(24px,env(safe-area-inset-right,0px)) !important}
+    #fonctionnalites,#pourqui{padding-left:24px !important;padding-right:24px !important}
+    .one-line,.sc-band p.sc-line{white-space:normal !important}
+    .hw-grid{grid-template-columns:1fr !important}
+    .hw-frame{max-width:620px;margin:0 auto;width:100%}
+    .wy-wrap{grid-template-columns:1fr !important;gap:32px !important}
+    .wy-left{position:static !important;text-align:center}
+    .wy-title{max-width:none}
+    .a-panel{grid-template-columns:1fr !important}
+    .a-left{text-align:center}
+    .a-left p{margin-left:auto;margin-right:auto}
+    .o-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+    .fc-arrow--prev{left:-12px !important}.fc-arrow--next{right:-12px !important}
+    .s-foot-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .s-foot-brand{grid-column:1/-1}
+  }
+  @media (max-width:760px){
+    .s-sec,.w-sec,.a-sec,.hw-sec,.pb-sec,.sc-band,#fonctionnalites,#pourqui{padding-left:max(18px,env(safe-area-inset-left,0px)) !important;padding-right:max(18px,env(safe-area-inset-right,0px)) !important;padding-top:64px !important}
+    .m-head{padding:12px 16px !important}
+    .m-head-cta{font-size:13.5px !important;padding:6px 6px 6px 14px !important;gap:8px !important}
+    .m-head-cta .cta-dot{width:28px;height:28px}
+    .m-hero{padding-left:18px !important;padding-right:18px !important;padding-top:48px !important}
+    .m-hero h1{font-size:clamp(32px,9vw,40px) !important;line-height:1.08 !important}
+    .m-sub,.s-lead,#fonctionnalites > div > p{font-size:16px !important}
+    .m-eyebrow{font-size:12px !important;line-height:1.4;text-align:left}
+    .m-cta,.sc-band .m-cta{font-size:16px !important;padding:7px 7px 7px 22px !important}
+    .m-cta .cta-dot{width:40px !important;height:40px !important}
+    .m-frame{padding:6px !important;border-radius:20px !important}
+    .m-grid{padding:8px !important;gap:8px !important}
+    .m-kpis{grid-template-columns:1fr 1fr !important}
+    .m-kpi p{display:none}
+    .s-h2,.wy-title,.a-left h2,.sc-band h2,#fonctionnalites > div > h2,#pourqui h2{font-size:clamp(26px,7.4vw,32px) !important;line-height:1.15 !important}
+    .lg-sec{padding:24px 18px !important}
+    .lg-item img{transform:scale(.85)}
+    .pb-sec .s-card{padding:22px !important}
+    .pb-sec .s-card h3{font-size:20px !important}
+    .pb-sec .pb-list li{font-size:16px !important}
+    .pb-sec .rs-box{padding:22px !important}
+    .pb-sec .rs-item p{font-size:16px !important}
+    .sc-band{padding-bottom:140px !important}
+    .sc-band p{font-size:16px}
+    .hw-step{padding:14px !important}
+    .hw-txt b{font-size:19px !important}
+    .hw-frame{padding:16px !important;border-radius:22px !important}
+    .hw-card{min-height:0 !important;padding:16px !important}
+    .hw-donut{width:140px;height:140px}
+    .fc-arrow{width:40px !important;height:40px !important}
+    .fc-arrow--prev{left:-6px !important}.fc-arrow--next{right:-6px !important}
+    .wy-item{padding:0 16px !important}
+    .wy-item summary{gap:14px !important}
+    .wy-ico{width:44px !important;height:44px !important}
+    .wy-item summary h3{font-size:18px !important}
+    .wy-item > p{margin-left:0 !important}
+    .t-grid > :nth-child(2){margin-top:0 !important}
+    .t-card{padding:24px !important}
+    .a-panel{padding:24px !important;border-radius:22px !important}
+    .a-grid{grid-template-columns:1fr 1fr !important;gap:10px !important}
+    .a-block{padding:16px !important}
+    .a-num{font-size:30px !important}
+    .o-plan{padding:24px !important}
+    .f-item summary{padding:16px !important;font-size:15px !important}
+    .f-item p{padding:0 16px 16px !important}
+    .s-final{padding-left:18px !important;padding-right:18px !important}
+    .s-final-actions{flex-direction:column}
+    .s-foot{padding-left:18px !important;padding-right:18px !important}
+    .s-foot-bottom{flex-direction:column}
+    #pourqui [style*="grid-auto-rows:1fr"]{grid-auto-rows:auto !important}
+  }
+  @media (max-width:420px){
+    .a-grid{grid-template-columns:1fr !important}
+    .m-head .m-logo svg{width:26px;height:26px}
+    .m-kpi-val strong{font-size:20px !important}
+    .m-kpi-val{flex-wrap:wrap}
+  }
+
+  @media (min-width:761px) and (max-width:1024px){
+    .t-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:12px !important}
+    .t-grid > :nth-child(2){margin-top:0 !important}
+    .t-card{padding:22px !important}
+    .o-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:12px !important}
+    .o-plan{padding:22px !important}
+    .o-amount b{font-size:36px !important}
+    .o-plan .s-btn-ghost,.o-plan .s-btn-cta{font-size:14px !important;padding:13px 14px !important;white-space:nowrap}
+    .a-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .rs-items{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  }
+
+  .m-logo-img{display:block;height:44px;width:auto;max-width:none}
+  @media (max-width:760px){.m-logo-img{height:34px}}
+  @media (max-width:400px){.m-logo-img{height:28px}}
+
+  /* Pas de CRM : questions empilées, résultat à droite */
+  .pb-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;align-items:stretch}
+  .pb-stack{display:flex;flex-direction:column;gap:20px}
+  .pb-sec .pb-split .rs-box{margin-top:0 !important;display:flex !important;flex-direction:column;justify-content:center;gap:18px;text-align:left;padding:clamp(28px,3.2vw,44px) !important}
+  .pb-sec .pb-split .rs-box h3{align-self:flex-start;font-size:clamp(28px,2.8vw,38px) !important}
+  .pb-sec .pb-split .rs-items{grid-template-columns:1fr !important;gap:0 !important}
+  .pb-sec .pb-split .rs-item{flex-direction:row !important;align-items:center !important;border-left:0 !important;border-top:1px solid rgba(101,34,232,.14);padding:20px 0 !important}
+  .pb-sec .pb-split .rs-item:first-child{border-top:0}
+  @media (max-width:900px){.pb-split{grid-template-columns:1fr}}
+  /* Version compacte */
+  .pb-split,.pb-stack{gap:14px !important}
+  .pb-sec .pb-stack .s-card{padding:24px 28px !important}
+  .pb-sec .pb-stack .pb-tag{margin-bottom:10px !important}
+  .pb-sec .pb-stack .s-card h3{font-size:clamp(19px,1.8vw,22px) !important}
+  .pb-sec .pb-stack .pb-list{margin-top:12px !important;display:grid !important;grid-template-columns:1fr 1fr;gap:4px 18px !important}
+  .pb-sec .pb-stack .pb-list li{padding:5px 0 !important;font-size:15.5px !important;line-height:1.4 !important}
+  @media (max-width:560px){.pb-sec .pb-stack .pb-list{grid-template-columns:1fr}}
+  .pb-sec .pb-split .rs-box{background:radial-gradient(70% 60% at 0% 0%,#E6D5FF 0%,transparent 70%),radial-gradient(60% 55% at 100% 100%,#FFDCCB 0%,transparent 70%),linear-gradient(150deg,#F1E6FF,#FBEAF4) !important;border:1px solid rgba(255,255,255,.9) !important;box-shadow:0 30px 60px -45px rgba(90,53,219,.55) !important;padding:28px 30px !important;gap:8px !important}
+  .pb-sec .pb-split .rs-box h3{font-size:clamp(24px,2.3vw,30px) !important}
+  .pb-sec .pb-split .rs-item{padding:14px 0 !important;border-top-color:rgba(101,34,232,.16) !important}
+  .pb-sec .pb-split .rs-item span{background:#fff !important;width:42px !important;height:42px !important}
+  .pb-sec .pb-split .rs-item p{font-size:16.5px !important}
+  .f-item p a{color:#5A35DB;text-decoration:underline}
+
+  /* ================= V8l ================= */
+  /* Lisibilité */
+  .m-eyebrow{font-size:15px !important;padding:9px 18px !important}
+  .m-sub,.sc-band p.sc-line,#fonctionnalites > div > p,.a-intro,.s-final .s-lead{font-weight:400 !important}
+
+  /* Hero et logos bien séparés */
+  .m-note{margin:16px 0 44px !important}
+  .lg-sec{padding:clamp(36px,4vw,56px) max(20px,3vw) !important;background:#F7F4FE !important;border-top:1px solid rgba(101,34,232,.1);border-bottom:1px solid rgba(101,34,232,.1) !important}
+  .lg-item img{filter:none !important;opacity:1 !important}
+
+  /* Pas de CRM : flèche */
+  .pb-split{grid-template-columns:minmax(0,1.25fr) auto minmax(0,1fr) !important;align-items:center !important}
+  .pb-split > .pb-stack,.pb-split > .rs-box{align-self:stretch}
+  .pb-arrow{display:flex;align-items:center;justify-content:center}
+  .pb-arrow span{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#9A7BFF,#6A45F0 55%,#C04FD0);color:#fff;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -14px rgba(90,53,219,.8)}
+  @media (max-width:900px){.pb-split{grid-template-columns:1fr !important}.pb-arrow span{transform:rotate(90deg)}}
+
+  /* Bandeau → Tout votre commerce : espace réduit */
+  .sc-band{padding-bottom:clamp(110px,10vw,150px) !important;background-size:100% 100%}
+  .hw-sec{padding-top:clamp(28px,3vw,44px) !important}
+  @media (min-width:1000px){.nowrap-d{white-space:nowrap}}
+  .hw-sec .s-head{max-width:none !important}
+
+  /* Fonctionnalités sans visuels */
+  .fc-card{padding-bottom:6px !important}
+  .fc-arrow{top:50% !important}
+
+  /* Changer de CRM : composition verticale */
+  .a-panel--v{display:flex !important;flex-direction:column;align-items:center;text-align:center;gap:0 !important}
+  .a-panel--v h2{margin:0;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:clamp(30px,3.4vw,48px);line-height:1.08;color:#fff}
+  .a-intro{margin:16px auto 0;max-width:62ch;font-size:17.5px;line-height:1.6;color:#E4DAFF}
+  .a-flow{list-style:none;margin:clamp(36px,4vw,52px) 0 0;padding:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative;text-align:left}
+  .a-flow::before{content:"";position:absolute;top:31px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,rgba(255,255,255,.15),rgba(255,255,255,.55),rgba(255,255,255,.15))}
+  .a-step{position:relative;padding:0 6px}
+  .a-step .a-num{position:relative;z-index:1;display:inline-flex !important;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:#fff !important;-webkit-background-clip:border-box !important;background-clip:border-box !important;color:#4329CF !important;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:22px !important;box-shadow:0 0 0 6px rgba(255,255,255,.14)}
+  .a-step h3{margin:18px 0 6px;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:19px;color:#fff}
+  .a-step p{margin:0;font-size:15px;font-weight:300;line-height:1.55;color:#E4DAFF}
+  .a-panel--v .a-cta{margin-top:clamp(34px,4vw,48px) !important}
+  @media (max-width:860px){
+    .a-flow{grid-template-columns:1fr !important;gap:22px;max-width:460px;margin-left:auto;margin-right:auto}
+    .a-flow::before{top:10px;bottom:10px;left:30px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.55),rgba(255,255,255,.15))}
+    .a-step{display:grid;grid-template-columns:62px 1fr;column-gap:16px;padding:0}
+    .a-step .a-num{grid-row:span 2}
+    .a-step h3{margin:6px 0 4px}
+  }
+
+  .fc{padding:0 34px}
+  .fc-arrow--prev{left:-4px !important}.fc-arrow--next{right:-4px !important}
+  .fc-arrow{transform:translateY(-50%) !important}
+  @media (max-width:760px){.fc{padding:0 22px}.fc-arrow--prev{left:-10px !important}.fc-arrow--next{right:-10px !important}}
+  .a-panel--v .m-cta{display:inline-flex !important;align-items:center;gap:16px !important;padding:9px 9px 9px 30px !important;background:#fff !important;color:#1E1060 !important;font-family:Jost,Futura,Helvetica,sans-serif !important;font-weight:500 !important;font-size:18px !important;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 24px 48px -18px rgba(10,4,40,.8) !important}
+  /* Bloc final → footer : espace réduit */
+  .s-final{padding-bottom:clamp(130px,12vw,170px) !important}
+
+  /* ================= V8m ================= */
+  .fc-head{margin:14px 10px 0 !important}
+  .fc-head h3{font-size:clamp(22px,1.9vw,25px) !important;line-height:1.2 !important}
+  .fc-ico{width:auto !important;height:auto !important;background:none !important;border-radius:0 !important;margin:auto 12px 6px auto;color:#7B4FF3 !important;opacity:.9}
+  .fc-more{margin-bottom:8px !important}
+
+  /* Frise : du 01 au 04, dégradé */
+  .a-flow::before{left:12.5% !important;right:12.5% !important;top:30px !important;height:4px !important;border-radius:2px;background:linear-gradient(90deg,#B39CFF 0%,#F0AEEA 50%,#FFBE98 100%) !important;box-shadow:0 0 18px rgba(240,174,234,.55)}
+  .a-step{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .a-step .a-num{background:linear-gradient(135deg,#fff,#fff) padding-box,linear-gradient(135deg,#B39CFF,#F0AEEA,#FFBE98) border-box !important;border:3px solid transparent;color:#4329CF !important}
+  .a-step:nth-child(1) .a-num{box-shadow:0 0 0 6px rgba(179,156,255,.25) !important}
+  .a-step:nth-child(2) .a-num{box-shadow:0 0 0 6px rgba(214,165,245,.25) !important}
+  .a-step:nth-child(3) .a-num{box-shadow:0 0 0 6px rgba(240,174,234,.25) !important}
+  .a-step:nth-child(4) .a-num{box-shadow:0 0 0 6px rgba(255,190,152,.3) !important}
+  .a-step p{max-width:26ch}
+  @media (max-width:860px){
+    .a-flow::before{left:30px !important;right:auto !important;top:30px !important;bottom:30px !important;width:4px !important;height:auto !important;background:linear-gradient(180deg,#B39CFF,#F0AEEA,#FFBE98) !important}
+    .a-step{display:grid !important;text-align:left;align-items:start;position:relative}
+    .a-flow::before{display:none !important}
+    .a-step:not(:last-child)::after{content:"";position:absolute;left:29px;top:62px;bottom:-22px;width:4px;border-radius:2px;background:linear-gradient(180deg,#B39CFF,#F0AEEA)}
+    .a-step:nth-child(2)::after{background:linear-gradient(180deg,#D6A5F5,#F0AEEA)}
+    .a-step:nth-child(3)::after{background:linear-gradient(180deg,#F0AEEA,#FFBE98)}
+  }
+
+  /* ================= Fonctionnalités : mosaïque ================= */
+  .bx-grid{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .bx-card{position:relative;display:flex;flex-direction:column;padding:26px;border-radius:24px;background:rgba(255,255,255,.97);box-shadow:0 30px 60px -40px rgba(10,4,40,.7);transition:transform .25s ease,box-shadow .25s ease;overflow:hidden}
+  .bx-card:hover{transform:translateY(-4px);box-shadow:0 40px 70px -40px rgba(10,4,40,.85)}
+  .bx-card::after{content:"";position:absolute;left:26px;right:26px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#9A7BFF,#F0AEEA,#FFBE98);opacity:0;transition:opacity .25s ease}
+  .bx-card:hover::after{opacity:1}
+  .bx-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .bx-ico{width:48px;height:48px;border-radius:15px;display:inline-flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 12px 24px -12px rgba(90,53,219,.7)}
+  .bx-ico--0{background:linear-gradient(135deg,#9A7BFF,#5A35DB)}
+  .bx-ico--1{background:linear-gradient(135deg,#C9A8FF,#8A47C0)}
+  .bx-ico--2{background:linear-gradient(135deg,#F0AEEA,#B44FD0)}
+  .bx-ico--3{background:linear-gradient(135deg,#FFBE98,#E0569E)}
+  .bx-ico--ia{background:linear-gradient(135deg,#FFA061,#E0569E 50%,#9B5CFF)}
+  .bx-num{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500;font-size:14px;letter-spacing:.14em;color:#C9BCEB}
+  .bx-card h3{margin:0;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,23px);line-height:1.2;color:#160A33}
+  .bx-line{margin:10px 0 0;font-size:15.5px;font-weight:500;line-height:1.45;color:#5A35DB}
+  .bx-desc{margin:10px 0 0;font-size:14.5px;font-weight:300;line-height:1.6;color:#4A3B70}
+  .bx-card--ia{grid-column:span 4;flex-direction:row;align-items:center;gap:clamp(24px,4vw,56px);padding:clamp(28px,3.4vw,40px);background:linear-gradient(120deg,rgba(255,255,255,.98),rgba(250,240,255,.98) 60%,rgba(255,238,228,.98))}
+  .bx-ia-text{flex:1;min-width:0}
+  .bx-card--ia h3{font-size:clamp(26px,2.6vw,34px)}
+  .bx-card--ia .bx-line{font-size:17px}
+  .bx-card--ia .bx-desc{font-size:15.5px;max-width:52ch}
+  .bx-badge{padding:5px 12px;border-radius:999px;background:linear-gradient(110deg,#FF8A5C,#C04FD0);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em}
+  .bx-chat{flex:0 0 min(46%,460px);display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:20px;background:#fff;border:1px solid rgba(101,34,232,.1);box-shadow:0 24px 50px -36px rgba(43,10,120,.6)}
+  .bx-me{margin:0 0 0 auto;max-width:86%;padding:10px 14px;border-radius:16px 16px 4px 16px;background:#160A33;color:#fff;font-size:13.5px;line-height:1.45;font-weight:500}
+  .bx-bot{margin:0;max-width:86%;display:flex;align-items:center;gap:9px;padding:10px 14px;border-radius:16px 16px 16px 4px;background:#F6F2FD;font-size:13.5px;font-weight:600;color:#2B1558}
+  .bx-bot span{flex:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#FF8A5C,#C04FD0);color:#fff;display:inline-flex;align-items:center;justify-content:center}
+  @media (max-width:1060px){.bx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bx-card--ia{grid-column:1/-1}}
+  @media (max-width:760px){.bx-card--ia{flex-direction:column;align-items:stretch}.bx-chat{flex:none}}
+  @media (max-width:560px){.bx-grid{grid-template-columns:1fr}.bx-card{padding:22px}}
+  @media (prefers-reduced-motion:reduce){.bx-card{transition:none}.bx-card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div style="background:#F7F4FF;color:#160A33;font-family:Poppins,Helvetica,Arial,sans-serif;font-weight:500;overflow-x:hidden">
+
+  <header class="m-head">
+    <a href="#" class="m-logo" aria-label="Maestro CRM by Nexxt Technologies, accueil"><img src="logos/maestro-crm.png" alt="Maestro CRM by Nexxt Technologies" class="m-logo-img"></a>
+    <nav class="m-nav" aria-label="Navigation principale">
+      <a href="#fonctionnalites" class="m-nav-pill"><i></i>Fonctionnalités<i></i></a>
+      <a href="#pourqui">Pour qui</a>
+      <a href="#pourquoi">Pourquoi Maestro</a>
+      <a href="#offres">Tarifs</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="m-head-cta" href="#contact">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+  </header>
+
+  <section class="m-hero">
+    <div class="m-hero-in">
+      <p class="m-eyebrow"><span></span>Le CRM simple des TPE et PME de conseil, de formation et de services</p>
+      <h1>Le CRM qui donne le <span class="m-grad">tempo</span><br class="m-br"> à votre activité commerciale.</h1>
+      <p class="m-sub">Prospects, clients, opportunités, relances, devis, suivi de missions et chiffre d’affaires : Maestro réunit toute votre activité commerciale au même endroit pour mieux suivre, mieux vendre et mieux piloter.</p>
+      <a class="m-cta" href="#contact">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+
+      <div class="m-frame" role="img" aria-label="Aperçu illustratif du tableau de bord Maestro, données d’exemple">
+        <div class="m-app">
+          <div class="m-app-bar">
+            <span class="m-app-logo"><svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true" style="flex:none;display:block"><path d="M33.93 5.83A47 47 0 0 1 95.60 38.63L76.74 53.76A27 27 0 0 0 50.94 23.02ZM96.29 58.16A47 47 0 0 1 37.05 95.18L33.38 71.28A27 27 0 0 0 72.90 64.31ZM19.79 86.00A47 47 0 0 1 17.35 16.19L39.89 24.97A27 27 0 0 0 26.16 62.68Z" fill="#7B4FF3"></path></svg>Maestro</span>
+            <span class="m-tabs">
+              <span class="m-tab-on">Tableau de bord</span>
+              <span>Contacts ⌄</span><span>Opportunités ⌄</span><span>Devis ⌄</span><span>Missions ⌄</span>
+            </span>
+            <span class="m-avatar">CL</span>
+          </div>
+          <div class="m-grid">
+            <div class="m-card m-hello">
+              <h3>Bonjour, Claire</h3>
+              <p>Votre activité commerciale avance bien ce mois-ci</p>
+              <div class="m-ring">
+                <svg viewBox="0 0 140 140" width="180" height="180">
+                  <circle cx="70" cy="70" r="58" fill="none" stroke="#EDE5FF" stroke-width="16"></circle>
+                  <circle cx="70" cy="70" r="58" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round" stroke-dasharray="262.4 364.4" transform="rotate(-90 70 70)"></circle>
+                  <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9A7BFF"></stop><stop offset="1" stop-color="#B44FD0"></stop></linearGradient></defs>
+                </svg>
+                <div><strong>72 %</strong><span>de l’objectif<br>trimestriel atteint</span></div>
+              </div>
+              <span class="m-float">Dupont Conseil · <b>12 k€</b><em>signé</em></span>
+            </div>
+            <div class="m-kpis">
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>Opportunités en cours</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>38</strong><span style="padding:3px 9px;border-radius:999px;background:#E9FBEF;color:#1E8A57;font-size:11px;font-weight:700;white-space:nowrap">En hausse</span></div>
+              <p>6 nouvelles opportunités créées cette semaine.</p>
+            </div>
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>CA signé</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>184 k€</strong><span style="padding:3px 9px;border-radius:999px;background:#FFF1D6;color:#A3620A;font-size:11px;font-weight:700;white-space:nowrap">Record</span></div>
+              <p>Meilleur trimestre depuis le lancement de l’activité.</p>
+            </div>
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>Relances du jour</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>7</strong><span style="padding:3px 9px;border-radius:999px;background:#FFE9E0;color:#C2410C;font-size:11px;font-weight:700;white-space:nowrap">3 en retard</span></div>
+              <p>Ne laissez plus dormir une opportunité.</p>
+            </div>
+              <div class="m-card m-kpi">
+              <div class="m-kpi-top"><span>Taux de transformation</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-kpi-val"><strong>32 %</strong><span style="padding:3px 9px;border-radius:999px;background:#EFE6FF;color:#5A35DB;font-size:11px;font-weight:700;white-space:nowrap">+4 pts</span></div>
+              <p>Calculé sur les devis envoyés ce trimestre.</p>
+            </div>
+            </div>
+            <div class="m-card m-pipe">
+              <div class="m-kpi-top"><span>Pipeline commercial</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <div class="m-bars">
+                <div><i style="height:62%"></i><span>Qualifié</span></div>
+                <div><i style="height:84%"></i><span>Proposition</span></div>
+                <div><i style="height:46%"></i><span>Négociation</span></div>
+                <div><i style="height:70%;background:linear-gradient(180deg,#A85BE0,#B44FD0)"></i><span>Signé</span></div>
+              </div>
+            </div>
+            <div class="m-card m-pipe">
+              <div class="m-kpi-top"><span>Prochaines actions</span><b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></b></div>
+              <ul class="m-todo">
+                <li><i></i>Relancer Forma+ Lyon<span>Aujourd’hui</span></li>
+                <li><i></i>Envoyer le devis Groupe Arvel<span>Demain</span></li>
+                <li><i></i>Kick-off mission Studio Kaya<span>Jeudi</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="m-note">Aperçu illustratif · données d’exemple</p>
+    </div>
+  </section>
+  <section class="lg-sec" aria-label="Ils nous font confiance">
+    <div class="lg-wrap">
+      <p class="lg-text">Ils nous font<br>confiance.</p>
+      <span class="lg-sep" aria-hidden="true"></span>
+      <div class="lg-viewport"><div class="lg-track"><div class="lg-set"><span class="lg-item"><img src="logos/grisbiche.svg" alt="Grisbiche" style="height:30px" loading="lazy"></span><span class="lg-item"><img src="logos/jai-le-lead.svg" alt="J’ai le lead" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/axioncom.png" alt="Axioncom" style="height:46px" loading="lazy"></span><span class="lg-item"><img src="logos/safe-hospitality.png" alt="Safe Hospitality" style="height:40px" loading="lazy"></span><span class="lg-item"><img src="logos/the-originals-expert.png" alt="The Originals Expert" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/insaho.png" alt="Insaho" style="height:40px" loading="lazy"></span></div><div class="lg-set" aria-hidden="true"><span class="lg-item"><img src="logos/grisbiche.svg" alt="" data-alt="Grisbiche" style="height:30px" loading="lazy"></span><span class="lg-item"><img src="logos/jai-le-lead.svg" alt="" data-alt="J’ai le lead" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/axioncom.png" alt="" data-alt="Axioncom" style="height:46px" loading="lazy"></span><span class="lg-item"><img src="logos/safe-hospitality.png" alt="" data-alt="Safe Hospitality" style="height:40px" loading="lazy"></span><span class="lg-item"><img src="logos/the-originals-expert.png" alt="" data-alt="The Originals Expert" style="height:36px" loading="lazy"></span><span class="lg-item"><img src="logos/insaho.png" alt="" data-alt="Insaho" style="height:40px" loading="lazy"></span></div></div></div>
+    </div>
+  </section>
+  <section class="s-sec s-white" id="video">
+    <div class="s-wrap s-split">
+      <div>
+        <h2 class="s-h2">Maestro en <span class="s-grad">45 secondes.</span></h2>
+        <p class="s-lead">Découvrez comment centraliser votre activité commerciale et garder une vision claire de vos affaires.</p>
+        <div class="s-flow"><span class="s-pill">Un prospect</span><i aria-hidden="true">→</i><span class="s-pill">une opportunité</span><i aria-hidden="true">→</i><span class="s-pill">un devis</span><i aria-hidden="true">→</i><span class="s-pill">une relance</span><i aria-hidden="true">→</i><span class="s-pill">une vente</span><i aria-hidden="true">→</i><span class="s-pill s-pill--on">une mission suivie jusqu’au bout</span></div>
+        <a class="s-btn-dark" href="#contact" style="margin-top:30px">Je veux voir Maestro sur mon activité <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="s-frame">
+        <div class="s-video" role="img" aria-label="Emplacement de la vidéo de démonstration">
+          <span class="s-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="#5A35DB" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></span>
+          <span class="s-video-label">Vidéo démo · 45 s</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="s-sec s-white pb-sec">
+    <div class="s-wrap">
+      <div class="s-head s-head--wide"><h2 class="s-h2 one-line">Pas de CRM, ou un CRM que <span class="s-grad">personne n’ouvre</span>&nbsp;?</h2></div>
+      <div class="pb-split">
+      <div class="pb-stack">
+        <article class="s-card">
+          <span class="pb-tag">Sans CRM</span>
+          <h3>Votre activité commerciale est éparpillée&nbsp;?</h3>
+          <ul class="pb-list"><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les prospects dans Excel.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les échanges dans les mails.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les relances dans l’agenda.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Les devis dans différents dossiers.</li></ul>
+        </article>
+        <article class="s-card">
+          <span class="pb-tag">Avec un CRM inadapté</span>
+          <h3>Vous avez déjà un CRM, mais il est devenu…</h3>
+          <ul class="pb-list"><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Trop complexe à utiliser au quotidien.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Un outil que votre équipe n’utilise pas vraiment.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Un outil de saisie plus qu’un outil de pilotage.</li><li><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>Une base de données à retraiter avant de pouvoir s’en servir.</li></ul>
+        </article>
+      </div>
+      <div class="pb-arrow" aria-hidden="true"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+      <div class="rs-box">
+        <h3>Résultat&nbsp;:</h3>
+        <div class="rs-items">
+          <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3 2"></path></svg></span><p>Des relances qui passent à la trappe.</p></div>
+          <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5c1.6 0 3 .4 4.3 1M21.5 12s-1.2 2.2-3.5 4"></path><path d="M3 3l18 18"></path></svg></span><p>Des opportunités qu’on perd de vue.</p></div>
+          <div class="rs-item"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"></path></svg></span><p>Du temps passé à gérer l’outil plutôt qu’à développer son activité.</p></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="sc-band">
+    <div class="sc-in">
+      <h2>C’est là que Maestro <span>entre en scène.</span></h2>
+      <p class="sc-line">Le CRM qui vous aide à centraliser et maîtriser votre activité commerciale de A&nbsp;à&nbsp;Z.</p>
+      <a class="m-cta sc-cta" href="#fonctionnalites">Voir comment<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
+  </section>
+  <section class="s-sec s-white hw-sec">
+    <div class="s-wrap">
+      <div class="s-head"><h2 class="s-h2"><span class="nowrap-d">Tout votre commerce au même endroit,</span><br><span class="s-grad">dans notre CRM.</span></h2><p class="s-lead">Avec Maestro, vous savez où vous en êtes. Et quoi faire ensuite.</p></div>
+      <div class="hw-grid">
+      <div class="hw-left">
+        <div class="hw-steps" role="group" aria-label="Ce que Maestro change">
+          <button type="button" class="hw-step is-on" data-hw="0" aria-pressed="true">
+            <span class="hw-ico hw-i1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16.5 7.5h4.5M16.5 11h4.5"></path></svg></span>
+            <span class="hw-txt"><b>Centralisez.</b><span>Prospects, clients, contacts, opportunités, devis, documents et informations commerciales au même endroit.</span></span>
+          </button>
+          <button type="button" class="hw-step" data-hw="1" aria-pressed="false">
+            <span class="hw-ico hw-i2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.2V12l3.2 2"></path></svg></span>
+            <span class="hw-txt"><b>Suivez.</b><span>Vos actions, vos échéances et vos relances pour ne plus laisser dormir une opportunité.</span></span>
+          </button>
+          <button type="button" class="hw-step" data-hw="2" aria-pressed="false">
+            <span class="hw-ico hw-i3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.4"></rect><rect x="9.75" y="4" width="4.5" height="11" rx="1.4"></rect><rect x="16.5" y="4" width="4.5" height="7" rx="1.4"></rect></svg></span>
+            <span class="hw-txt"><b>Vendez.</b><span>Gardez une vision claire de votre pipeline commercial et des affaires qui avancent.</span></span>
+          </button>
+          <button type="button" class="hw-step" data-hw="3" aria-pressed="false">
+            <span class="hw-ico hw-i4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path></svg></span>
+            <span class="hw-txt"><b>Pilotez.</b><span>Votre chiffre d’affaires, votre potentiel et vos actions prioritaires en un coup d’œil, grâce au dashboard Maestro.</span></span>
+          </button>
+        </div>
+      </div>
+      <div class="hw-frame">
+        <div class="hw-frame-in">
+          <div class="hw-panel" data-hw-panel="0">
+            <div class="hw-card">
+              <div class="hw-card-top"><span class="hw-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path></svg></span><b>Fiche client</b><span class="hw-card-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+              <div class="hw-client">
+                <div class="hw-client-top"><span class="hw-av">DC</span><div><b>Dupont Conseil</b><small>Cabinet de conseil · Lyon</small></div><em class="hw-pill hw-pill--ok">Client</em></div>
+                <div class="hw-kpis"><span><b>3</b>contacts</span><span><b>2</b>devis</span><span><b>1</b>mission</span></div>
+                <div class="hw-line"><span>Dernier échange</span><b>il y a 2 jours</b></div>
+                <div class="hw-line"><span>Prochaine action</span><b>Relance jeudi</b></div>
+              </div>
+            </div>
+          </div>
+          <div class="hw-panel" hidden data-hw-panel="1">
+            <div class="hw-card">
+              <div class="hw-card-top"><span class="hw-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.2V12l3.2 2"></path></svg></span><b>Relances du jour</b><span class="hw-card-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+              <div class="hw-todo">
+                <div><i></i><b>Relancer Forma+ Lyon</b><em class="hw-pill hw-pill--hot">Aujourd’hui</em></div>
+                <div><i></i><b>Envoyer le devis Groupe Arvel</b><em class="hw-pill">Demain</em></div>
+                <div><i></i><b>Point d’étape Cabinet Lemoine</b><em class="hw-pill">Jeudi</em></div>
+                <div class="is-done"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></i><b>Appel découverte Studio Kaya</b><em class="hw-pill hw-pill--ok">Fait</em></div>
+              </div>
+            </div>
+          </div>
+          <div class="hw-panel" hidden data-hw-panel="2">
+            <div class="hw-card">
+              <div class="hw-card-top"><span class="hw-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.4"></rect><rect x="9.75" y="4" width="4.5" height="11" rx="1.4"></rect><rect x="16.5" y="4" width="4.5" height="7" rx="1.4"></rect></svg></span><b>Pipeline commercial</b><span class="hw-card-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+              <div class="hw-donut-wrap">
+                <div class="hw-donut" style="background:conic-gradient(#B39CFF 0.0deg 57.1deg, #7B4FF3 57.1deg 141.5deg, #F0AEEA 141.5deg 260.7deg, #FFBE98 260.7deg 360.0deg)"><span><b>145 k€</b><small>en cours</small></span></div>
+                <ul class="hw-legend"><li><i style="background:#B39CFF"></i><span><b>Qualifié</b><small>16 % · 23 k€</small></span></li><li><i style="background:#7B4FF3"></i><span><b>Proposition</b><small>23 % · 34 k€</small></span></li><li><i style="background:#F0AEEA"></i><span><b>Négociation</b><small>33 % · 48 k€</small></span></li><li><i style="background:#FFBE98"></i><span><b>Signé</b><small>28 % · 40 k€</small></span></li></ul>
+              </div>
+            </div>
+          </div>
+          <div class="hw-panel" hidden data-hw-panel="3">
+            <div class="hw-card">
+              <div class="hw-card-top"><span class="hw-card-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path></svg></span><b>Pilotage</b><span class="hw-card-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+              <div class="hw-pilot">
+                <div class="hw-gauge">
+                  <svg viewBox="0 0 200 112" width="200" height="112" aria-hidden="true">
+                    <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#EDE5FF" stroke-width="18" stroke-linecap="round"></path>
+                    <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="url(#hwg)" stroke-width="18" stroke-linecap="round" stroke-dasharray="181 251.3"></path>
+                    <defs><linearGradient id="hwg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7B4FF3"></stop><stop offset=".75" stop-color="#C04FD0"></stop><stop offset="1" stop-color="#FF8A5C"></stop></linearGradient></defs>
+                  </svg>
+                  <div><b>72 %</b><small>de l’objectif trimestriel</small></div>
+                </div>
+                <div class="hw-kpis"><span><b>184 k€</b>CA signé</span><span><b>412 k€</b>pipeline</span><span><b>7</b>actions</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="hw-claim">Une seule vue pour décider.<br>Une seule vision pour avancer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <section id="fonctionnalites" style="padding:clamp(64px,7vw,104px) 24px;background:#fff" class="ft-sec">
+    <div style="max-width:1240px;margin:0 auto">
+      <h2 style="margin:0;max-width:30ch;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.02;letter-spacing:-.04em">Les fonctionnalités du <span style="background:linear-gradient(110deg,#7B4FF3,#B44FD0);-webkit-background-clip:text;background-clip:text;color:transparent">CRM Maestro</span></h2>
+      <p style="margin:16px 0 0;font-size:18px;font-weight:600;color:#3B2168">Découvrez votre <span style="color:#7B4FF3">cockpit commercial</span>. Tout ce dont vous avez besoin pour vendre, suivre et piloter.</p>
+
+      <div class="bx-grid">
+        <article class="bx-card bx-card--ia">
+          <div class="bx-ia-text">
+            <div class="bx-top"><span class="bx-ico bx-ico--ia"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span></div>
+            <h3>Intelligence augmentée</h3>
+            <p class="bx-line">Votre CRM qui vous fait gagner du temps.</p>
+            <p class="bx-desc">Pilotez Maestro avec l’IA. Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité commerciale en quelques secondes.</p>
+          </div>
+          <div class="bx-chat" aria-hidden="true">
+            <p class="bx-me">Crée une opportunité de 12 k€ pour Dupont Conseil, relance jeudi.</p>
+            <p class="bx-bot"><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>Opportunité créée · relance jeudi</p>
+            <p class="bx-me bx-me--2">Quel est mon CA signé ce trimestre&nbsp;?</p>
+            <p class="bx-bot"><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>184 k€, soit 72 % de l’objectif</p>
+          </div>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16.5 7.5h4.5M16.5 11h4.5"></path></svg></span><span class="bx-num">01</span></div>
+          <h3>CRM commercial</h3>
+          <p class="bx-line">Votre activité commerciale, au même endroit.</p>
+          <p class="bx-desc">Prospects, clients, contacts, historique des échanges.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.4"></rect><rect x="9.75" y="4" width="4.5" height="11" rx="1.4"></rect><rect x="16.5" y="4" width="4.5" height="7" rx="1.4"></rect></svg></span><span class="bx-num">02</span></div>
+          <h3>Gestion des opportunités</h3>
+          <p class="bx-line">Votre pipeline, toujours à jour.</p>
+          <p class="bx-desc">Pipeline, étapes, montant, responsable, échéances.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.2V12l3.2 2"></path></svg></span><span class="bx-num">03</span></div>
+          <h3>Actions commerciales</h3>
+          <p class="bx-line">Votre prochaine action, toujours visible.</p>
+          <p class="bx-desc">Relances, prochaines étapes et suivi de l’activité.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8.5L19 7.5V21H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 16.5h4"></path></svg></span><span class="bx-num">04</span></div>
+          <h3>Devis &amp; facturation</h3>
+          <p class="bx-line">Vos devis suivis jusqu’à la signature.</p>
+          <p class="bx-desc">Suivi commercial jusqu’à la contractualisation.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5h17v12h-17z"></path><path d="M8.5 7.5V5.2c0-.7.6-1.2 1.3-1.2h4.4c.7 0 1.3.5 1.3 1.2v2.3"></path><path d="M3.5 12.5h17"></path></svg></span><span class="bx-num">05</span></div>
+          <h3>Gestion des affaires &amp; mode projet</h3>
+          <p class="bx-line">Vos missions suivies jusqu’à la livraison.</p>
+          <p class="bx-desc">Suivi de la production de la mission après signature.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path></svg></span><span class="bx-num">06</span></div>
+          <h3>Dashboard &amp; pilotage</h3>
+          <p class="bx-line">Vos chiffres de pilotage en un coup d’œil.</p>
+          <p class="bx-desc">CA réalisé, potentiel, prévisionnel, activité commerciale.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5c2.2 2.4 3.4 5.4 3.4 8.5S14.2 18.1 12 20.5c-2.2-2.4-3.4-5.4-3.4-8.5S9.8 5.9 12 3.5z"></path></svg></span><span class="bx-num">07</span></div>
+          <h3>Multi-BU / Multi-sites</h3>
+          <p class="bx-line">Votre vision d’ensemble, activité par activité.</p>
+          <p class="bx-desc">Plusieurs équipes, sites ou Business Units&nbsp;? Une vision globale avec un pilotage par activité.</p>
+        </article>
+        <article class="bx-card">
+          <div class="bx-top"><span class="bx-ico bx-ico--0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l-2.2 2.2a3.5 3.5 0 01-5-5L4 10"></path><path d="M15 9l2.2-2.2a3.5 3.5 0 015 5L20 14"></path><path d="M9.5 14.5l5-5"></path></svg></span><span class="bx-num">08</span></div>
+          <h3>Connectivité</h3>
+          <p class="bx-line">Vos outils qui se parlent enfin.</p>
+          <p class="bx-desc">Connexion possible avec vos outils métier.</p>
+        </article>
+      </div>
+      <div style="margin-top:clamp(32px,4vw,48px);padding:clamp(18px,2.2vw,26px);border-radius:26px;background:#F7F4FF">
+        <div style="position:relative;border-radius:18px;background:#fff;padding:10px;box-shadow:0 30px 60px -44px rgba(43,10,120,.7)">
+          <div style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background-color:#F4EEFF;background-image:repeating-linear-gradient(135deg,rgba(101,34,232,.07) 0 2px,transparent 2px 12px);display:flex;align-items:center;justify-content:center">
+            <span style="font-weight:700;font-size:12px;letter-spacing:.14em;color:#8A76B8;text-align:center;padding:0 24px"><span data-bind="shotPlaceholder"></span></span>
+            <span style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;background:rgba(22,10,51,.9);color:#fff;font-weight:700;font-size:13px;letter-spacing:-.01em"><span style="color:#C9A8FF;font-size:11px"><span data-bind="shotNum"></span></span><span data-bind="shotLabel"></span></span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 6px 4px">
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <div id="mae-shots" style="display:contents"></div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="hv4" type="button" data-action="prev" aria-label="Visuel précédent" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(101,34,232,.25);background:#fff;color:#5A35DB;font-weight:800;font-size:15px;cursor:pointer">←</button>
+              <button class="hv5" type="button" data-action="next" aria-label="Visuel suivant" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(101,34,232,.25);background:#fff;color:#5A35DB;font-weight:800;font-size:15px;cursor:pointer">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section id="pourqui" style="padding:clamp(64px,7vw,104px) max(20px,3vw);background:#fff">
+    <div style="max-width:1240px;margin:0 auto">
+      <div class="pq-head">
+        <h2 style="margin:0;font-weight:800;font-size:clamp(30px,3.4vw,48px);line-height:1.02;letter-spacing:-.04em;font-size:clamp(28px,3vw,42px);line-height:1.1">Un CRM pour les cabinets de conseil, les organismes de formation et les <span style="color:#7B4FF3">PME de services</span></h2>
+        <p style="margin:0;font-size:19px;font-weight:600;line-height:1.5;color:#3B2168">Maestro est fait pour vous si vous vous reconnaissez dans l’un de ces profils.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px;align-items:stretch;grid-auto-rows:1fr;margin-top:clamp(32px,4vw,48px)">
+        <details class="feat" style="padding:26px;border-radius:20px;background:#F6F2FD;border:1px solid rgba(101,34,232,.06)">
+          <summary style="display:block;cursor:pointer;list-style:none">
+            <span style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:#F1EAFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B4FF3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5h17v12h-17z"></path><path d="M8.5 7.5V5.2c0-.7.6-1.2 1.3-1.2h4.4c.7 0 1.3.5 1.3 1.2v2.3"></path><path d="M3.5 12.5h17"></path></svg></span><span class="feat-title" style="display:block;margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Société de conseil ou de formation</span><span style="margin-left:auto;flex:none"><span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5A35DB;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></span></span>
+            <span style="display:block;margin-top:16px;font-size:16px;font-weight:500;line-height:1.55;color:#160A33">Vous gérez plusieurs clients, missions, appels d’offres ou projets&nbsp;?</span>
+          </summary>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous accompagne de la première prise de contact jusqu’au suivi de production de l’affaire.</p>
+        </details>
+        <details class="feat" style="padding:26px;border-radius:20px;background:#F6F2FD;border:1px solid rgba(101,34,232,.06)">
+          <summary style="display:block;cursor:pointer;list-style:none">
+            <span style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:#F1EAFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B4FF3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3"></circle><circle cx="16.5" cy="9.5" r="2.4"></circle><path d="M3 18.5c0-2.6 2.5-4.5 5.5-4.5s5.5 1.9 5.5 4.5"></path><path d="M15 14.2c2.6.2 4.5 1.9 4.5 4.3"></path></svg></span><span class="feat-title" style="display:block;margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">PME de services</span><span style="margin-left:auto;flex:none"><span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5A35DB;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></span></span>
+            <span style="display:block;margin-top:16px;font-size:16px;font-weight:500;line-height:1.55;color:#160A33">Plusieurs collaborateurs participent au développement commercial&nbsp;?</span>
+          </summary>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous permet de partager une même information, suivre les opportunités et piloter votre activité avec une vision commune.</p>
+        </details>
+        <details class="feat" style="padding:26px;border-radius:20px;background:#F6F2FD;border:1px solid rgba(101,34,232,.06)">
+          <summary style="display:block;cursor:pointer;list-style:none">
+            <span style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:#F1EAFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B4FF3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path><path d="M14.5 7h4v4"></path></svg></span><span class="feat-title" style="display:block;margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">TPE en croissance</span><span style="margin-left:auto;flex:none"><span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5A35DB;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></span></span>
+            <span style="display:block;margin-top:16px;font-size:16px;font-weight:500;line-height:1.55;color:#160A33">Votre suivi commercial repose encore sur Excel, les mails ou la mémoire de chacun&nbsp;?</span>
+          </summary>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous aide à structurer votre commerce sans l’alourdir.</p>
+        </details>
+        <details class="feat" style="padding:26px;border-radius:20px;background:#F6F2FD;border:1px solid rgba(101,34,232,.06)">
+          <summary style="display:block;cursor:pointer;list-style:none">
+            <span style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:#F1EAFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B4FF3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"></path></svg></span><span class="feat-title" style="display:block;margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Indépendant, consultant ou formateur</span><span style="margin-left:auto;flex:none"><span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5A35DB;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></span></span>
+            <span style="display:block;margin-top:16px;font-size:16px;font-weight:500;line-height:1.55;color:#160A33">Vous voulez professionnaliser votre suivi sans passer sur un outil complexe&nbsp;?</span>
+          </summary>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous aide à structurer simplement vos prospects, clients et opportunités.</p>
+        </details>
+        <details class="feat" style="padding:26px;border-radius:20px;background:#F6F2FD;border:1px solid rgba(101,34,232,.06)">
+          <summary style="display:block;cursor:pointer;list-style:none">
+            <span style="display:flex;align-items:center;gap:14px"><span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:#F1EAFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B4FF3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5c2.2 2.4 3.4 5.4 3.4 8.5S14.2 18.1 12 20.5c-2.2-2.4-3.4-5.4-3.4-8.5S9.8 5.9 12 3.5z"></path></svg></span><span class="feat-title" style="display:block;margin:0;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.025em;color:#160A33">Multi-sites ou multi-BU</span><span style="margin-left:auto;flex:none"><span class="feat-arrow" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#EFE6FF;color:#5A35DB;transition:transform .2s ease,background .2s ease,color .2s ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></span></span>
+            <span style="display:block;margin-top:16px;font-size:16px;font-weight:500;line-height:1.55;color:#160A33">Plusieurs activités, entités ou équipes commerciales&nbsp;?</span>
+          </summary>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(101,34,232,.12);font-size:16px;font-weight:500;line-height:1.6;color:#3F2E66">Maestro vous permet de garder une vision consolidée tout en suivant chaque activité séparément.</p>
+        </details>
+        <div class="s-soft-panel" style="display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding:26px;border-radius:20px">
+          <div>
+            <h3 style="margin:0;font-weight:800;font-size:22px;line-height:1.1;letter-spacing:-.035em;color:#160A33">Vous vous reconnaissez&nbsp;?</h3>
+            <p style="margin:8px 0 0;font-size:14.5px;font-weight:500;line-height:1.6;color:#3B2168">Il existe une formule Maestro adaptée à la taille et à l’organisation de votre structure.</p>
+          </div>
+          <a class="s-btn-dark" href="#offres" style="align-self:flex-start">Découvrir nos formules <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="pourquoi" class="w-sec">
+    <div class="w-wrap wy-wrap">
+      <div class="wy-left">
+        <h2 class="wy-title">Pourquoi choisir le <span>CRM Maestro</span>&nbsp;?</h2>
+        <a class="m-cta wy-cta" href="#contact">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+      </div>
+      <div class="wy-list">
+        <details class="wy-item">
+          <summary><span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path></svg></span><h3>Maestro se comprend <em class="wy-hl">tout de suite</em>.</h3><span class="wy-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+          <p>Vous ouvrez Maestro, vous comprenez, vous agissez. Simple à comprendre, simple à utiliser, simple à piloter.</p>
+        </details>
+        <details class="wy-item">
+          <summary><span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5h16"></path><path d="M5.5 16V10M10.5 16V6M15.5 16v-4M20 16V8"></path></svg></span><h3>Maestro <em class="wy-hl">grandit avec vous</em>.</h3><span class="wy-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+          <p>Devis, facturation, plusieurs sites ou équipes : quand votre activité se développe, l’outil suit.</p>
+        </details>
+        <details class="wy-item">
+          <summary><span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>Maestro continue <em class="wy-hl">après la signature</em>.</h3><span class="wy-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+          <p>La plupart des CRM s’arrêtent au devis signé. Maestro suit aussi la production de la mission, jusqu’à la livraison.</p>
+        </details>
+        <details class="wy-item">
+          <summary><span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><h3>Maestro se pilote <em class="wy-hl">avec l’IA</em>.</h3><span class="wy-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+          <p>Avec Claude ou ChatGPT, créez une fiche client, une opportunité, préparez un devis ou analysez votre activité en quelques secondes.</p>
+        </details>
+        <details class="wy-item">
+          <summary><span class="wy-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3"></circle><circle cx="16.5" cy="9.5" r="2.4"></circle><path d="M3 18.5c0-2.6 2.5-4.5 5.5-4.5s5.5 1.9 5.5 4.5"></path><path d="M15 14.2c2.6.2 4.5 1.9 4.5 4.3"></path></svg></span><h3>Maestro ne vous laisse <em class="wy-hl">jamais seul</em>.</h3><span class="wy-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></summary>
+          <p>On configure l’outil avec vous, on importe vos données et on forme votre équipe.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="s-sec">
+    <div class="s-wrap">
+      <div class="s-head"><h2 class="s-h2">Ils ont pris le <span class="s-grad">rythme</span>.</h2></div>
+      <div class="t-grid">
+        <figure class="t-card">
+          <div class="t-top"><span class="t-q" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6.5A2.5 2.5 0 004 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C9.7 19 11 16.5 11 13V8a1 1 0 00-1-1zm9 0h-3.5A2.5 2.5 0 0013 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C18.7 19 20 16.5 20 13V8a1 1 0 00-1-1z"></path></svg></span><span class="t-tag">Suivi des actions commerciales</span></div>
+          <blockquote>« Avant, mes relances vivaient dans mon agenda et dans ma tête. J’en oubliais régulièrement. Avec Maestro, je vois chaque matin mes actions du jour : je relance au bon moment et plus rien ne passe à la trappe. »</blockquote>
+          <figcaption><span class="t-av">CL</span><span><b>Claire Lemaire</b><small>Dirigeante, cabinet de conseil</small></span></figcaption>
+        </figure>
+        <figure class="t-card">
+          <div class="t-top"><span class="t-q" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6.5A2.5 2.5 0 004 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C9.7 19 11 16.5 11 13V8a1 1 0 00-1-1zm9 0h-3.5A2.5 2.5 0 0013 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C18.7 19 20 16.5 20 13V8a1 1 0 00-1-1z"></path></svg></span><span class="t-tag">Animation de la base clients</span></div>
+          <blockquote>« Notre fichier prospects était un Excel que plus personne n’ouvrait. Aujourd’hui, nos contacts sont segmentés et l’équipe sait qui relancer, quand et pourquoi. Notre base est redevenue une source d’affaires. »</blockquote>
+          <figcaption><span class="t-av">TM</span><span><b>Thomas Morel</b><small>Responsable commercial, organisme de formation</small></span></figcaption>
+        </figure>
+        <figure class="t-card">
+          <div class="t-top"><span class="t-q" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6.5A2.5 2.5 0 004 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C9.7 19 11 16.5 11 13V8a1 1 0 00-1-1zm9 0h-3.5A2.5 2.5 0 0013 9.5V13a2 2 0 002 2h2.2c-.3 1.6-1.2 2.6-2.7 3.2l.8 1.8C18.7 19 20 16.5 20 13V8a1 1 0 00-1-1z"></path></svg></span><span class="t-tag">Pilotage du chiffre d’affaires</span></div>
+          <blockquote>« Je reconstituais mon chiffre d’affaires à la main chaque fin de mois. Maintenant, j’ouvre le tableau de bord : CA signé, pipeline, prévisionnel. Je sais où on va atterrir et je décide plus vite. »</blockquote>
+          <figcaption><span class="t-av">SA</span><span><b>Sophie Arnaud</b><small>Gérante, PME de services</small></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="s-sec s-white" id="offres">
+    <div class="s-wrap">
+      <div class="s-head">
+        <h2 class="s-h2">Les tarifs du <span style="color:#7B4FF3">CRM Maestro</span></h2>
+        <p class="s-lead">Maestro s’adapte à votre activité.</p>
+      </div>
+      <div class="o-grid">
+        <div class="o-plan">
+          <div class="o-top"><small>Maestro</small></div>
+          <h3>Essentiel</h3>
+          <div class="o-amount"><b>99&nbsp;€</b><span>HT / mois</span></div>
+          <div class="o-users"><span class="o-users-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 11h5M18.5 8.5v5"></path></svg></span><div><strong>2 utilisateurs maximum</strong></div></div>
+          <hr>
+          <strong>Structurer son activité commerciale.</strong>
+          <p>Pour les petites structures qui souhaitent centraliser leur suivi.</p>
+          <a class="s-btn-ghost" href="#contact">Demander une démo</a>
+        </div>
+        <div class="o-plan o-plan--feat">
+          <div class="o-top"><small>Maestro</small><span class="o-badge">La plus choisie</span></div>
+          <h3>Business</h3>
+          <div class="o-amount"><b>139&nbsp;€</b><span>HT / mois</span></div>
+          <div class="o-users"><span class="o-users-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 11h5M18.5 8.5v5"></path></svg></span><div><strong>Jusqu’à 8 utilisateurs</strong><small>+ 10 € HT par utilisateur supplémentaire</small></div></div>
+          <hr>
+          <strong>Développer ses ventes en équipe.</strong>
+          <p>Pour les TPE/PME qui souhaitent partager l’information et suivre leurs opportunités.</p>
+          <a class="s-btn-cta" href="#contact">Demander une démo <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="o-plan">
+          <div class="o-top"><small>Maestro</small></div>
+          <h3>Groupe</h3>
+          <div class="o-amount"><b>159&nbsp;€</b><span>HT / mois</span></div>
+          <div class="o-users"><span class="o-users-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 11h5M18.5 8.5v5"></path></svg></span><div><strong>Jusqu’à 15 utilisateurs</strong><small>+ 10 € HT par utilisateur supplémentaire</small></div></div>
+          <hr>
+          <strong>Prendre de la hauteur.</strong>
+          <p>Pour les organisations multi-activités, multi-sites ou multi-BU.</p>
+          <a class="s-btn-ghost" href="#contact">Demander une démo</a>
+        </div>
+      </div>
+      <p class="o-note"><span>Accompagnement au démarrage inclus dans toutes les offres</span></p>
+    </div>
+  </section>
+  <section class="a-sec">
+    <div class="a-panel a-panel--v">
+      <h2>Changer de CRM n’a jamais été aussi simple.</h2>
+      <p class="a-intro">Avec Maestro, vous n’êtes pas seul face au CRM. Nous vous accompagnons pour configurer l’outil, former vos équipes et installer les bons réflexes commerciaux.</p>
+      <ol class="a-flow">
+          <li class="a-step">
+            <span class="a-num">01</span>
+            <h3>On vous écoute.</h3>
+            <p>Votre activité, votre organisation, votre façon de vendre.</p>
+          </li>
+          <li class="a-step">
+            <span class="a-num">02</span>
+            <h3>On prépare votre Maestro.</h3>
+            <p>Configuration selon vos besoins et import de vos données (Excel ou ancien CRM).</p>
+          </li>
+          <li class="a-step">
+            <span class="a-num">03</span>
+            <h3>On vous forme.</h3>
+            <p>Pour que chacun prenne en main l’outil et l’utilise vraiment au quotidien.</p>
+          </li>
+          <li class="a-step">
+            <span class="a-num">04</span>
+            <h3>Vous prenez la main.</h3>
+            <p>Pilotez votre activité commerciale dans un environnement clair et structuré. À vous de jouer.</p>
+          </li>
+      </ol>
+      <a href="#contact" class="m-cta a-cta">Demander une démo<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
+  </section>
+  <section class="s-sec s-white" id="faq">
+    <div class="s-wrap">
+      <div class="s-head"><h2 class="s-h2">Vos questions sur le <span class="s-grad">CRM Maestro</span></h2></div>
+      <div class="f-grid">
+        <div class="f-col"><details class="f-item" open><summary>Combien coûte le CRM Maestro&nbsp;? Y a-t-il un engagement&nbsp;?<i aria-hidden="true"></i></summary><p>Maestro est accessible à partir de 79&nbsp;€&nbsp;HT par mois, avec un engagement d’un an. Le tarif dépend de la formule choisie et du nombre d’utilisateurs.</p></details><details class="f-item"><summary>Est-ce compliqué de passer d’Excel à un CRM&nbsp;? Mes contacts peuvent-ils être importés&nbsp;?<i aria-hidden="true"></i></summary><p>Non, Maestro est très facile à utiliser et tout est paramétrable selon votre façon de travailler. Et oui, vos contacts peuvent être importés depuis Excel ou depuis votre ancien CRM.</p></details><details class="f-item"><summary>Combien de temps faut-il pour prendre Maestro en main&nbsp;?<i aria-hidden="true"></i></summary><p>Une demi-journée de formation suffit pour prendre Maestro en main.</p></details><details class="f-item"><summary>Peut-on travailler à plusieurs dans Maestro&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Plusieurs accès sont possibles, pour que toute votre équipe partage la même information.</p></details></div>
+        <div class="f-col"><details class="f-item"><summary>Puis-je gérer plusieurs activités, sites ou entités&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro gère le multi-propriétés et la segmentation par Business Unit : vous gardez une vision consolidée tout en pilotant chaque activité séparément.</p></details><details class="f-item"><summary>Où sont hébergées mes données&nbsp;? Maestro est-il conforme au RGPD&nbsp;?<i aria-hidden="true"></i></summary><p>Vos données sont hébergées en France par Scaleway (application et base de données), avec des sauvegardes chiffrées dans l’Union européenne. Les fichiers sont stockés dans l’Union européenne. Maestro respecte le RGPD : les données que vous enregistrez sont traitées uniquement pour votre compte, jamais revendues ni utilisées pour entraîner des modèles d’IA. Le détail figure dans notre <a href="politique-confidentialite.html">politique de confidentialité</a> et notre <a href="dpa.html">accord de traitement des données</a>.</p></details><details class="f-item"><summary>Comment fonctionne l’IA&nbsp;?<i aria-hidden="true"></i></summary><p>Maestro intègre une IA pour vous assister au quotidien. Pour aller plus loin, Maestro se connecte à Claude et à ChatGPT : vous pilotez alors l’intégralité de votre CRM en langage naturel, de la création d’une fiche client à l’analyse de votre activité.</p></details><details class="f-item"><summary>Maestro peut-il se connecter à mes autres outils métier&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Maestro se connecte, avec votre propre compte, à : Microsoft&nbsp;365 (Outlook, Teams) pour vos e-mails, votre agenda et vos transcriptions de réunions ; Google et Google Drive ; Dropbox ; Pennylane pour la synchronisation comptable ; Mailjet pour vos campagnes d’e-mailing ; votre serveur de messagerie (SMTP, IMAP) ; votre agenda CalDAV (iCloud, Fastmail, Nextcloud…) ; ainsi qu’à votre propre fournisseur d’IA ou à un assistant IA comme Claude ou ChatGPT.</p></details></div>
+      </div>
+    </div>
+  </section>
+  <section class="s-final" id="demo">
+    <div class="s-final-in">
+      <h2 class="s-h2">Prêt à reprendre la main sur votre <span class="s-grad">activité commerciale</span>&nbsp;?</h2>
+      <p class="s-lead">En 30 minutes, on vous montre Maestro sur vos propres affaires.</p>
+      <div class="s-final-actions">
+        <a class="m-cta" href="#contact" style="margin-top:0">Demander ma démo Maestro<span class="cta-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+        <a class="s-btn-ghost" href="#offres">Voir les offres</a>
+      </div>
+    </div>
+  </section>
+  <footer class="s-foot">
+    <div class="s-foot-in">
+      <div class="s-foot-grid">
+        <div class="s-foot-brand">
+          <a href="#" class="s-foot-logo" aria-label="Maestro CRM by Nexxt Technologies"><img src="logos/maestro-crm.png" alt="Maestro CRM by Nexxt Technologies" style="display:block;height:52px;width:auto;max-width:100%"></a>
+          <p>Maestro est le CRM simple des TPE et PME de conseil, de formation et de services. Centralisez, suivez, vendez et pilotez votre activité commerciale au même endroit.</p>
+        </div>
+        <div><h4>Produit</h4><ul>
+          <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
+          <li><a href="#pourquoi">Pourquoi Maestro</a></li>
+          <li><a href="#offres">Tarifs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul></div>
+        <div><h4>Légal</h4><ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+          <li><a href="vos-droits-rgpd.html">Vos droits RGPD</a></li>
+          <li><a href="cgu.html">CGU</a></li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="dpa.html">Accord de traitement des données (DPA)</a></li>
+        </ul></div>
+        <div><h4>Contact</h4><ul>
+          <li><a href="#contact">Compléter le formulaire →</a></li>
+        </ul></div>
+      </div>
+      <div class="s-foot-bottom">
+        <span>© 2026 Maestro CRM. Tous droits réservés. · Site réalisé par <a href="https://grisbiche.fr/" target="_blank" rel="noopener">Grisbiche</a></span>
+        <span>Données hébergées en France</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var shots = ["Opportunités en cours", "CA signé", "Pipeline commercial", "Relances à faire", "Prévisionnel", "Activité équipe"];
+  var cur = 0, box = document.getElementById("mae-shots");
+  if (!box) return;
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function render() {
+    var binds = { shotPlaceholder: "CAPTURE MAESTRO — " + shots[cur].toUpperCase(), shotNum: pad(cur + 1) + " / " + pad(shots.length), shotLabel: shots[cur] };
+    document.querySelectorAll("[data-bind]").forEach(function (el) { var k = el.getAttribute("data-bind"); if (k in binds) el.textContent = binds[k]; });
+    box.innerHTML = shots.map(function (label, i) {
+      var on = i === cur;
+      return '<button type="button" data-shot="' + i + '" style="padding:9px 14px;border-radius:999px;border:1px solid ' + (on ? "transparent" : "rgba(101,34,232,.2)") + ';background:' + (on ? "#160A33" : "#fff") + ';color:' + (on ? "#fff" : "#54427E") + ';font-family:Poppins,Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;cursor:pointer">' + label + '</button>';
+    }).join("");
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-shot],[data-action]");
+    if (!t) return;
+    if (t.hasAttribute("data-shot")) cur = +t.getAttribute("data-shot");
+    else if (t.getAttribute("data-action") === "prev") cur = (cur - 1 + shots.length) % shots.length;
+    else if (t.getAttribute("data-action") === "next") cur = (cur + 1) % shots.length;
+    render();
+  });
+  render();
+})();
+</script>
+<script>
+(function () {
+  var track = document.getElementById("fc-track");
+  if (!track) return;
+  var wrap = document.getElementById("fc");
+  var prev = wrap.querySelector(".fc-arrow--prev"), next = wrap.querySelector(".fc-arrow--next");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function step() { var c = track.querySelector(".fc-card"); return c ? c.getBoundingClientRect().width + 16 : 300; }
+  function atEnd() { return track.scrollLeft >= track.scrollWidth - track.clientWidth - 4; }
+  function go(dir) {
+    if (dir > 0 && atEnd()) track.scrollTo({ left: 0, behavior: "smooth" });
+    else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
+    else track.scrollBy({ left: dir * step(), behavior: "smooth" });
+  }
+  prev.addEventListener("click", function () { go(-1); restart(); });
+  next.addEventListener("click", function () { go(1); restart(); });
+  var timer = null, paused = false;
+  function start() { if (reduce) return; stop(); timer = setInterval(function () { if (!paused && !document.hidden) go(1); }, 4000); }
+  function stop() { if (timer) clearInterval(timer); timer = null; }
+  function restart() { start(); }
+  ["mouseenter", "focusin", "touchstart"].forEach(function (e) { wrap.addEventListener(e, function () { paused = true; }, { passive: true }); });
+  ["mouseleave", "focusout", "touchend"].forEach(function (e) { wrap.addEventListener(e, function () { paused = false; }, { passive: true }); });
+  start();
+})();
+</script>
+<script>
+(function () {
+  var steps = document.querySelectorAll(".hw-step"), panels = document.querySelectorAll("[data-hw-panel]");
+  function show(n) {
+    steps.forEach(function (b, k) { b.classList.toggle("is-on", k === n); b.setAttribute("aria-pressed", k === n ? "true" : "false"); });
+    panels.forEach(function (p, k) { p.hidden = k !== n; });
+  }
+  steps.forEach(function (b, n) {
+    b.addEventListener("click", function () { show(n); });
+    b.addEventListener("mouseenter", function () { show(n); });
+    b.addEventListener("focus", function () { show(n); });
+  });
+})();
+</script>
+
+<!-- Formulaire de contact en fenêtre -->
+<style>
+  .lead-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(18,11,46,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .2s ease;font-family:Poppins,Helvetica,Arial,sans-serif}
+  .lead-modal[hidden]{display:none !important}
+  .lead-modal.is-open{opacity:1}
+  .lead-box{position:relative;width:100%;max-width:720px;height:min(860px,100%);display:flex;flex-direction:column;border-radius:24px;background:#fff;overflow:hidden;box-shadow:0 50px 120px -40px rgba(10,4,40,.8);transform:translateY(12px);transition:transform .25s ease}
+  .lead-modal.is-open .lead-box{transform:none}
+  .lead-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px 16px 24px;border-bottom:1px solid rgba(101,34,232,.12)}
+  .lead-head b{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:20px;color:#160A33}
+  .lead-close{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(101,34,232,.2);background:#fff;color:#160A33;font-size:22px;line-height:1;cursor:pointer}
+  .lead-close:hover{background:#F1EAFF}
+  .lead-frame{flex:1;width:100%;border:0;background:#FAF8FF}
+  .lead-foot{flex:none;padding:10px 24px;font-size:12.5px;color:#7A6AA0;text-align:center;border-top:1px solid rgba(101,34,232,.08)}
+  .lead-foot a{color:#5A35DB;text-decoration:underline}
+  @media (max-width:640px){.lead-modal{padding:0}.lead-box{max-width:none;height:100%;border-radius:0}}
+  @media (prefers-reduced-motion:reduce){.lead-modal,.lead-box{transition:none}}
+</style>
+<div class="lead-modal" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-title" hidden>
+  <div class="lead-box">
+    <div class="lead-head"><b id="lead-title">Demander une démo</b><button type="button" class="lead-close" aria-label="Fermer">×</button></div>
+    <iframe class="lead-frame" title="Formulaire de contact Maestro" loading="lazy"></iframe>
+    <p class="lead-foot">Le formulaire ne s’affiche pas&nbsp;? <a href="https://app.nexxt-maestro.fr/lead/b606d47317632b7143de72d913312d96" target="_blank" rel="noopener">Ouvrez-le dans un nouvel onglet</a>.</p>
+  </div>
+</div>
+<script>
+(function () {
+  var URL = "https://app.nexxt-maestro.fr/lead/b606d47317632b7143de72d913312d96";
+  var modal = document.getElementById("lead-modal");
+  if (!modal) return;
+  var frame = modal.querySelector(".lead-frame"), lastFocus = null;
+  function open(e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    lastFocus = document.activeElement;
+    if (!frame.getAttribute("src")) frame.setAttribute("src", URL);
+    modal.hidden = false;
+    requestAnimationFrame(function () { modal.classList.add("is-open"); });
+    document.documentElement.style.overflow = "hidden";
+    modal.querySelector(".lead-close").focus();
+  }
+  function close() {
+    modal.classList.remove("is-open");
+    document.documentElement.style.overflow = "";
+    setTimeout(function () { modal.hidden = true; }, 200);
+    if (lastFocus) lastFocus.focus();
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href="#contact"]');
+    if (a) open(e);
+  });
+  modal.querySelector(".lead-close").addEventListener("click", close);
+  modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) close(); });
+})();
+</script>
+</body>
+</html>
