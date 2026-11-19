@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fonctionnalités — Maestro CRM</title>
-<meta name="description" content="Toutes les fonctionnalités du CRM Maestro : prospection, ventes, devis, facturation, missions, pilotage, IA et sécurité.">
+<meta name="description" content="Les fonctionnalités du CRM Maestro incluses dans chaque formule : Essentiel, Business et Groupe.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +91,46 @@
   @media (max-width:620px){.ff-grid{grid-template-columns:1fr}.ff-head{flex-direction:column;align-items:flex-start}.ff-item{padding:22px}.ff-btn{font-size:16px;padding:7px 7px 7px 22px}.ff-btn .cta-dot{width:40px;height:40px}}
   @media (prefers-reduced-motion:reduce){.ff-item{transition:none}.ff-item:hover{transform:none}}
   html{scroll-behavior:smooth}
+
+  /* ================= Comparatif des formules ================= */
+  .cp-sec{padding:clamp(24px,3vw,40px) max(16px,3vw) clamp(64px,7vw,104px);background:#fff;font-family:Poppins,Helvetica,Arial,sans-serif}
+  .cp-wrap{max-width:1100px;margin:0 auto}
+  .cp-table{border-radius:24px;background:#fff;border:1px solid rgba(101,34,232,.12);box-shadow:0 40px 80px -60px rgba(43,10,120,.6)}
+  .cp-row{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));align-items:stretch;border-top:1px solid rgba(101,34,232,.08)}
+  .cp-plans{position:sticky;top:69px;z-index:5;border-top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:24px 24px 0 0;border-bottom:1px solid rgba(101,34,232,.14)}
+  .cp-plan{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;padding:22px 10px 18px;text-align:center}
+  .cp-plan em{font-style:normal;margin-bottom:6px;padding:4px 10px;border-radius:999px;background:linear-gradient(110deg,#FF8A5C,#C04FD0 55%,#6A45F0);color:#fff;font-size:11px;font-weight:600}
+  .cp-plan b{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:22px;color:#160A33}
+  .cp-price{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:20px;color:#5A35DB;font-variant-numeric:tabular-nums}
+  .cp-price small{font-family:Poppins,Helvetica,Arial,sans-serif;font-weight:400;font-size:12px;color:#7A6AA0}
+  .cp-users{font-size:12.5px;font-weight:400;color:#6B5A92}
+  .cp-plan--feat,.cp-cell--feat{background:linear-gradient(180deg,rgba(123,79,243,.07),rgba(192,79,208,.05))}
+  .cp-plan--feat{border-radius:20px 20px 0 0}
+  .cp-cat{padding:26px 24px 12px;border-top:1px solid rgba(101,34,232,.08);scroll-margin-top:190px}
+  .cp-cat span{font-family:Jost,Futura,Helvetica,sans-serif;font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#7B4FF3}
+  .cp-feat{padding:16px 24px;min-width:0}
+  .cp-feat b{display:block;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:600;font-size:17px;color:#160A33}
+  .cp-feat small{display:block;margin-top:2px;font-size:13.5px;font-weight:300;line-height:1.45;color:#4A3B70}
+  .cp-cell{display:flex;align-items:center;justify-content:center;padding:10px}
+  .cp-yes{width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#9A7BFF,#6A45F0 55%,#C04FD0);box-shadow:0 8px 18px -10px rgba(90,53,219,.8)}
+  .cp-no{font-size:20px;color:#CFC6EA}
+  .cp-row:not(.cp-plans):hover{background:#FBF9FF}
+  .cp-note{margin:20px 0 0;text-align:center;font-family:Jost,Futura,Helvetica,sans-serif;font-weight:400;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#6B5A92}
+  @media (max-width:700px){
+    .cp-row{grid-template-columns:minmax(0,1fr) repeat(3,62px)}
+    .cp-feat{padding:14px 12px}
+    .cp-feat b{font-size:15px}
+    .cp-feat small{display:none}
+    .cp-plan{padding:14px 2px 12px}
+    .cp-plan b{font-size:14px}
+    .cp-price{font-size:14px}
+    .cp-price small,.cp-users{display:none}
+    .cp-plan em{display:none}
+    .cp-cat{padding:20px 12px 8px}
+    .cp-yes{width:26px;height:26px}
+    .cp-plans{top:58px}
+  }
+  @media (max-width:520px){header a[href="index.html"]:last-child{white-space:nowrap;font-size:13px !important}header .m-logo img{height:30px !important}}
 </style>
 </head>
 <body>
@@ -102,272 +142,18 @@
   <section class="ff-hero">
     <div class="ff-hero-in">
       <h1>Les fonctionnalités du <span>CRM Maestro</span></h1>
-      <p>Prospects, ventes, devis, facturation, missions, pilotage et IA : tout ce que Maestro fait pour votre activité commerciale, en détail.</p>
+      <p>Comparez les formules Essentiel, Business et Groupe, et retrouvez les fonctionnalités incluses dans chacune.</p>
       <nav class="ff-chips" aria-label="Catégories de fonctionnalités"><a href="#relation">Relation client & prospection</a><a href="#ventes">Ventes, devis & facturation</a><a href="#activite">Activité & organisation</a><a href="#emails">E-mails & marketing</a><a href="#pilotage">Pilotage</a><a href="#ia">Intelligence artificielle</a><a href="#securite">Sécurité & données</a></nav>
     </div>
   </section>
 
-  <section class="ff-sec" id="relation">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16.5 7.5h4.5M16.5 11h4.5"></path></svg></span>
-        <div>
-          <p class="ff-kicker">01</p>
-          <h2>Relation client & prospection</h2>
-          <p class="ff-lead">Toute votre base clients et prospects, enfin au même endroit.</p>
-        </div>
+    <section class="cp-sec">
+    <div class="cp-wrap">
+      <div class="cp-table" role="table" aria-label="Fonctionnalités incluses dans chaque formule">
+        <div class="cp-row cp-plans"><div class="cp-feat"></div><div class="cp-plan"><b>Essentiel</b><span class="cp-price">99&nbsp;€<small> HT/mois</small></span><span class="cp-users">2 utilisateurs max.</span></div><div class="cp-plan cp-plan--feat"><em>La plus choisie</em><b>Business</b><span class="cp-price">139&nbsp;€<small> HT/mois</small></span><span class="cp-users">Jusqu’à 8 utilisateurs</span></div><div class="cp-plan"><b>Groupe</b><span class="cp-price">159&nbsp;€<small> HT/mois</small></span><span class="cp-users">Jusqu’à 15 utilisateurs</span></div></div>
+        <div class="cp-cat" id="relation"><span>Relation client & prospection</span></div><div class="cp-row"><div class="cp-feat"><b>Fiches entreprises et contacts</b><small>Prospects, clients, contacts, partenaires et historique des échanges</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Carte de la fiche client</b><small>Adresse placée sur une carte, suggestion d’adresses</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Corbeille</b><small>Restauration d’une entreprise supprimée pendant 90 jours</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Prospection téléphonique</b><small>Enchaînement des appels et saisie des résultats</small></div><div class="cp-cell"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Reporting de prospection partageable</b><small>Avancement d’une campagne partagé par lien</small></div><div class="cp-cell"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Groupes de sociétés</b><small>Clients et contacts partagés entre les sociétés d’un groupe</small></div><div class="cp-cell"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell cp-cell--feat"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-cat" id="ventes"><span>Ventes, devis & facturation</span></div><div class="cp-row"><div class="cp-feat"><b>Pipeline des opportunités</b><small>Étapes, montant, responsable, échéances</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Devis</b><small>Création, envoi et suivi de consultation</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Signature électronique</b><small>Signature des devis en ligne, confirmée par code</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Facturation</b><small>Factures au format Factur-X</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Abonnements de vos clients</b><small>Suivi des abonnements que vous vendez</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Synchronisation comptable</b><small>Pennylane : factures, devis, abonnements, clients</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-cat" id="activite"><span>Activité & organisation</span></div><div class="cp-row"><div class="cp-feat"><b>Actions et relances</b><small>Tâches, relances, prochaines étapes</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Agenda</b><small>Synchronisé avec Outlook ou CalDAV</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Gestion des affaires & mode projet</b><small>Suivi des missions jusqu’à la livraison</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Messagerie d’équipe</b><small>Messages directs et canaux</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Notifications</b><small>Dans l’application et en push</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-cat" id="emails"><span>E-mails & marketing</span></div><div class="cp-row"><div class="cp-feat"><b>Boîte mail connectée</b><small>Outlook ou IMAP/SMTP, envoi depuis votre adresse</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Modèles d’e-mails</b><small>Modèles réutilisables et éditeur assisté par l’IA</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Formulaires de contact et de rendez-vous</b><small>Chaque demande arrive dans le CRM</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Campagnes d’e-mailing</b><small>Via votre compte Mailjet, avec les consentements</small></div><div class="cp-cell"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-cat" id="pilotage"><span>Pilotage</span></div><div class="cp-row"><div class="cp-feat"><b>Dashboard de pilotage</b><small>CA réalisé, potentiel, prévisionnel</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Rôles et droits</b><small>Accès selon le rôle de chaque membre</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Multi-BU et multi-sites</b><small>Vision consolidée, pilotage par activité</small></div><div class="cp-cell"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell cp-cell--feat"><span class="cp-no" role="img" aria-label="Non inclus">–</span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-cat" id="ia"><span>Intelligence artificielle</span></div><div class="cp-row"><div class="cp-feat"><b>Assistant IA intégré</b><small>Assistant CRM, réponses aux e-mails, résumés de réunion</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Pilotage avec Claude ou ChatGPT</b><small>Votre assistant IA connecté au CRM</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Votre propre fournisseur d’IA</b><small>Anthropic, OpenAI, Google… avec votre clé</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-cat" id="securite"><span>Sécurité & données</span></div><div class="cp-row"><div class="cp-feat"><b>Connexion sécurisée</b><small>Code par e-mail, Microsoft, Google ou passkey</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Hébergement en France</b><small>Sauvegardes chiffrées dans l’Union européenne</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Export complet</b><small>Tableur, JSON et fichiers, à tout moment</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Annulation des modifications</b><small>Retour en arrière pendant 30 jours</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div><div class="cp-row"><div class="cp-feat"><b>Journal d’audit</b><small>Actions tracées, accès support encadrés</small></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell cp-cell--feat"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div><div class="cp-cell"><span class="cp-yes" role="img" aria-label="Inclus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span></div></div>
       </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16.5 7.5h4.5M16.5 11h4.5"></path></svg></span>
-            <h3>Fiches entreprises et contacts</h3>
-            <p>Prospects, clients, contacts et partenaires, avec l’historique complet des échanges, des notes et des appels.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"></path></svg></span>
-            <h3>Prospection téléphonique</h3>
-            <p>Enchaînez vos appels de prospection et notez les résultats au fil de l’eau, sans rien perdre de votre saisie.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="18" cy="18" r="2.5"></circle><path d="M8.2 10.9l7.6-3.8M8.2 13.1l7.6 3.8"></path></svg></span>
-            <h3>Reporting de prospection partageable</h3>
-            <p>Partagez l’avancement d’une campagne de prospection par un simple lien.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg></span>
-            <h3>Carte de la fiche client</h3>
-            <p>L’adresse de chaque client placée sur une carte, avec la suggestion d’adresses pendant la saisie.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5h17v12h-17z"></path><path d="M8.5 7.5V5.2c0-.7.6-1.2 1.3-1.2h4.4c.7 0 1.3.5 1.3 1.2v2.3"></path></svg></span>
-            <h3>Groupes de sociétés</h3>
-            <p>Partagez clients, contacts et groupements entre les sociétés d’un même groupe.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14L4 9l5-5"></path><path d="M4 9h10a6 6 0 010 12h-3"></path></svg></span>
-            <h3>Corbeille</h3>
-            <p>Une entreprise supprimée reste 90 jours dans la corbeille, où elle peut être restaurée.</p>
-          </article>
-      </div>
-    </div>
-  </section>
-  <section class="ff-sec ff-sec--tint" id="ventes">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.4"></rect><rect x="9.75" y="4" width="4.5" height="11" rx="1.4"></rect><rect x="16.5" y="4" width="4.5" height="7" rx="1.4"></rect></svg></span>
-        <div>
-          <p class="ff-kicker">02</p>
-          <h2>Ventes, devis & facturation</h2>
-          <p class="ff-lead">Du premier rendez-vous à la facture, sans changer d’outil.</p>
-        </div>
-      </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="4.5" height="16" rx="1.4"></rect><rect x="9.75" y="4" width="4.5" height="11" rx="1.4"></rect><rect x="16.5" y="4" width="4.5" height="7" rx="1.4"></rect></svg></span>
-            <h3>Pipeline des opportunités</h3>
-            <p>Étapes, montant, responsable et échéances : votre pipeline toujours à jour.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8.5L19 7.5V21H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 16.5h4"></path></svg></span>
-            <h3>Devis</h3>
-            <p>Créez et envoyez vos devis, et suivez leur consultation par vos clients.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"></path><path d="M6 15l3-1 9-9a1.4 1.4 0 00-2-2l-9 9-1 3z"></path></svg></span>
-            <h3>Signature électronique</h3>
-            <p>Vos clients signent leurs devis en ligne, avec une confirmation par code envoyé par e-mail.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M15 8.5a4 4 0 100 7M7.5 11h6M7.5 13.5h6"></path></svg></span>
-            <h3>Facturation</h3>
-            <p>Émettez vos factures au format Factur-X, directement depuis Maestro.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0113.7-5.7L20 8.5"></path><path d="M20 4v4.5h-4.5"></path><path d="M20 12a8 8 0 01-13.7 5.7L4 15.5"></path><path d="M4 20v-4.5h4.5"></path></svg></span>
-            <h3>Abonnements de vos clients</h3>
-            <p>Suivez les abonnements que vous vendez à vos propres clients.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l-2.2 2.2a3.5 3.5 0 01-5-5L4 10"></path><path d="M15 9l2.2-2.2a3.5 3.5 0 015 5L20 14"></path><path d="M9.5 14.5l5-5"></path></svg></span>
-            <h3>Synchronisation comptable</h3>
-            <p>Factures, devis, abonnements et clients synchronisés avec Pennylane.</p>
-          </article>
-      </div>
-    </div>
-  </section>
-  <section class="ff-sec" id="activite">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.2V12l3.2 2"></path></svg></span>
-        <div>
-          <p class="ff-kicker">03</p>
-          <h2>Activité & organisation</h2>
-          <p class="ff-lead">Votre prochaine action toujours visible, toute l’équipe sur la même page.</p>
-        </div>
-      </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.2V12l3.2 2"></path></svg></span>
-            <h3>Actions et relances</h3>
-            <p>Tâches, relances et prochaines étapes pour ne plus laisser dormir une opportunité.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"></rect><path d="M8 3v4M16 3v4M3.5 10h17"></path></svg></span>
-            <h3>Agenda</h3>
-            <p>Votre planning dans Maestro, synchronisé avec Outlook ou votre agenda CalDAV (iCloud, Fastmail, Nextcloud…).</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5h17v12h-17z"></path><path d="M8.5 7.5V5.2c0-.7.6-1.2 1.3-1.2h4.4c.7 0 1.3.5 1.3 1.2v2.3"></path><path d="M3.5 12.5h17"></path></svg></span>
-            <h3>Gestion des affaires &amp; mode projet</h3>
-            <p>Suivez la production de chaque mission après la signature, jusqu’à la livraison.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg></span>
-            <h3>Messagerie d’équipe</h3>
-            <p>Échangez avec votre équipe directement dans le CRM, en messages directs ou en canaux.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15z"></path><path d="M10 20a2 2 0 004 0"></path></svg></span>
-            <h3>Notifications</h3>
-            <p>Restez informé des événements importants, y compris par notifications push.</p>
-          </article>
-      </div>
-    </div>
-  </section>
-  <section class="ff-sec ff-sec--tint" id="emails">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 6.5L12 13l8.5-6.5"></path></svg></span>
-        <div>
-          <p class="ff-kicker">04</p>
-          <h2>E-mails & marketing</h2>
-          <p class="ff-lead">Vos échanges et vos campagnes, reliés à vos fiches clients.</p>
-        </div>
-      </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 6.5L12 13l8.5-6.5"></path></svg></span>
-            <h3>Boîte mail connectée</h3>
-            <p>Connectez Outlook ou votre serveur de messagerie (IMAP, SMTP) et envoyez depuis votre propre adresse.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8.5L19 7.5V21H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 16.5h4"></path></svg></span>
-            <h3>Modèles d’e-mails</h3>
-            <p>Gagnez du temps avec des modèles réutilisables et un éditeur d’e-mails assisté par l’IA.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
-            <h3>Formulaires de contact</h3>
-            <p>Publiez vos formulaires de contact et de prise de rendez-vous : chaque demande arrive dans le CRM.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L3 10.5l7 2.5 2.5 7z"></path><path d="M10 13l11-10"></path></svg></span>
-            <h3>Campagnes d’e-mailing</h3>
-            <p>Envoyez vos campagnes depuis votre compte Mailjet, avec la gestion des consentements marketing.</p>
-          </article>
-      </div>
-    </div>
-  </section>
-  <section class="ff-sec" id="pilotage">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path></svg></span>
-        <div>
-          <p class="ff-kicker">05</p>
-          <h2>Pilotage</h2>
-          <p class="ff-lead">Prenez de la hauteur sur votre activité commerciale.</p>
-        </div>
-      </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 19.5h17"></path><path d="M5 16l4.5-5 3.5 3 5.5-7"></path></svg></span>
-            <h3>Dashboard de pilotage</h3>
-            <p>CA réalisé, potentiel, prévisionnel et activité commerciale en un coup d’œil.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5c2.2 2.4 3.4 5.4 3.4 8.5S14.2 18.1 12 20.5c-2.2-2.4-3.4-5.4-3.4-8.5S9.8 5.9 12 3.5z"></path></svg></span>
-            <h3>Multi-BU et multi-sites</h3>
-            <p>Plusieurs équipes, sites ou Business Units : une vision consolidée, avec un pilotage par activité.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="M11 12l9-9M17 6l2 2M15 8l2 2"></path></svg></span>
-            <h3>Rôles et droits</h3>
-            <p>Chaque membre accède à ce qui le concerne, selon son rôle et ses droits.</p>
-          </article>
-      </div>
-    </div>
-  </section>
-  <section class="ff-sec ff-sec--tint" id="ia">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span>
-        <div>
-          <p class="ff-kicker">06</p>
-          <h2>Intelligence artificielle</h2>
-          <p class="ff-lead">Votre CRM qui vous fait gagner du temps.</p>
-        </div>
-      </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span>
-            <h3>Assistant IA intégré</h3>
-            <p>Un assistant dans le CRM, des suggestions de réponse à vos e-mails et le résumé de vos transcriptions de réunion.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg></span>
-            <h3>Pilotage avec Claude ou ChatGPT</h3>
-            <p>Connectez votre assistant IA : créez une fiche client, une opportunité, préparez un devis ou analysez votre activité en langage naturel.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg></span>
-            <h3>Accès sous contrôle</h3>
-            <p>L’accès d’un assistant IA est limité à vos droits, peut être restreint à la lecture seule et se révoque à tout moment.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l-2.2 2.2a3.5 3.5 0 01-5-5L4 10"></path><path d="M15 9l2.2-2.2a3.5 3.5 0 015 5L20 14"></path><path d="M9.5 14.5l5-5"></path></svg></span>
-            <h3>Votre propre fournisseur d’IA</h3>
-            <p>Branchez votre fournisseur d’IA (Anthropic, OpenAI, Google…) avec votre propre clé.</p>
-          </article>
-      </div>
-    </div>
-  </section>
-  <section class="ff-sec" id="securite">
-    <div class="ff-wrap">
-      <div class="ff-head">
-        <span class="ff-big"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v6c0 4.5-3.2 7.8-7.5 9-4.3-1.2-7.5-4.5-7.5-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-        <div>
-          <p class="ff-kicker">07</p>
-          <h2>Sécurité & données</h2>
-          <p class="ff-lead">Vos données sont à vous, et protégées.</p>
-        </div>
-      </div>
-      <div class="ff-grid">
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="M11 12l9-9M17 6l2 2M15 8l2 2"></path></svg></span>
-            <h3>Connexion sécurisée</h3>
-            <p>Connexion par code envoyé par e-mail, compte Microsoft ou Google, ou clé d’accès (passkey).</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v6c0 4.5-3.2 7.8-7.5 9-4.3-1.2-7.5-4.5-7.5-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-            <h3>Hébergement en France</h3>
-            <p>Application et base de données hébergées en France, sauvegardes chiffrées dans l’Union européenne.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"></path><path d="M4 19h16"></path></svg></span>
-            <h3>Export complet</h3>
-            <p>Exportez à tout moment toutes les données de votre société : tableur, fichier JSON et fichiers.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14L4 9l5-5"></path><path d="M4 9h10a6 6 0 010 12h-3"></path></svg></span>
-            <h3>Annulation des modifications</h3>
-            <p>Revenez en arrière sur une modification pendant 30 jours.</p>
-          </article>
-          <article class="ff-item">
-            <span class="ff-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path></svg></span>
-            <h3>Journal d’audit</h3>
-            <p>Les actions sont tracées, et les accès du support sont encadrés et visibles par vos administrateurs.</p>
-          </article>
-      </div>
+      <p class="cp-note">+ 10&nbsp;€&nbsp;HT par utilisateur supplémentaire sur les formules Business et Groupe · Accompagnement au démarrage inclus dans toutes les offres</p>
     </div>
   </section>
 
